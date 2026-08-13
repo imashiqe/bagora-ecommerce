@@ -3725,7 +3725,7 @@
     <div x-show="isSticky" class="h-[60px]" style="display: none"></div>
   </div>
 </header>
-@yield('content')
+
 <!-- Footer Top -->
 <div class="bg-primary-main py-8">
   <div class="custom-container">
@@ -5572,6 +5572,9 @@
     </div>
   </div>
 </div>
+
+
+ @yield('content')
 <!-- Footer -->
 <footer class="">
   <!-- Footer Nav -->
