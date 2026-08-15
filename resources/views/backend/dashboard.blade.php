@@ -1,490 +1,616 @@
 @extends('backend.master')
 
+@section('title', 'Dashboard - Bagora Admin')
+
+@section('page-header')
+<div class="row align-items-center">
+    <div class="col-sm-6">
+        <h1 class="mb-0 fs-3">Dashboard</h1>
+        <small class="text-secondary">
+            Bagora ecommerce overview
+        </small>
+    </div>
+
+    <div class="col-sm-6">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb float-sm-end mb-0">
+                <li class="breadcrumb-item">
+                    <a href="{{ url('/admin/dashboard') }}">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    Dashboard
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+@endsection
+
+
 @section('content')
-      <!--begin::App Main-->
-      <main class="app-main">
-        <!--begin::App Content Header-->
-        <div class="app-content-header">
-          <!--begin::Container-->
-          <div class="container-fluid">
-            <!--begin::Row-->
-            <div class="row">
-              <div class="col-sm-6">
-                <h1 class="mb-0 fs-3">Dashboard</h1>
-              </div>
-              <div class="col-sm-6">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb float-sm-end">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                  </ol>
-                </nav>
-              </div>
+
+{{-- =========================================================
+    TOP KPI CARDS
+========================================================= --}}
+<div class="row g-3 mb-4">
+
+    {{-- Today Orders --}}
+    <div class="col-xl-3 col-md-6">
+        <div class="small-box text-bg-primary">
+            <div class="inner">
+                <h3>{{ $todayOrders ?? 0 }}</h3>
+                <p>Today's Orders</p>
             </div>
-            <!--end::Row-->
-          </div>
-          <!--end::Container-->
+
+            <i class="small-box-icon bi bi-cart-check"></i>
+
+            <a
+                href="{{ url('/admin/orders') }}"
+                class="small-box-footer link-light link-underline-opacity-0"
+            >
+                View Orders
+                <i class="bi bi-arrow-right-circle ms-1"></i>
+            </a>
         </div>
-        <!--end::App Content Header-->
-        <!--begin::App Content-->
-        <div class="app-content">
-          <!--begin::Container-->
-          <div class="container-fluid">
-            <!--begin::Row-->
-            <div class="row">
-              <!--begin::Col-->
-              <div class="col-lg-3 col-6">
-                <!--begin::Small Box Widget 1-->
-                <div class="small-box text-bg-primary">
-                  <div class="inner">
-                    <h3>150</h3>
+    </div>
 
-                    <p>New Orders</p>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z"
-                    ></path>
-                  </svg>
-                  <a
-                    href="#"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                    More info <i class="bi bi-link-45deg"></i>
-                  </a>
-                </div>
-                <!--end::Small Box Widget 1-->
-              </div>
-              <!--end::Col-->
-              <div class="col-lg-3 col-6">
-                <!--begin::Small Box Widget 2-->
-                <div class="small-box text-bg-success">
-                  <div class="inner">
-                    <h3>53<sup class="fs-5">%</sup></h3>
 
-                    <p>Bounce Rate</p>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75zM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 01-1.875-1.875V8.625zM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 013 19.875v-6.75z"
-                    ></path>
-                  </svg>
-                  <a
-                    href="#"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                    More info <i class="bi bi-link-45deg"></i>
-                  </a>
-                </div>
-                <!--end::Small Box Widget 2-->
-              </div>
-              <!--end::Col-->
-              <div class="col-lg-3 col-6">
-                <!--begin::Small Box Widget 3-->
-                <div class="small-box text-bg-warning">
-                  <div class="inner">
-                    <h3>44</h3>
-
-                    <p>User Registrations</p>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z"
-                    ></path>
-                  </svg>
-                  <a
-                    href="#"
-                    class="small-box-footer link-dark link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                    More info <i class="bi bi-link-45deg"></i>
-                  </a>
-                </div>
-                <!--end::Small Box Widget 3-->
-              </div>
-              <!--end::Col-->
-              <div class="col-lg-3 col-6">
-                <!--begin::Small Box Widget 4-->
-                <div class="small-box text-bg-danger">
-                  <div class="inner">
-                    <h3>65</h3>
-
-                    <p>Unique Visitors</p>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      clip-rule="evenodd"
-                      fill-rule="evenodd"
-                      d="M2.25 13.5a8.25 8.25 0 018.25-8.25.75.75 0 01.75.75v6.75H18a.75.75 0 01.75.75 8.25 8.25 0 01-16.5 0z"
-                    ></path>
-                    <path
-                      clip-rule="evenodd"
-                      fill-rule="evenodd"
-                      d="M12.75 3a.75.75 0 01.75-.75 8.25 8.25 0 018.25 8.25.75.75 0 01-.75.75h-7.5a.75.75 0 01-.75-.75V3z"
-                    ></path>
-                  </svg>
-                  <a
-                    href="#"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                    More info <i class="bi bi-link-45deg"></i>
-                  </a>
-                </div>
-                <!--end::Small Box Widget 4-->
-              </div>
-              <!--end::Col-->
+    {{-- Today Sales --}}
+    <div class="col-xl-3 col-md-6">
+        <div class="small-box text-bg-success">
+            <div class="inner">
+                <h3>
+                    ৳{{ number_format($todaySales ?? 0, 0) }}
+                </h3>
+                <p>Today's Sales</p>
             </div>
-            <!--end::Row-->
-            <!--begin::Row-->
-            <div class="row">
-              <!-- Start col -->
-              <div class="col-lg-7 connectedSortable">
-                <div class="card mb-4">
-                  <div class="card-header">
-                    <h3 class="card-title">Sales Value</h3>
-                  </div>
 
-                  <div class="card-body">
-                    <div id="revenue-chart"></div>
-                  </div>
-                </div>
-                <!-- /.card -->
+            <i class="small-box-icon bi bi-cash-stack"></i>
 
-                <!-- DIRECT CHAT -->
-                <div class="card direct-chat direct-chat-primary mb-4">
-                  <div class="card-header">
-                    <h3 class="card-title">Direct Chat</h3>
-
-                    <div class="card-tools">
-                      <span title="3 New Messages" class="badge text-bg-primary"> 3 </span>
-                      <button
-                        type="button"
-                        class="btn btn-tool"
-                        data-lte-toggle="card-collapse"
-                        aria-label="Collapse card"
-                      >
-                        <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                        <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-tool"
-                        title="Contacts"
-                        data-lte-toggle="chat-pane"
-                      >
-                        <i class="bi bi-chat-text-fill"></i>
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-tool"
-                        data-lte-toggle="card-remove"
-                        aria-label="Remove card"
-                      >
-                        <i class="bi bi-x-lg"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body">
-                    <!-- Conversations are loaded here -->
-                    <div
-                      class="direct-chat-messages"
-                      role="log"
-                      tabindex="0"
-                      aria-label="Chat messages"
-                    >
-                      <!-- Message. Default to the start -->
-                      <div class="direct-chat-msg">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-start"> Alexander Pierce </span>
-                          <span class="direct-chat-timestamp float-end"> 23 Jan 2:00 pm </span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img
-                          class="direct-chat-img"
-                          src="./assets/img/user1-128x128.jpg"
-                          alt="message user image"
-                        />
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">
-                          Is this template really for free? That's unbelievable!
-                        </div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-
-                      <!-- Message to the end -->
-                      <div class="direct-chat-msg end">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-end"> Sarah Bullock </span>
-                          <span class="direct-chat-timestamp float-start"> 23 Jan 2:05 pm </span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img
-                          class="direct-chat-img"
-                          src="./assets/img/user3-128x128.jpg"
-                          alt="message user image"
-                        />
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">You better believe it!</div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-
-                      <!-- Message. Default to the start -->
-                      <div class="direct-chat-msg">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-start"> Alexander Pierce </span>
-                          <span class="direct-chat-timestamp float-end"> 23 Jan 5:37 pm </span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img
-                          class="direct-chat-img"
-                          src="./assets/img/user1-128x128.jpg"
-                          alt="message user image"
-                        />
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">
-                          Working with AdminLTE on a great new app! Wanna join?
-                        </div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-
-                      <!-- Message to the end -->
-                      <div class="direct-chat-msg end">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-end"> Sarah Bullock </span>
-                          <span class="direct-chat-timestamp float-start"> 23 Jan 6:10 pm </span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img
-                          class="direct-chat-img"
-                          src="./assets/img/user3-128x128.jpg"
-                          alt="message user image"
-                        />
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">I would love to.</div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-                    </div>
-                    <!-- /.direct-chat-messages-->
-
-                    <!-- Contacts are loaded here -->
-                    <div class="direct-chat-contacts">
-                      <ul class="contacts-list">
-                        <li>
-                          <a href="#">
-                            <img
-                              class="contacts-list-img"
-                              src="./assets/img/user1-128x128.jpg"
-                              alt="User Avatar"
-                            />
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Count Dracula
-                                <small class="contacts-list-date float-end"> 2/28/2023 </small>
-                              </span>
-                              <span class="contacts-list-msg"> How have you been? I was... </span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img
-                              class="contacts-list-img"
-                              src="./assets/img/user7-128x128.jpg"
-                              alt="User Avatar"
-                            />
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Sarah Doe
-                                <small class="contacts-list-date float-end"> 2/23/2023 </small>
-                              </span>
-                              <span class="contacts-list-msg"> I will be waiting for... </span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img
-                              class="contacts-list-img"
-                              src="./assets/img/user3-128x128.jpg"
-                              alt="User Avatar"
-                            />
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Nadia Jolie
-                                <small class="contacts-list-date float-end"> 2/20/2023 </small>
-                              </span>
-                              <span class="contacts-list-msg"> I'll call you back at... </span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img
-                              class="contacts-list-img"
-                              src="./assets/img/user5-128x128.jpg"
-                              alt="User Avatar"
-                            />
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Nora S. Vans
-                                <small class="contacts-list-date float-end"> 2/10/2023 </small>
-                              </span>
-                              <span class="contacts-list-msg"> Where is your new... </span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img
-                              class="contacts-list-img"
-                              src="./assets/img/user6-128x128.jpg"
-                              alt="User Avatar"
-                            />
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                John K.
-                                <small class="contacts-list-date float-end"> 1/27/2023 </small>
-                              </span>
-                              <span class="contacts-list-msg"> Can I take a look at... </span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img
-                              class="contacts-list-img"
-                              src="./assets/img/user8-128x128.jpg"
-                              alt="User Avatar"
-                            />
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Kenneth M.
-                                <small class="contacts-list-date float-end"> 1/4/2023 </small>
-                              </span>
-                              <span class="contacts-list-msg"> Never mind I found... </span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                      </ul>
-                      <!-- /.contacts-list -->
-                    </div>
-                    <!-- /.direct-chat-pane -->
-                  </div>
-                  <!-- /.card-body -->
-                  <div class="card-footer">
-                    <form action="#" method="post">
-                      <div class="input-group">
-                        <input
-                          type="text"
-                          name="message"
-                          placeholder="Type Message ..."
-                          class="form-control"
-                        />
-                        <span class="input-group-append">
-                          <button type="button" class="btn btn-primary">Send</button>
-                        </span>
-                      </div>
-                    </form>
-                  </div>
-                  <!-- /.card-footer-->
-                </div>
-                <!-- /.direct-chat -->
-              </div>
-              <!-- /.Start col -->
-
-              <!-- Start col -->
-              <div class="col-lg-5 connectedSortable">
-                <div class="card text-white bg-primary bg-gradient border-primary mb-4">
-                  <div class="card-header border-0">
-                    <h3 class="card-title">Sales Value</h3>
-                    <div class="card-tools">
-                      <button
-                        type="button"
-                        class="btn btn-primary btn-sm"
-                        data-lte-toggle="card-collapse"
-                        aria-label="Collapse card"
-                      >
-                        <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                        <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="world-map" style="height: 220px"></div>
-                  </div>
-                  <div class="card-footer border-0">
-                    <!--begin::Row-->
-                    <div class="row">
-                      <div class="col-4 text-center">
-                        <div id="sparkline-1" class="text-dark"></div>
-                        <div class="text-white">Visitors</div>
-                      </div>
-                      <div class="col-4 text-center">
-                        <div id="sparkline-2" class="text-dark"></div>
-                        <div class="text-white">Online</div>
-                      </div>
-                      <div class="col-4 text-center">
-                        <div id="sparkline-3" class="text-dark"></div>
-                        <div class="text-white">Sales</div>
-                      </div>
-                    </div>
-                    <!--end::Row-->
-                  </div>
-                </div>
-              </div>
-              <!-- /.Start col -->
-            </div>
-            <!-- /.row (main row) -->
-          </div>
-          <!--end::Container-->
+            <a
+                href="{{ url('/admin/orders') }}"
+                class="small-box-footer link-light link-underline-opacity-0"
+            >
+                View Sales
+                <i class="bi bi-arrow-right-circle ms-1"></i>
+            </a>
         </div>
-        <!--end::App Content-->
-      </main>
-      <!--end::App Main-->
+    </div>
+
+
+    {{-- Pending --}}
+    <div class="col-xl-3 col-md-6">
+        <div class="small-box text-bg-warning">
+            <div class="inner">
+                <h3>{{ $pendingOrders ?? 0 }}</h3>
+                <p>Pending Orders</p>
+            </div>
+
+            <i class="small-box-icon bi bi-hourglass-split"></i>
+
+            <a
+                href="{{ url('/admin/orders?status=pending') }}"
+                class="small-box-footer link-dark link-underline-opacity-0"
+            >
+                Review Orders
+                <i class="bi bi-arrow-right-circle ms-1"></i>
+            </a>
+        </div>
+    </div>
+
+
+    {{-- Low Stock --}}
+    <div class="col-xl-3 col-md-6">
+        <div class="small-box text-bg-danger">
+            <div class="inner">
+                <h3>{{ $lowStockCount ?? 0 }}</h3>
+                <p>Low Stock Variants</p>
+            </div>
+
+            <i class="small-box-icon bi bi-exclamation-triangle"></i>
+
+            <a
+                href="{{ url('/admin/variants?stock=low') }}"
+                class="small-box-footer link-light link-underline-opacity-0"
+            >
+                Check Stock
+                <i class="bi bi-arrow-right-circle ms-1"></i>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+
+{{-- =========================================================
+    ORDER STATUS + BUSINESS STATS
+========================================================= --}}
+<div class="row g-3 mb-4">
+
+    <div class="col-xl-8">
+
+        <div class="card h-100">
+
+            <div class="card-header d-flex align-items-center justify-content-between">
+
+                <div>
+                    <h3 class="card-title mb-0">Order Status</h3>
+                    <small class="text-secondary">
+                        Current order workflow
+                    </small>
+                </div>
+
+                <a
+                    href="{{ url('/admin/orders') }}"
+                    class="btn btn-sm btn-outline-primary"
+                >
+                    All Orders
+                </a>
+
+            </div>
+
+
+            <div class="card-body">
+
+                <div class="row g-3">
+
+                    @php
+                        $orderStats = [
+                            [
+                                'label' => 'Confirmed',
+                                'value' => $confirmedOrders ?? 0,
+                                'icon' => 'bi-check-circle',
+                                'class' => 'text-bg-primary',
+                                'status' => 'confirmed',
+                            ],
+                            [
+                                'label' => 'Processing',
+                                'value' => $processingOrders ?? 0,
+                                'icon' => 'bi-gear',
+                                'class' => 'text-bg-info',
+                                'status' => 'processing',
+                            ],
+                            [
+                                'label' => 'Packed',
+                                'value' => $packedOrders ?? 0,
+                                'icon' => 'bi-box-seam',
+                                'class' => 'text-bg-secondary',
+                                'status' => 'packed',
+                            ],
+                            [
+                                'label' => 'Shipped',
+                                'value' => $shippedOrders ?? 0,
+                                'icon' => 'bi-truck',
+                                'class' => 'text-bg-warning',
+                                'status' => 'shipped',
+                            ],
+                            [
+                                'label' => 'Delivered',
+                                'value' => $deliveredOrders ?? 0,
+                                'icon' => 'bi-bag-check',
+                                'class' => 'text-bg-success',
+                                'status' => 'delivered',
+                            ],
+                            [
+                                'label' => 'Cancelled',
+                                'value' => $cancelledOrders ?? 0,
+                                'icon' => 'bi-x-circle',
+                                'class' => 'text-bg-danger',
+                                'status' => 'cancelled',
+                            ],
+                        ];
+                    @endphp
+
+
+                    @foreach($orderStats as $stat)
+
+                        <div class="col-md-4 col-sm-6">
+
+                            <a
+                                href="{{ url('/admin/orders?status=' . $stat['status']) }}"
+                                class="text-decoration-none"
+                            >
+
+                                <div
+                                    class="p-3 rounded border h-100 d-flex align-items-center gap-3"
+                                >
+
+                                    <div
+                                        class="d-inline-flex align-items-center justify-content-center rounded-circle {{ $stat['class'] }}"
+                                        style="width: 46px; height: 46px;"
+                                    >
+                                        <i class="bi {{ $stat['icon'] }} fs-5"></i>
+                                    </div>
+
+
+                                    <div>
+
+                                        <div class="fs-4 fw-bold text-body">
+                                            {{ $stat['value'] }}
+                                        </div>
+
+                                        <div class="text-secondary small">
+                                            {{ $stat['label'] }}
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </a>
+
+                        </div>
+
+                    @endforeach
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-xl-4">
+
+        <div class="card h-100">
+
+            <div class="card-header">
+                <h3 class="card-title mb-0">
+                    Store Overview
+                </h3>
+            </div>
+
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between border-bottom py-3">
+                    <span class="text-secondary">
+                        Total Products
+                    </span>
+                    <strong>
+                        {{ $totalProducts ?? 0 }}
+                    </strong>
+                </div>
+
+
+                <div class="d-flex justify-content-between border-bottom py-3">
+                    <span class="text-secondary">
+                        Total Variants
+                    </span>
+                    <strong>
+                        {{ $totalVariants ?? 0 }}
+                    </strong>
+                </div>
+
+
+                <div class="d-flex justify-content-between border-bottom py-3">
+                    <span class="text-secondary">
+                        Customers
+                    </span>
+                    <strong>
+                        {{ $totalCustomers ?? 0 }}
+                    </strong>
+                </div>
+
+
+                <div class="d-flex justify-content-between border-bottom py-3">
+                    <span class="text-secondary">
+                        Abandoned Checkouts
+                    </span>
+                    <strong class="text-danger">
+                        {{ $abandonedCheckouts ?? 0 }}
+                    </strong>
+                </div>
+
+
+                <div class="d-flex justify-content-between pt-3">
+                    <span class="text-secondary">
+                        Total Revenue
+                    </span>
+                    <strong class="text-success">
+                        ৳{{ number_format($totalRevenue ?? 0, 0) }}
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{{-- =========================================================
+    RECENT ORDERS + LOW STOCK
+========================================================= --}}
+<div class="row g-3 mb-4">
+
+    {{-- Recent Orders --}}
+    <div class="col-xl-8">
+
+        <div class="card">
+
+            <div class="card-header d-flex align-items-center justify-content-between">
+
+                <div>
+                    <h3 class="card-title mb-0">
+                        Recent Orders
+                    </h3>
+                </div>
+
+                <a
+                    href="{{ url('/admin/orders') }}"
+                    class="btn btn-sm btn-outline-primary"
+                >
+                    View All
+                </a>
+
+            </div>
+
+
+            <div class="card-body p-0">
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle mb-0">
+
+                        <thead>
+                            <tr>
+                                <th>Order</th>
+                                <th>Customer</th>
+                                <th>Phone</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+
+                            @forelse(($recentOrders ?? collect()) as $order)
+
+                                @php
+                                    $statusClasses = [
+                                        'pending' => 'text-bg-warning',
+                                        'confirmed' => 'text-bg-primary',
+                                        'processing' => 'text-bg-info',
+                                        'packed' => 'text-bg-secondary',
+                                        'shipped' => 'text-bg-dark',
+                                        'delivered' => 'text-bg-success',
+                                        'cancelled' => 'text-bg-danger',
+                                        'returned' => 'text-bg-danger',
+                                        'failed_delivery' => 'text-bg-danger',
+                                    ];
+
+                                    $statusClass =
+                                        $statusClasses[$order->order_status]
+                                        ?? 'text-bg-secondary';
+                                @endphp
+
+                                <tr>
+
+                                    <td>
+                                        <a
+                                            href="{{ url('/admin/orders/' . $order->id) }}"
+                                            class="fw-semibold text-decoration-none"
+                                        >
+                                            {{ $order->order_number }}
+                                        </a>
+                                    </td>
+
+
+                                    <td>
+                                        {{ $order->customer_name }}
+                                    </td>
+
+
+                                    <td>
+                                        {{ $order->phone }}
+                                    </td>
+
+
+                                    <td>
+                                        <strong>
+                                            ৳{{ number_format($order->grand_total, 0) }}
+                                        </strong>
+                                    </td>
+
+
+                                    <td>
+                                        <span class="badge {{ $statusClass }}">
+                                            {{ ucfirst(str_replace('_', ' ', $order->order_status)) }}
+                                        </span>
+                                    </td>
+
+
+                                    <td class="text-secondary">
+                                        {{ optional($order->created_at)->format('d M Y, h:i A') }}
+                                    </td>
+
+                                </tr>
+
+                            @empty
+
+                                <tr>
+                                    <td colspan="6" class="text-center py-5 text-secondary">
+                                        No orders found yet.
+                                    </td>
+                                </tr>
+
+                            @endforelse
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    {{-- Low Stock --}}
+    <div class="col-xl-4">
+
+        <div class="card">
+
+            <div class="card-header d-flex align-items-center justify-content-between">
+
+                <h3 class="card-title mb-0">
+                    Low Stock
+                </h3>
+
+                <a
+                    href="{{ url('/admin/variants') }}"
+                    class="btn btn-sm btn-outline-danger"
+                >
+                    Manage
+                </a>
+
+            </div>
+
+
+            <div class="card-body p-0">
+
+                <div class="list-group list-group-flush">
+
+                    @forelse(($lowStockVariants ?? collect()) as $variant)
+
+                        <a
+                            href="{{ url('/admin/variants/' . $variant->id . '/edit') }}"
+                            class="list-group-item list-group-item-action"
+                        >
+
+                            <div class="d-flex justify-content-between gap-3">
+
+                                <div>
+
+                                    <div class="fw-semibold">
+                                        {{ $variant->product->title ?? 'Product' }}
+                                    </div>
+
+                                    <small class="text-secondary">
+
+                                        {{ $variant->sku }}
+
+                                        @if($variant->color)
+                                            • {{ $variant->color->name }}
+                                        @endif
+
+                                        @if($variant->size)
+                                            • {{ $variant->size->name }}
+                                        @endif
+
+                                    </small>
+
+                                </div>
+
+
+                                <div class="text-end">
+
+                                    <span
+                                        class="badge {{ ($variant->stock ?? 0) <= 0 ? 'text-bg-danger' : 'text-bg-warning' }}"
+                                    >
+                                        {{ $variant->stock ?? 0 }} left
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </a>
+
+                    @empty
+
+                        <div class="text-center py-5 text-secondary">
+                            No low-stock variants.
+                        </div>
+
+                    @endforelse
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{{-- =========================================================
+    QUICK ACTIONS
+========================================================= --}}
+<div class="card mb-4">
+
+    <div class="card-header">
+        <h3 class="card-title mb-0">
+            Quick Actions
+        </h3>
+    </div>
+
+
+    <div class="card-body">
+
+        <div class="d-flex flex-wrap gap-2">
+
+            <a
+                href="{{ url('/admin/products/create') }}"
+                class="btn btn-primary"
+            >
+                <i class="bi bi-plus-circle me-1"></i>
+                Add Product
+            </a>
+
+
+            <a
+                href="{{ url('/admin/categories/create') }}"
+                class="btn btn-outline-primary"
+            >
+                <i class="bi bi-folder-plus me-1"></i>
+                Add Category
+            </a>
+
+
+            <a
+                href="{{ url('/admin/orders?status=pending') }}"
+                class="btn btn-outline-warning"
+            >
+                <i class="bi bi-hourglass-split me-1"></i>
+                Pending Orders
+            </a>
+
+
+            <a
+                href="{{ url('/admin/checkout-drafts') }}"
+                class="btn btn-outline-danger"
+            >
+                <i class="bi bi-cart-x me-1"></i>
+                Abandoned Checkouts
+            </a>
+
+
+            <a
+                href="{{ url('/') }}"
+                target="_blank"
+                class="btn btn-outline-secondary"
+            >
+                <i class="bi bi-box-arrow-up-right me-1"></i>
+                Visit Website
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
 @endsection

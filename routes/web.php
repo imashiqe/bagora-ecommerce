@@ -1,20 +1,186 @@
 <?php
 
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+
+/*
+|--------------------------------------------------------------------------
+| Frontend
+|--------------------------------------------------------------------------
+*/
+
 Route::get('/', function () {
     return view('frontend.main');
-});
+})->name('home');
+
+
+/*
+|--------------------------------------------------------------------------
+| Breeze Dashboard Redirect
+|--------------------------------------------------------------------------
+|
+| Breeze may send logged-in users to /dashboard.
+| Redirect that URL to Bagora admin dashboard.
+|
+*/
 
 Route::get('/dashboard', function () {
-    return view('backend.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+    return redirect()
+        ->route('admin.dashboard');
+
+})->middleware(['auth', 'verified'])
+  ->name('dashboard');
+
+
+/*
+|--------------------------------------------------------------------------
+| Bagora Admin
+|--------------------------------------------------------------------------
+*/
+
+Route::prefix('admin')
+    ->name('admin.')
+    ->middleware(['auth', 'verified'])
+    ->group(function () {
+
+        /*
+        |--------------------------------------------------------------------------
+        | Dashboard
+        |--------------------------------------------------------------------------
+        */
+
+        Route::get('/dashboard', function () {
+
+            return view('backend.dashboard');
+
+        })->name('dashboard');
+
+
+
+        /*
+|--------------------------------------------------------------------------
+| Category Trash Routes
+|--------------------------------------------------------------------------
+|
+| Keep these BEFORE Route::resource()
+|
+*/
+
+Route::get(
+    'categories/trashed',
+    [
+        CategoryController::class,
+        'trashed'
+    ]
+)->name(
+    'categories.trashed'
+);
+
+
+Route::patch(
+    'categories/{id}/restore',
+    [
+        CategoryController::class,
+        'restore'
+    ]
+)->name(
+    'categories.restore'
+);
+
+
+Route::delete(
+    'categories/{id}/force-delete',
+    [
+        CategoryController::class,
+        'forceDelete'
+    ]
+)->name(
+    'categories.force-delete'
+);
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Category Resource CRUD
+|--------------------------------------------------------------------------
+*/
+
+Route::resource(
+    'categories',
+    CategoryController::class
+);
+        /*
+        |--------------------------------------------------------------------------
+        | Catalog
+        |--------------------------------------------------------------------------
+        |
+        | We will add these controllers next.
+        |
+        */
+
+        // Categories
+        // Route::resource('categories', CategoryController::class);
+
+        // Sub Categories
+        // Route::resource('subcategories', SubCategoryController::class);
+
+        // Child Categories
+        // Route::resource('childcategories', ChildCategoryController::class);
+
+        // Brands
+        // Route::resource('brands', BrandController::class);
+
+        // Colors
+        // Route::resource('colors', ColorController::class);
+
+        // Sizes
+        // Route::resource('sizes', SizeController::class);
+
+        // Products
+        // Route::resource('products', ProductController::class);
+
+        // Variants
+        // Route::resource('variants', ProductVariantController::class);
+
+    });
+
+
+/*
+|--------------------------------------------------------------------------
+| User Profile - Laravel Breeze
+|--------------------------------------------------------------------------
+*/
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get(
+        '/profile',
+        [ProfileController::class, 'edit']
+    )->name('profile.edit');
+
+
+    Route::patch(
+        '/profile',
+        [ProfileController::class, 'update']
+    )->name('profile.update');
+
+
+    Route::delete(
+        '/profile',
+        [ProfileController::class, 'destroy']
+    )->name('profile.destroy');
+
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| Breeze Authentication Routes
+|--------------------------------------------------------------------------
+*/
 
 require __DIR__.'/auth.php';
