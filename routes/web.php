@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\ColorController;
+use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SizeController;
 use Illuminate\Support\Facades\Route;
@@ -438,6 +439,57 @@ Route::delete(
 Route::resource(
     'products',
     ProductController::class
+);
+
+
+/*
+|--------------------------------------------------------------------------
+| Coupon Trash
+|--------------------------------------------------------------------------
+*/
+
+Route::get(
+    'coupons/trashed',
+    [
+        CouponController::class,
+        'trashed'
+    ]
+)->name(
+    'coupons.trashed'
+);
+
+
+Route::patch(
+    'coupons/{id}/restore',
+    [
+        CouponController::class,
+        'restore'
+    ]
+)->name(
+    'coupons.restore'
+);
+
+
+Route::delete(
+    'coupons/{id}/force-delete',
+    [
+        CouponController::class,
+        'forceDelete'
+    ]
+)->name(
+    'coupons.force-delete'
+);
+
+
+/*
+|--------------------------------------------------------------------------
+| Coupon Resource
+|--------------------------------------------------------------------------
+*/
+
+Route::resource(
+    'coupons',
+    CouponController::class
 );
         /*
         |--------------------------------------------------------------------------
