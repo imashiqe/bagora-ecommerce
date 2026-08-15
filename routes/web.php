@@ -1,9 +1,11 @@
 <?php
 
+
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ChildCategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Backend\BrandController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -215,6 +217,56 @@ Route::delete(
 Route::resource(
     'childcategories',
     ChildCategoryController::class
+);
+
+/*
+|--------------------------------------------------------------------------
+| Brand Trash
+|--------------------------------------------------------------------------
+*/
+
+Route::get(
+    'brands/trashed',
+    [
+        BrandController::class,
+        'trashed'
+    ]
+)->name(
+    'brands.trashed'
+);
+
+
+Route::patch(
+    'brands/{id}/restore',
+    [
+        BrandController::class,
+        'restore'
+    ]
+)->name(
+    'brands.restore'
+);
+
+
+Route::delete(
+    'brands/{id}/force-delete',
+    [
+        BrandController::class,
+        'forceDelete'
+    ]
+)->name(
+    'brands.force-delete'
+);
+
+
+/*
+|--------------------------------------------------------------------------
+| Brand Resource
+|--------------------------------------------------------------------------
+*/
+
+Route::resource(
+    'brands',
+    BrandController::class
 );
         /*
         |--------------------------------------------------------------------------
