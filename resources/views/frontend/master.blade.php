@@ -3726,159 +3726,7 @@
   </div>
 </header>
 
-<!-- Footer Top -->
-<div class="bg-primary-main py-8">
-  <div class="custom-container">
-    <div
-      class="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4 2xl:gap-11"
-    >
-      <div class="wow animate__fadeInUp flex items-center gap-4" data-wow-duration="1.2s">
-        <div
-          class="bg-success-light text-primary-main inline-flex size-12 items-center justify-center rounded-full"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <circle cx="17" cy="18" r="2" stroke="#04535C" stroke-width="1.5" />
-            <circle cx="7" cy="18" r="2" stroke="#04535C" stroke-width="1.5" />
-            <path
-              d="M11 17H15M13.5 7H14.4429C15.7533 7 16.4086 7 16.9641 7.31452C17.5196 7.62904 17.89 8.20972 18.6308 9.37107C19.1502 10.1854 19.6955 10.7765 20.4622 11.3024C21.2341 11.8318 21.6012 12.0906 21.8049 12.506C22 12.9038 22 13.375 22 14.3173C22 15.5596 22 16.1808 21.651 16.5755C21.636 16.5925 21.6207 16.609 21.6049 16.625C21.2375 17 20.6594 17 19.503 17H19"
-              stroke="#04535C"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M13 7L13.9942 9.48556C14.4813 10.7034 14.7249 11.3123 15.2328 11.6561C15.7407 12 16.3965 12 17.7081 12L21 12"
-              stroke="#04535C"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M4.86957 17C3.51684 17 2.84048 17 2.42024 16.5607C2 16.1213 2 15.4142 2 14L2 7C2 5.58579 2 4.87868 2.42024 4.43934C2.84048 4 3.51684 4 4.86957 4L10.1304 4C11.4832 4 12.1595 4 12.5798 4.43934C13 4.87868 13 5.58579 13 7L13 17L8.69565 17"
-              stroke="#04535C"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
-        <div>
-          <p class="text-base leading-6 font-normal text-white">Shipping to</p>
-          <p class="font-medium text-white">Over 200+ Countries</p>
-        </div>
-      </div>
-      <div class="wow animate__fadeInUp flex items-center gap-4" data-wow-duration="1.2s" data-wow-delay="0.1s">
-        <div
-          class="bg-success-light text-primary-main inline-flex size-12 items-center justify-center rounded-full"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path
-              d="M11.9982 2C8.99043 2 7.04018 4.01899 4.73371 4.7549C3.79589 5.05413 3.32697 5.20374 3.1372 5.41465C2.94743 5.62556 2.89186 5.93375 2.78072 6.55013C1.59143 13.146 4.1909 19.244 10.3903 21.6175C11.0564 21.8725 11.3894 22 12.0015 22C12.6135 22 12.9466 21.8725 13.6126 21.6175C19.8116 19.2439 22.4086 13.146 21.219 6.55013C21.1078 5.93364 21.0522 5.6254 20.8624 5.41449C20.6726 5.20358 20.2037 5.05405 19.2659 4.75499C16.9585 4.01915 15.0061 2 11.9982 2Z"
-              stroke="#04535C"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M9 13C9 13 10 13 11 15C11 15 14.1765 10 17 9"
-              stroke="#04535C"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
-        <div>
-          <p class="text-base leading-6 font-normal text-white">100% Secure</p>
-          <p class="font-medium text-white">Checkout</p>
-        </div>
-      </div>
-      <div class="wow animate__fadeInUp flex items-center gap-4" data-wow-duration="1.2s" data-wow-delay="0.2s">
-        <div
-          class="bg-success-light text-primary-main inline-flex size-12 items-center justify-center rounded-full"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path
-              d="M17 10.8045C17 10.4588 17 10.286 17.052 10.132C17.2032 9.68444 17.6018 9.51076 18.0011 9.32888C18.45 9.12442 18.6744 9.02219 18.8968 9.0042C19.1493 8.98378 19.4022 9.03818 19.618 9.15929C19.9041 9.31984 20.1036 9.62493 20.3079 9.87302C21.2513 11.0188 21.7229 11.5918 21.8955 12.2236C22.0348 12.7334 22.0348 13.2666 21.8955 13.7764C21.6438 14.6979 20.8485 15.4704 20.2598 16.1854C19.9587 16.5511 19.8081 16.734 19.618 16.8407C19.4022 16.9618 19.1493 17.0162 18.8968 16.9958C18.6744 16.9778 18.45 16.8756 18.0011 16.6711C17.6018 16.4892 17.2032 16.3156 17.052 15.868C17 15.714 17 15.5412 17 15.1955V10.8045Z"
-              stroke="#04535C"
-              stroke-width="1.5"
-            />
-            <path
-              d="M7 10.8046C7 10.3694 6.98778 9.97821 6.63591 9.6722C6.50793 9.5609 6.33825 9.48361 5.99891 9.32905C5.55001 9.12458 5.32556 9.02235 5.10316 9.00436C4.43591 8.9504 4.07692 9.40581 3.69213 9.87318C2.74875 11.019 2.27706 11.5919 2.10446 12.2237C1.96518 12.7336 1.96518 13.2668 2.10446 13.7766C2.3562 14.6981 3.15152 15.4705 3.74021 16.1856C4.11129 16.6363 4.46577 17.0475 5.10316 16.996C5.32556 16.978 5.55001 16.8757 5.99891 16.6713C6.33825 16.5167 6.50793 16.4394 6.63591 16.3281C6.98778 16.0221 7 15.631 7 15.1957V10.8046Z"
-              stroke="#04535C"
-              stroke-width="1.5"
-            />
-            <path
-              d="M5 9C5 5.68629 8.13401 3 12 3C15.866 3 19 5.68629 19 9"
-              stroke="#04535C"
-              stroke-width="1.5"
-              stroke-linecap="square"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M19 17V17.8C19 19.5673 17.2091 21 15 21H13"
-              stroke="#04535C"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
-        <div>
-          <p class="text-base leading-6 font-normal text-white">Outstanding</p>
-          <p class="font-medium text-white">Support</p>
-        </div>
-      </div>
-      <div class="wow animate__fadeInUp flex items-center gap-4" data-wow-duration="1.2s" data-wow-delay="0.3s">
-        <div
-          class="bg-success-light text-primary-main inline-flex size-12 items-center justify-center rounded-full"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="22"
-            viewBox="0 0 22 22"
-            fill="none"
-          >
-            <path
-              d="M12.4791 2.19418L14.2389 5.74288C14.4789 6.23687 15.1188 6.7107 15.6587 6.80143L18.8484 7.33575C20.8882 7.67853 21.3681 9.17059 19.8983 10.6425L17.4186 13.1427C16.9986 13.5661 16.7686 14.3827 16.8986 14.9675L17.6085 18.0625C18.1685 20.5123 16.8786 21.46 14.7289 20.1796L11.7392 18.3952C11.1992 18.0726 10.3093 18.0726 9.7594 18.3952L6.76973 20.1796C4.62997 21.46 3.33011 20.5022 3.89005 18.0625L4.59997 14.9675C4.72996 14.3827 4.49998 13.5661 4.08003 13.1427L1.6003 10.6425C0.140465 9.17059 0.610413 7.67853 2.65019 7.33575L5.83984 6.80143C6.36978 6.7107 7.00971 6.23687 7.24968 5.74288L9.00949 2.19418C9.96938 0.268607 11.5292 0.268607 12.4791 2.19418Z"
-              stroke="#04535C"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
-        <div>
-          <p class="text-base leading-6 font-normal text-white">
-            Designed for Everyday
-          </p>
-          <p class="font-medium text-white">Carry & Travel</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Footer Top End -->
-</main>
+
     <!-- Promo Popup -->
     <div
   x-data="{ 
@@ -5577,6 +5425,159 @@
  @yield('content')
 <!-- Footer -->
 <footer class="">
+
+  <!-- Footer Top -->
+<div class="bg-primary-main py-8">
+  <div class="custom-container">
+    <div
+      class="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4 2xl:gap-11"
+    >
+      <div class="wow animate__fadeInUp flex items-center gap-4" data-wow-duration="1.2s">
+        <div
+          class="bg-success-light text-primary-main inline-flex size-12 items-center justify-center rounded-full"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <circle cx="17" cy="18" r="2" stroke="#04535C" stroke-width="1.5" />
+            <circle cx="7" cy="18" r="2" stroke="#04535C" stroke-width="1.5" />
+            <path
+              d="M11 17H15M13.5 7H14.4429C15.7533 7 16.4086 7 16.9641 7.31452C17.5196 7.62904 17.89 8.20972 18.6308 9.37107C19.1502 10.1854 19.6955 10.7765 20.4622 11.3024C21.2341 11.8318 21.6012 12.0906 21.8049 12.506C22 12.9038 22 13.375 22 14.3173C22 15.5596 22 16.1808 21.651 16.5755C21.636 16.5925 21.6207 16.609 21.6049 16.625C21.2375 17 20.6594 17 19.503 17H19"
+              stroke="#04535C"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M13 7L13.9942 9.48556C14.4813 10.7034 14.7249 11.3123 15.2328 11.6561C15.7407 12 16.3965 12 17.7081 12L21 12"
+              stroke="#04535C"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M4.86957 17C3.51684 17 2.84048 17 2.42024 16.5607C2 16.1213 2 15.4142 2 14L2 7C2 5.58579 2 4.87868 2.42024 4.43934C2.84048 4 3.51684 4 4.86957 4L10.1304 4C11.4832 4 12.1595 4 12.5798 4.43934C13 4.87868 13 5.58579 13 7L13 17L8.69565 17"
+              stroke="#04535C"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div>
+          <p class="text-base leading-6 font-normal text-white">Shipping to</p>
+          <p class="font-medium text-white">Over 200+ Countries</p>
+        </div>
+      </div>
+      <div class="wow animate__fadeInUp flex items-center gap-4" data-wow-duration="1.2s" data-wow-delay="0.1s">
+        <div
+          class="bg-success-light text-primary-main inline-flex size-12 items-center justify-center rounded-full"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M11.9982 2C8.99043 2 7.04018 4.01899 4.73371 4.7549C3.79589 5.05413 3.32697 5.20374 3.1372 5.41465C2.94743 5.62556 2.89186 5.93375 2.78072 6.55013C1.59143 13.146 4.1909 19.244 10.3903 21.6175C11.0564 21.8725 11.3894 22 12.0015 22C12.6135 22 12.9466 21.8725 13.6126 21.6175C19.8116 19.2439 22.4086 13.146 21.219 6.55013C21.1078 5.93364 21.0522 5.6254 20.8624 5.41449C20.6726 5.20358 20.2037 5.05405 19.2659 4.75499C16.9585 4.01915 15.0061 2 11.9982 2Z"
+              stroke="#04535C"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M9 13C9 13 10 13 11 15C11 15 14.1765 10 17 9"
+              stroke="#04535C"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div>
+          <p class="text-base leading-6 font-normal text-white">100% Secure</p>
+          <p class="font-medium text-white">Checkout</p>
+        </div>
+      </div>
+      <div class="wow animate__fadeInUp flex items-center gap-4" data-wow-duration="1.2s" data-wow-delay="0.2s">
+        <div
+          class="bg-success-light text-primary-main inline-flex size-12 items-center justify-center rounded-full"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M17 10.8045C17 10.4588 17 10.286 17.052 10.132C17.2032 9.68444 17.6018 9.51076 18.0011 9.32888C18.45 9.12442 18.6744 9.02219 18.8968 9.0042C19.1493 8.98378 19.4022 9.03818 19.618 9.15929C19.9041 9.31984 20.1036 9.62493 20.3079 9.87302C21.2513 11.0188 21.7229 11.5918 21.8955 12.2236C22.0348 12.7334 22.0348 13.2666 21.8955 13.7764C21.6438 14.6979 20.8485 15.4704 20.2598 16.1854C19.9587 16.5511 19.8081 16.734 19.618 16.8407C19.4022 16.9618 19.1493 17.0162 18.8968 16.9958C18.6744 16.9778 18.45 16.8756 18.0011 16.6711C17.6018 16.4892 17.2032 16.3156 17.052 15.868C17 15.714 17 15.5412 17 15.1955V10.8045Z"
+              stroke="#04535C"
+              stroke-width="1.5"
+            />
+            <path
+              d="M7 10.8046C7 10.3694 6.98778 9.97821 6.63591 9.6722C6.50793 9.5609 6.33825 9.48361 5.99891 9.32905C5.55001 9.12458 5.32556 9.02235 5.10316 9.00436C4.43591 8.9504 4.07692 9.40581 3.69213 9.87318C2.74875 11.019 2.27706 11.5919 2.10446 12.2237C1.96518 12.7336 1.96518 13.2668 2.10446 13.7766C2.3562 14.6981 3.15152 15.4705 3.74021 16.1856C4.11129 16.6363 4.46577 17.0475 5.10316 16.996C5.32556 16.978 5.55001 16.8757 5.99891 16.6713C6.33825 16.5167 6.50793 16.4394 6.63591 16.3281C6.98778 16.0221 7 15.631 7 15.1957V10.8046Z"
+              stroke="#04535C"
+              stroke-width="1.5"
+            />
+            <path
+              d="M5 9C5 5.68629 8.13401 3 12 3C15.866 3 19 5.68629 19 9"
+              stroke="#04535C"
+              stroke-width="1.5"
+              stroke-linecap="square"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M19 17V17.8C19 19.5673 17.2091 21 15 21H13"
+              stroke="#04535C"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div>
+          <p class="text-base leading-6 font-normal text-white">Outstanding</p>
+          <p class="font-medium text-white">Support</p>
+        </div>
+      </div>
+      <div class="wow animate__fadeInUp flex items-center gap-4" data-wow-duration="1.2s" data-wow-delay="0.3s">
+        <div
+          class="bg-success-light text-primary-main inline-flex size-12 items-center justify-center rounded-full"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 22 22"
+            fill="none"
+          >
+            <path
+              d="M12.4791 2.19418L14.2389 5.74288C14.4789 6.23687 15.1188 6.7107 15.6587 6.80143L18.8484 7.33575C20.8882 7.67853 21.3681 9.17059 19.8983 10.6425L17.4186 13.1427C16.9986 13.5661 16.7686 14.3827 16.8986 14.9675L17.6085 18.0625C18.1685 20.5123 16.8786 21.46 14.7289 20.1796L11.7392 18.3952C11.1992 18.0726 10.3093 18.0726 9.7594 18.3952L6.76973 20.1796C4.62997 21.46 3.33011 20.5022 3.89005 18.0625L4.59997 14.9675C4.72996 14.3827 4.49998 13.5661 4.08003 13.1427L1.6003 10.6425C0.140465 9.17059 0.610413 7.67853 2.65019 7.33575L5.83984 6.80143C6.36978 6.7107 7.00971 6.23687 7.24968 5.74288L9.00949 2.19418C9.96938 0.268607 11.5292 0.268607 12.4791 2.19418Z"
+              stroke="#04535C"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div>
+          <p class="text-base leading-6 font-normal text-white">
+            Designed for Everyday
+          </p>
+          <p class="font-medium text-white">Carry & Travel</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Footer Top End -->
   <!-- Footer Nav -->
   <div class="pt-12 pb-8">
     <div class="custom-container">

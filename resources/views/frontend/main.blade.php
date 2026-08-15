@@ -79,7 +79,7 @@
                   class="relative flex h-full w-full items-center justify-center overflow-visible"
                 >
                   <img
-                    src="{{ asset('frontend/assets/src/images/home-1/hero/sl-img-1.webp') }}"
+                    src="{{ asset('frontend/assets/images/home-1/hero/sl-img-1.webp') }}"
                     class=""
                     alt="Shop the Smart Way"
                   />
@@ -90,7 +90,7 @@
                   class="absolute top-25 left-6 z-10 size-40 cursor-pointer duration-300 select-none xl:size-62.5"
                 >
                   <img
-                    src="{{ asset('frontend/assets/src/images/home-1/hero/badge-1.png') }}"
+                    src="{{ asset('frontend/assets/images/home-1/hero/badge-1.png') }}"
                     class="animate-spin [animation-duration:15s]"
                     alt=""
                   />
@@ -183,7 +183,7 @@
                   class="relative flex h-full w-full items-center justify-center overflow-visible"
                 >
                   <img
-                    src="{{ asset('frontend/assets/src/images/home-1/hero/sl-img-2.webp') }}"
+                    src="{{ asset('frontend/assets/images/home-1/hero/sl-img-2.webp') }}"
                     class="mt-10 block"
                     alt="Shop the Smart Way"
                   />
@@ -194,7 +194,7 @@
                   class="absolute top-55 left-18 z-10 size-40 cursor-pointer duration-300 select-none xl:size-62.5"
                 >
                   <img
-                    src="{{ asset('frontend/assets/src/images/home-1/hero/badge-1.png') }}"
+                    src="{{ asset('frontend/assets/images/home-1/hero/badge-1.png') }}"
                     class="animate-spin [animation-duration:15s] xl:w-full"
                     alt=""
                   />
@@ -287,7 +287,7 @@
                   class="relative flex h-full w-full items-center justify-center overflow-visible"
                 >
                   <img
-                    src="{{ asset('frontend/assets/src/images/home-1/hero/sl-img-3.webp') }}"
+                    src="{{ asset('frontend/assets/images/home-1/hero/sl-img-3.webp') }}"
                     class="block"
                     alt="Shop the Smart Way"
                   />
@@ -298,7 +298,7 @@
                   class="absolute top-39 left-10 z-10 size-40 cursor-pointer duration-300 select-none xl:size-58"
                 >
                   <img
-                    src="{{ asset('frontend/assets/src/images/home-1/hero/badge-2.png') }}"
+                    src="{{ asset('frontend/assets/images/home-1/hero/badge-2.png') }}"
                     class="animate-spin [animation-duration:15s] xl:w-full"
                     alt=""
                   />
@@ -382,7 +382,7 @@
           >
             <div class="size-20">
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/category/cat-1.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/category/cat-1.webp') }}"
                 class="w-full"
                 alt=""
               />
@@ -403,7 +403,7 @@
           >
             <div class="size-20">
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/category/cat-2.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/category/cat-2.webp') }}"
                 class="w-full"
                 alt=""
               />
@@ -424,7 +424,7 @@
           >
             <div class="size-20">
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/category/cat-3.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/category/cat-3.webp') }}"
                 class="w-full"
                 alt=""
               />
@@ -445,7 +445,7 @@
           >
             <div class="size-20">
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/category/cat-4.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/category/cat-4.webp') }}"
                 class="w-full"
                 alt=""
               />
@@ -466,7 +466,7 @@
           >
             <div class="size-20">
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/category/cat-5.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/category/cat-5.webp') }}"
                 class="w-full"
                 alt=""
               />
@@ -487,7 +487,7 @@
           >
             <div class="size-20">
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/category/cat-6.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/category/cat-6.webp') }}"
                 class="w-full"
                 alt=""
               />
@@ -508,7 +508,7 @@
           >
             <div class="size-20">
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/category/cat-3.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/category/cat-3.webp') }}"
                 class="w-full"
                 alt=""
               />
@@ -529,7 +529,7 @@
           >
             <div class="size-20">
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/category/cat-3.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/category/cat-3.webp') }}"
                 class="w-full"
                 alt=""
               />
@@ -550,7 +550,7 @@
           >
             <div class="size-20">
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/category/cat-4.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/category/cat-4.webp') }}"
                 class="w-full"
                 alt=""
               />
@@ -665,7 +665,7 @@
                 class="relative block overflow-hidden rounded-lg"
               >
                 <img
-                  src="{{ asset('frontend/assets/src/images/home-1/best-selling-tabs/product-1.webp') }}"
+                  src="{{ asset('frontend/assets/images/home-1/best-selling-tabs/product-1.webp') }}"
                   class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                   alt="product"
                 />
@@ -862,7 +862,7 @@
                 class="relative block overflow-hidden rounded-lg"
               >
                 <img
-                  src="{{ asset('frontend/assets/src/images/home-1/best-selling-tabs/product-2.webp') }}"
+                  src="{{ asset('frontend/assets/images/home-1/best-selling-tabs/product-2.webp') }}"
                   class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                   alt="product"
                 />
@@ -1257,7 +1257,7 @@
                 class="relative block overflow-hidden rounded-lg"
               >
                 <img
-                  src="{{ asset('frontend/assets/src/images/home-1/best-selling-tabs/product-4.webp') }}"
+                  src="{{ asset('frontend/assets/images/home-1/best-selling-tabs/product-4.webp') }}"
                   class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                   alt="product"
                 />
@@ -1454,7 +1454,7 @@
                 class="relative block overflow-hidden rounded-lg"
               >
                 <img
-                  src="{{ asset('frontend/assets/src/images/home-1/best-selling-tabs/product-5.webp') }}"
+                  src="{{ asset('frontend/assets/images/home-1/best-selling-tabs/product-5.webp') }}"
                   class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                   alt="product"
                 />
@@ -1651,7 +1651,7 @@
                 class="relative block overflow-hidden rounded-lg"
               >
                 <img
-                  src="{{ asset('frontend/assets/src/images/home-1/best-selling-tabs/product-5.webp') }}"
+                  src="{{ asset('frontend/assets/images/home-1/best-selling-tabs/product-5.webp') }}"
                   class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                   alt="product"
                 />
@@ -1848,7 +1848,7 @@
                 class="relative block overflow-hidden rounded-lg"
               >
                 <img
-                  src="{{ asset('frontend/assets/src/images/home-1/best-selling-tabs/product-1.webp') }}"
+                  src="{{ asset('frontend/assets/images/home-1/best-selling-tabs/product-1.webp') }}"
                   class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                   alt="product"
                 />
@@ -2045,7 +2045,7 @@
                 class="relative block overflow-hidden rounded-lg"
               >
                 <img
-                  src="{{ asset('frontend/assets/src/images/home-1/best-selling-tabs/product-2.webp') }}"
+                  src="{{ asset('frontend/assets/images/home-1/best-selling-tabs/product-2.webp') }}"
                   class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                   alt="product"
                 />
@@ -2242,7 +2242,7 @@
                 class="relative block overflow-hidden rounded-lg"
               >
                 <img
-                  src="{{ asset('frontend/assets/src/images/home-1/best-selling-tabs/product-3.webp') }}"
+                  src="{{ asset('frontend/assets/images/home-1/best-selling-tabs/product-3.webp') }}"
                   class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                   alt="product"
                 />
@@ -2439,7 +2439,7 @@
                 class="relative block overflow-hidden rounded-lg"
               >
                 <img
-                  src="{{ asset('frontend/assets/src/images/home-1/best-selling-tabs/product-4.webp') }}"
+                  src="{{ asset('frontend/assets/images/home-1/best-selling-tabs/product-4.webp') }}"
                   class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                   alt="product"
                 />
@@ -2677,7 +2677,7 @@
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
       <div class="wow animate__fadeInUp relative overflow-hidden rounded-2xl" data-wow-duration="1.2s">
         <img
-          src="{{ asset('frontend/assets/src/images/home-1/feature-grid/banner-1.webp') }}"
+          src="{{ asset('frontend/assets/images/home-1/feature-grid/banner-1.webp') }}"
           class="h-full w-full rounded-2xl transition-transform duration-300 hover:scale-110"
           alt=""
         />
@@ -2728,7 +2728,7 @@
           data-wow-delay="0.1s"
         >
           <img
-            src="{{ asset('frontend/assets/src/images/home-1/feature-grid/banner-2.webp') }}"
+            src="{{ asset('frontend/assets/images/home-1/feature-grid/banner-2.webp') }}"
             class="h-full w-full rounded-2xl object-cover transition-transform duration-300 hover:scale-110"
             alt=""
           />
@@ -2778,7 +2778,7 @@
           data-wow-delay="0.2s"
         >
           <img
-            src="{{ asset('frontend/assets/src/images/home-1/feature-grid/banner-3.webp') }}"
+            src="{{ asset('frontend/assets/images/home-1/feature-grid/banner-3.webp') }}"
             class="h-full w-full rounded-2xl object-cover transition-transform duration-300 hover:scale-110"
             alt=""
           />
@@ -2831,7 +2831,7 @@
     <div
       class="w-full rounded-2xl bg-cover bg-center bg-no-repeat p-5"
       style="
-        background-image: url('{{ asset('frontend/assets/src/images/home-1/cta/cta-cover.webp') }}');
+        background-image: url('{{ asset('frontend/assets/images/home-1/cta/cta-cover.webp') }}');
       "
     >
       <div class="rounded-3xl border border-gray-300 p-6">
@@ -2947,7 +2947,7 @@
                     <img
                       alt="Juicy Blackberries"
                       class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/src/images/home-1/harvest/product-1.webp') }}"
+                      src="{{ asset('frontend/assets/images/home-1/harvest/product-1.webp') }}"
                     />
                   </a>
                   <div class="flex flex-1 flex-col justify-between">
@@ -3101,7 +3101,7 @@
                     <img
                       alt=""
                       class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/src/images/home-1/harvest/product-2.webp') }}"
+                      src="{{ asset('frontend/assets/images/home-1/harvest/product-2.webp') }}"
                     />
                   </a>
                   <div class="flex flex-1 flex-col justify-between">
@@ -3256,7 +3256,7 @@
                     <img
                       alt=""
                       class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/src/images/home-1/harvest/product-5.webp') }}"
+                      src="{{ asset('frontend/assets/images/home-1/harvest/product-5.webp') }}"
                     />
                   </a>
                   <div class="flex flex-1 flex-col justify-between">
@@ -3411,7 +3411,7 @@
                     <img
                       alt=""
                       class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/src/images/home-1/harvest/product-5.webp') }}"
+                      src="{{ asset('frontend/assets/images/home-1/harvest/product-5.webp') }}"
                     />
                   </a>
                   <div class="flex flex-1 flex-col justify-between">
@@ -3570,7 +3570,7 @@
                     <img
                       alt=""
                       class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/src/images/home-1/harvest/product-5.webp') }}"
+                      src="{{ asset('frontend/assets/images/home-1/harvest/product-5.webp') }}"
                     />
                   </a>
                   <div class="flex flex-1 flex-col justify-between">
@@ -3724,7 +3724,7 @@
                     <img
                       alt=""
                       class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/src/images/home-1/harvest/product-2.webp') }}"
+                      src="{{ asset('frontend/assets/images/home-1/harvest/product-2.webp') }}"
                     />
                   </a>
                   <div class="flex flex-1 flex-col justify-between">
@@ -3879,7 +3879,7 @@
                     <img
                       alt=""
                       class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/src/images/home-1/harvest/product-5.webp') }}"
+                      src="{{ asset('frontend/assets/images/home-1/harvest/product-5.webp') }}"
                     />
                   </a>
                   <div class="flex flex-1 flex-col justify-between">
@@ -4034,7 +4034,7 @@
                     <img
                       alt=""
                       class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/src/images/home-1/harvest/product-5.webp') }}"
+                      src="{{ asset('frontend/assets/images/home-1/harvest/product-5.webp') }}"
                     />
                   </a>
                   <div class="flex flex-1 flex-col justify-between">
@@ -4245,7 +4245,7 @@
                     <img
                       alt=""
                       class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/src/images/home-1/harvest/product-3.webp') }}"
+                      src="{{ asset('frontend/assets/images/home-1/harvest/product-3.webp') }}"
                     />
                   </a>
                   <div class="flex flex-1 flex-col justify-between">
@@ -4551,7 +4551,7 @@
                     <img
                       alt=""
                       class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/src/images/home-1/harvest/product-4.webp') }}"
+                      src="{{ asset('frontend/assets/images/home-1/harvest/product-4.webp') }}"
                     />
                   </a>
                   <div class="flex flex-1 flex-col justify-between">
@@ -4706,7 +4706,7 @@
                     <img
                       alt=""
                       class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/src/images/home-1/harvest/product-4.webp') }}"
+                      src="{{ asset('frontend/assets/images/home-1/harvest/product-4.webp') }}"
                     />
                   </a>
                   <div class="flex flex-1 flex-col justify-between">
@@ -4865,7 +4865,7 @@
                     <img
                       alt=""
                       class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/src/images/home-1/harvest/product-2.webp') }}"
+                      src="{{ asset('frontend/assets/images/home-1/harvest/product-2.webp') }}"
                     />
                   </a>
                   <div class="flex flex-1 flex-col justify-between">
@@ -5020,7 +5020,7 @@
                     <img
                       alt=""
                       class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/src/images/home-1/harvest/product-5.webp') }}"
+                      src="{{ asset('frontend/assets/images/home-1/harvest/product-5.webp') }}"
                     />
                   </a>
                   <div class="flex flex-1 flex-col justify-between">
@@ -5175,7 +5175,7 @@
                     <img
                       alt=""
                       class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/src/images/home-1/harvest/product-5.webp') }}"
+                      src="{{ asset('frontend/assets/images/home-1/harvest/product-5.webp') }}"
                     />
                   </a>
                   <div class="flex flex-1 flex-col justify-between">
@@ -5330,7 +5330,7 @@
                     <img
                       alt=""
                       class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/src/images/home-1/harvest/product-4.webp') }}"
+                      src="{{ asset('frontend/assets/images/home-1/harvest/product-4.webp') }}"
                     />
                   </a>
                   <div class="flex flex-1 flex-col justify-between">
@@ -5485,7 +5485,7 @@
           <img
             alt=""
             class="h-full w-full rounded-2xl transition-transform duration-300 hover:scale-110"
-            src="{{ asset('frontend/assets/src/images/home-1/harvest/feature-img.webp') }}"
+            src="{{ asset('frontend/assets/images/home-1/harvest/feature-img.webp') }}"
           />
           <div
             class="absolute bottom-0 flex w-full flex-col gap-4 rounded-b-2xl bg-gradient-to-b from-transparent to-black px-6 py-8 text-center"
@@ -5616,7 +5616,7 @@
               class="relative block overflow-hidden rounded-lg"
             >
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/essential-grid/product-1.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/essential-grid/product-1.webp') }}"
                 class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                 alt="product"
               />
@@ -5821,7 +5821,7 @@
               class="relative block overflow-hidden rounded-lg"
             >
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/essential-grid/product-2.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/essential-grid/product-2.webp') }}"
                 class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                 alt="product"
               />
@@ -6014,7 +6014,7 @@
               class="relative block overflow-hidden rounded-lg"
             >
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/essential-grid/product-3.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/essential-grid/product-3.webp') }}"
                 class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                 alt="product"
               />
@@ -6207,7 +6207,7 @@
               class="relative block overflow-hidden rounded-lg"
             >
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/essential-grid/product-4.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/essential-grid/product-4.webp') }}"
                 class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                 alt="product"
               />
@@ -6400,7 +6400,7 @@
               class="relative block overflow-hidden rounded-lg"
             >
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/essential-grid/product-5.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/essential-grid/product-5.webp') }}"
                 class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                 alt="product"
               />
@@ -6593,7 +6593,7 @@
               class="relative block overflow-hidden rounded-lg"
             >
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/essential-grid/product-6.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/essential-grid/product-6.webp') }}"
                 class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                 alt="product"
               />
@@ -6786,7 +6786,7 @@
               class="relative block overflow-hidden rounded-lg"
             >
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/essential-grid/product-7.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/essential-grid/product-7.webp') }}"
                 class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                 alt="product"
               />
@@ -6983,7 +6983,7 @@
       >
         <div class="relative">
           <img
-            src="{{ asset('frontend/assets/src/images/home-1/three-col-cta/cta-img-one.webp') }}"
+            src="{{ asset('frontend/assets/images/home-1/three-col-cta/cta-img-one.webp') }}"
             class="h-full w-full rounded-2xl object-cover transition-transform duration-300 hover:scale-110"
             alt=""
           />
@@ -7037,7 +7037,7 @@
       >
         <div class="relative">
           <img
-            src="{{ asset('frontend/assets/src/images/home-1/three-col-cta/cta-img-two.webp') }}"
+            src="{{ asset('frontend/assets/images/home-1/three-col-cta/cta-img-two.webp') }}"
             class="h-full w-full rounded-2xl object-cover transition-transform duration-300 hover:scale-110"
             alt=""
           />
@@ -7091,7 +7091,7 @@
       >
         <div class="relative">
           <img
-            src="{{ asset('frontend/assets/src/images/home-1/three-col-cta/cta-img-three.webp') }}"
+            src="{{ asset('frontend/assets/images/home-1/three-col-cta/cta-img-three.webp') }}"
             class="h-full w-full rounded-2xl object-cover transition-transform duration-300 hover:scale-110"
             alt=""
           />
@@ -7149,7 +7149,7 @@
       <div class="wow animate__fadeInLeft xl:w-5/12" data-wow-duration="1.2s">
         <div>
           <img
-            src="{{ asset('frontend/assets/src/images/home-1/cta/delivery-men.webp') }}"
+            src="{{ asset('frontend/assets/images/home-1/cta/delivery-men.webp') }}"
             class="w-full"
             alt=""
           />
@@ -7283,7 +7283,7 @@
           >
             <div class="shrink-0 overflow-hidden">
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/best-seller/seller-1.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/best-seller/seller-1.webp') }}"
                 class="size-16 rounded-full"
                 alt=""
               />
@@ -7717,7 +7717,7 @@
               class="relative flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
             >
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/best-seller/product-3.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/best-seller/product-3.webp') }}"
                 class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
                 alt=""
               />
@@ -7879,7 +7879,7 @@
           >
             <div class="shrink-0">
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/best-seller/seller-2.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/best-seller/seller-2.webp') }}"
                 class="size-16 rounded-full"
                 alt=""
               />
@@ -7995,7 +7995,7 @@
               class="relative flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
             >
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/best-seller/product-4.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/best-seller/product-4.webp') }}"
                 class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
                 alt=""
               />
@@ -8154,7 +8154,7 @@
               class="relative flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
             >
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/best-seller/product-5.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/best-seller/product-5.webp') }}"
                 class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
                 alt=""
               />
@@ -8313,7 +8313,7 @@
               class="relative flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
             >
               <img
-                src="{{ asset('frontend/assets/src/images/home-1/best-seller/product-6.webp') }}"
+                src="{{ asset('frontend/assets/images/home-1/best-seller/product-6.webp') }}"
                 class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
                 alt=""
               />
@@ -8493,7 +8493,7 @@
                 class="relative block overflow-hidden rounded-lg"
               >
                 <img
-                  src="{{ asset('frontend/assets/src/images/home-1/new-item/product-1.webp') }}"
+                  src="{{ asset('frontend/assets/images/home-1/new-item/product-1.webp') }}"
                   class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                   alt="Bagora Bag"
                 />
@@ -8696,7 +8696,7 @@
                 class="relative block overflow-hidden rounded-lg"
               >
                 <img
-                  src="{{ asset('frontend/assets/src/images/home-1/new-item/product-2.webp') }}"
+                  src="{{ asset('frontend/assets/images/home-1/new-item/product-2.webp') }}"
                   class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                   alt="Bagora Bag"
                 />
@@ -8899,7 +8899,7 @@
                 class="relative block overflow-hidden rounded-lg"
               >
                 <img
-                  src="{{ asset('frontend/assets/src/images/home-1/new-item/product-3.webp') }}"
+                  src="{{ asset('frontend/assets/images/home-1/new-item/product-3.webp') }}"
                   class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                   alt="Bagora Backpack"
                 />
@@ -9098,7 +9098,7 @@
                 class="relative block overflow-hidden rounded-lg"
               >
                 <img
-                  src="{{ asset('frontend/assets/src/images/home-1/new-item/product-4.webp') }}"
+                  src="{{ asset('frontend/assets/images/home-1/new-item/product-4.webp') }}"
                   class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                   alt="Probiotic Yogurt"
                 />
@@ -9297,7 +9297,7 @@
                 class="relative block overflow-hidden rounded-lg"
               >
                 <img
-                  src="{{ asset('frontend/assets/src/images/home-1/new-item/product-5.webp') }}"
+                  src="{{ asset('frontend/assets/images/home-1/new-item/product-5.webp') }}"
                   class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                   alt="Bagora Travel Bag"
                 />
@@ -9496,7 +9496,7 @@
                 class="relative block overflow-hidden rounded-lg"
               >
                 <img
-                  src="{{ asset('frontend/assets/src/images/home-1/new-item/product-2.webp') }}"
+                  src="{{ asset('frontend/assets/images/home-1/new-item/product-2.webp') }}"
                   class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
                   alt="Bagora Bag"
                 />
@@ -9714,7 +9714,7 @@
           <img
             alt="blog grid"
             class="h-full w-full rounded-lg transition-transform duration-300 hover:scale-110"
-            src="{{ asset('frontend/assets/src/images/blog/latest-blog-1/bt-1.webp') }}"
+            src="{{ asset('frontend/assets/images/blog/latest-blog-1/bt-1.webp') }}"
           />
         </a>
         <a
@@ -9849,7 +9849,7 @@
           <img
             alt="blog grid"
             class="h-full w-full rounded-lg transition-transform duration-300 hover:scale-110"
-            src="{{ asset('frontend/assets/src/images/blog/latest-blog-1/bt-2.webp') }}"
+            src="{{ asset('frontend/assets/images/blog/latest-blog-1/bt-2.webp') }}"
           />
         </a>
         <a
@@ -9984,7 +9984,7 @@
           <img
             alt="blog grid"
             class="h-full w-full rounded-lg transition-transform duration-300 hover:scale-110"
-            src="{{ asset('frontend/assets/src/images/blog/latest-blog-1/bt-3.webp') }}"
+            src="{{ asset('frontend/assets/images/blog/latest-blog-1/bt-3.webp') }}"
           />
         </a>
         <a
@@ -10119,7 +10119,7 @@
           <img
             alt="blog grid"
             class="h-full w-full rounded-lg transition-transform duration-300 hover:scale-110"
-            src="{{ asset('frontend/assets/src/images/blog/latest-blog-1/bt-4.webp') }}"
+            src="{{ asset('frontend/assets/images/blog/latest-blog-1/bt-4.webp') }}"
           />
         </a>
         <a
