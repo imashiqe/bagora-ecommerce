@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\ColorController;
+use App\Http\Controllers\Backend\SizeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -319,6 +320,56 @@ Route::delete(
 Route::resource(
     'colors',
     ColorController::class
+);
+
+/*
+|--------------------------------------------------------------------------
+| Size Trash
+|--------------------------------------------------------------------------
+*/
+
+Route::get(
+    'sizes/trashed',
+    [
+        SizeController::class,
+        'trashed'
+    ]
+)->name(
+    'sizes.trashed'
+);
+
+
+Route::patch(
+    'sizes/{id}/restore',
+    [
+        SizeController::class,
+        'restore'
+    ]
+)->name(
+    'sizes.restore'
+);
+
+
+Route::delete(
+    'sizes/{id}/force-delete',
+    [
+        SizeController::class,
+        'forceDelete'
+    ]
+)->name(
+    'sizes.force-delete'
+);
+
+
+/*
+|--------------------------------------------------------------------------
+| Size Resource
+|--------------------------------------------------------------------------
+*/
+
+Route::resource(
+    'sizes',
+    SizeController::class
 );
         /*
         |--------------------------------------------------------------------------
