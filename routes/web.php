@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\ColorController;
+use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SizeController;
 use Illuminate\Support\Facades\Route;
 
@@ -370,6 +371,73 @@ Route::delete(
 Route::resource(
     'sizes',
     SizeController::class
+);
+
+/*
+|--------------------------------------------------------------------------
+| Product Trash
+|--------------------------------------------------------------------------
+*/
+
+Route::get(
+    'products/trashed',
+    [
+        ProductController::class,
+        'trashed'
+    ]
+)->name(
+    'products.trashed'
+);
+
+
+Route::patch(
+    'products/{id}/restore',
+    [
+        ProductController::class,
+        'restore'
+    ]
+)->name(
+    'products.restore'
+);
+
+
+Route::delete(
+    'products/{id}/force-delete',
+    [
+        ProductController::class,
+        'forceDelete'
+    ]
+)->name(
+    'products.force-delete'
+);
+
+
+/*
+|--------------------------------------------------------------------------
+| Gallery Image Delete
+|--------------------------------------------------------------------------
+*/
+
+Route::delete(
+    'products/{product}/gallery/{image}',
+    [
+        ProductController::class,
+        'deleteGalleryImage'
+    ]
+)->name(
+    'products.gallery.destroy'
+);
+
+
+/*
+|--------------------------------------------------------------------------
+| Product Resource
+|--------------------------------------------------------------------------
+*/
+
+Route::resource(
+    'products',
+    ProductController::class
 );
         /*
         |--------------------------------------------------------------------------
