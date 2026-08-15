@@ -45,4 +45,11 @@ class Category extends Model
         SubCategory::class
     );
 }
+
+public function childCategories()
+{
+    return $this->hasMany(
+        ChildCategory::class
+    );
+}
 }

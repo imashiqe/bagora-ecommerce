@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
-class SubCategory extends Model
+class ChildCategory extends Model
 {
     use SoftDeletes;
 
@@ -14,6 +14,8 @@ class SubCategory extends Model
     protected $fillable = [
 
         'category_id',
+
+        'sub_category_id',
 
         'name',
 
@@ -36,9 +38,11 @@ class SubCategory extends Model
 
             'category_id' => 'integer',
 
-            'status' => 'boolean',
+            'sub_category_id' => 'integer',
 
             'sort_order' => 'integer',
+
+            'status' => 'boolean',
 
         ];
     }
@@ -51,11 +55,12 @@ class SubCategory extends Model
         )->withTrashed();
     }
 
-    public function childCategories()
-{
-    return $this->hasMany(
-        ChildCategory::class,
-        'sub_category_id'
-    );
-}
+
+    public function subCategory()
+    {
+        return $this->belongsTo(
+            SubCategory::class,
+            'sub_category_id'
+        )->withTrashed();
+    }
 }

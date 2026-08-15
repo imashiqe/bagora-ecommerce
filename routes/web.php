@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ChildCategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -163,6 +164,57 @@ Route::delete(
 Route::resource(
     'subcategories',
     SubCategoryController::class
+);
+
+
+/*
+|--------------------------------------------------------------------------
+| Child Category Trash
+|--------------------------------------------------------------------------
+*/
+
+Route::get(
+    'childcategories/trashed',
+    [
+        ChildCategoryController::class,
+        'trashed'
+    ]
+)->name(
+    'childcategories.trashed'
+);
+
+
+Route::patch(
+    'childcategories/{id}/restore',
+    [
+        ChildCategoryController::class,
+        'restore'
+    ]
+)->name(
+    'childcategories.restore'
+);
+
+
+Route::delete(
+    'childcategories/{id}/force-delete',
+    [
+        ChildCategoryController::class,
+        'forceDelete'
+    ]
+)->name(
+    'childcategories.force-delete'
+);
+
+
+/*
+|--------------------------------------------------------------------------
+| Child Category Resource
+|--------------------------------------------------------------------------
+*/
+
+Route::resource(
+    'childcategories',
+    ChildCategoryController::class
 );
         /*
         |--------------------------------------------------------------------------
