@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ChildCategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\ColorController;
 use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SizeController;
+use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,9 +20,10 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', function () {
-    return view('frontend.main');
-})->name('home');
+Route::get(
+    '/',
+    [HomeController::class, 'index']
+)->name('home');
 
 
 /*
@@ -490,6 +492,32 @@ Route::delete(
 Route::resource(
     'coupons',
     CouponController::class
+);
+
+
+//  banner
+
+Route::get(
+    'banners/trashed',
+    [BannerController::class, 'trashed']
+)->name('banners.trashed');
+
+
+Route::patch(
+    'banners/{id}/restore',
+    [BannerController::class, 'restore']
+)->name('banners.restore');
+
+
+Route::delete(
+    'banners/{id}/force-delete',
+    [BannerController::class, 'forceDelete']
+)->name('banners.force-delete');
+
+
+Route::resource(
+    'banners',
+    BannerController::class
 );
         /*
         |--------------------------------------------------------------------------

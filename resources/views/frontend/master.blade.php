@@ -9,10 +9,14 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>@yield('title', 'Bagora - Premium Bags in Bangladesh')</title>
-  <link rel="icon" href="{{ asset('frontend/assets/images/favicon.png') }}"><link href="{{ asset('frontend/assets/css/style.css') }}" rel="stylesheet"></head>
+    <link rel="icon" href="{{ asset('frontend/assets/images/favicon.png') }}">
+    <link href="{{ asset('frontend/assets/css/style.css') }}" rel="stylesheet">
+
+    @stack('styles')
+  </head>
   <body>
     <!-- Preloader -->
-<div 
+{{-- <div 
   x-data="{ showPreloader: true }" 
   x-init="window.addEventListener('load', () => { setTimeout(() => showPreloader = false, 300) })"
   x-show="showPreloader" 
@@ -22,7 +26,7 @@
   class="fixed inset-0 z-[9999] flex items-center justify-center bg-white"
 >
   <div class="inline-block size-12 animate-spin rounded-full border-4 border-gray-200 border-t-primary-main"></div>
-</div>
+</div> --}}
 
     <header class="z-50 w-full">
   <div class="bg-primary-main py-3">
@@ -6900,5 +6904,12 @@
     </div>
   </button>
 </div>
-<script defer src="{{ asset('frontend/assets/js/bundle.js') }}"></script></body>
+
+
+
+<script src="{{ asset('frontend/assets/js/bundle.js') }}"></script>
+
+@stack('scripts')
+
+</body>
 </html>

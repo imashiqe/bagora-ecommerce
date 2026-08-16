@@ -3,6975 +3,1160 @@
 @section('content')
 {{-- Bagora homepage. Static template content prepared for later Category/Product database binding. --}}
 <main>
-      <section class="group relative overflow-hidden">
-  <!-- Swiper Slider Container -->
-  <div
-    class="swiper hero-slider h-[434px] overflow-hidden lg:h-[460px] xl:h-[740px]"
-  >
-    <div class="swiper-wrapper">
-      <!-- Slide 1 -->
-      <div class="swiper-slide bg-primary-main py-16 lg:py-0">
-        <div class="custom-container">
-          <div
-            class="grid grid-cols-1 items-center justify-between lg:grid-cols-12 lg:gap-16"
-          >
-            <!-- Text Content -->
-            <div
-              class="wow animate__fadeInUp order-2 flex flex-col items-start text-left lg:order-1 lg:col-span-6 xl:col-span-5"
-            >
-              <div class="mb-3 inline-flex items-center gap-2">
-                <span
-                  class="text-base font-medium tracking-wide text-white md:text-lg"
-                  >Bagora Exclusive</span
-                >
-                <span
-                  class="bg-success-dark inline-flex h-5 items-center justify-center rounded-full px-2 py-1 text-xs font-normal text-gray-800 uppercase"
-                  >25% OFF</span
-                >
-              </div>
-              <h1
-                class="font-tiktok-sans mb-3 max-w-2xl text-3xl font-bold text-white md:text-5xl lg:leading-16"
-              >
-                Carry Smarter.<br />Everywhere You Go
-              </h1>
-              <p class="mb-6 max-w-md text-base leading-relaxed text-white">
-                Discover dependable bags for work, campus, travel and everyday life — all in one place.
-              </p>
-              <a
-                href="{{ url('/shop') }}"
-                class="group bg-success-light text-primary-main inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-base font-medium transition-all hover:bg-white"
-              >
-                Shop Bags
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 22 22"
-                  fill="none"
-                  class="transition-transform duration-500 group-hover:rotate-45"
-                >
-                  <path
-                    d="M15.5833 6.41406L5.5 16.4974"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
-            </div>
+@if(
+    isset($banners)
+    &&
+    $banners->isNotEmpty()
+)
 
-            <!-- Image & Sticker Column -->
-            <div
-              class="relative order-1 hidden justify-end lg:col-span-6 lg:flex xl:col-span-7"
-            >
-              <div
-                class="relative flex aspect-square w-full items-center justify-center xl:max-w-[684px]"
-              >
-                <!-- Floating Container Image Placeholder -->
-                <div
-                  class="relative flex h-full w-full items-center justify-center overflow-visible"
-                >
-                  <img
-                    src="{{ asset('frontend/assets/images/home-1/hero/sl-img-1.webp') }}"
-                    class=""
-                    alt="Shop the Smart Way"
-                  />
-                </div>
+<section
+    class="
+        group
+        relative
+        overflow-hidden
+    "
+>
 
-                <!-- Starburst sticker badge overlay -->
-                <div
-                  class="absolute top-25 left-6 z-10 size-40 cursor-pointer duration-300 select-none xl:size-62.5"
-                >
-                  <img
-                    src="{{ asset('frontend/assets/images/home-1/hero/badge-1.png') }}"
-                    class="animate-spin [animation-duration:15s]"
-                    alt=""
-                  />
-                  <div
-                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                  >
-                    <p class="text-3xl leading-none font-light text-white">
-                      UP TO
-                    </p>
-                    <p class="text-[64px] leading-none font-bold text-white">
-                      25%
-                    </p>
-                    <p class="text-right text-4xl leading-none text-white">
-                      OFF
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Slide 2 -->
-      <div class="swiper-slide gradient-bg-1 h-full py-16 lg:py-0">
-        <div class="custom-container">
-          <div
-            class="grid grid-cols-1 items-center justify-between gap-10 lg:grid-cols-12 lg:gap-16"
-          >
-            <!-- Text Content -->
-            <div
-              class="wow animate__fadeInUp order-2 flex flex-col items-start text-left lg:order-1 lg:col-span-6 xl:col-span-5"
-            >
-              <div class="mb-3 inline-flex items-center gap-2">
-                <span
-                  class="text-base font-medium tracking-wide text-white md:text-lg"
-                  >Bagora Exclusive</span
-                >
-                <span
-                  class="bg-success-dark inline-flex h-5 items-center justify-center rounded-full px-2 py-1 text-xs font-normal text-gray-800 uppercase"
-                  >25% OFF</span
-                >
-              </div>
-              <h1
-                class="font-tiktok-sans mb-3 max-w-2xl text-3xl font-bold text-white md:text-5xl lg:leading-16"
-              >
-                Designed for Daily Life. Built to Carry More
-              </h1>
-              <p class="mb-6 max-w-md text-base leading-relaxed text-white">
-                From laptop bags to backpacks and travel essentials, find the right Bagora carry for every routine.
-              </p>
-              <a
-                href="{{ url('/shop') }}"
-                class="group bg-success-light text-primary-main inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-base font-medium transition-all hover:bg-white"
-              >
-                Shop Bags
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 22 22"
-                  fill="none"
-                  class="transition-transform duration-500 group-hover:rotate-45"
-                >
-                  <path
-                    d="M15.5833 6.41406L5.5 16.4974"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
-            </div>
 
-            <!-- Image & Sticker Column -->
-            <div
-              class="relative order-1 hidden justify-end lg:order-2 lg:col-span-6 lg:flex xl:col-span-7"
-            >
-              <div
-                class="relative flex aspect-square w-full items-center justify-center xl:max-w-[741px]"
-              >
-                <!-- Floating Container Image Placeholder -->
-                <div
-                  class="relative flex h-full w-full items-center justify-center overflow-visible"
-                >
-                  <img
-                    src="{{ asset('frontend/assets/images/home-1/hero/sl-img-2.webp') }}"
-                    class="mt-10 block"
-                    alt="Shop the Smart Way"
-                  />
-                </div>
+    {{-- ========================================================= --}}
+    {{-- SWIPER --}}
+    {{-- ========================================================= --}}
 
-                <!-- Starburst sticker badge overlay -->
-                <div
-                  class="absolute top-55 left-18 z-10 size-40 cursor-pointer duration-300 select-none xl:size-62.5"
-                >
-                  <img
-                    src="{{ asset('frontend/assets/images/home-1/hero/badge-1.png') }}"
-                    class="animate-spin [animation-duration:15s] xl:w-full"
-                    alt=""
-                  />
-                  <div
-                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                  >
-                    <p class="text-3xl leading-none font-light text-white">
-                      UP TO
-                    </p>
-                    <p class="text-[64px] leading-none font-bold text-white">
-                      25%
-                    </p>
-                    <p class="text-right text-4xl leading-none text-white">
-                      OFF
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Slide 3 -->
-      <div class="swiper-slide bg-[#135B43] py-16 lg:py-0">
-        <div class="custom-container">
-          <div
-            class="grid grid-cols-1 items-center justify-between gap-10 lg:grid-cols-12 lg:gap-16"
-          >
-            <!-- Text Content -->
-            <div
-              class="wow animate__fadeInUp order-2 flex flex-col items-start text-left lg:order-1 lg:col-span-6 xl:col-span-5"
-            >
-              <div class="mb-3 inline-flex items-center gap-2">
-                <span
-                  class="text-base font-medium tracking-wide text-white md:text-lg"
-                  >Bagora Exclusive</span
-                >
-                <span
-                  class="bg-success-dark inline-flex h-5 items-center justify-center rounded-full px-2 py-1 text-xs font-normal text-gray-800 uppercase"
-                  >25% OFF</span
-                >
-              </div>
-              <h1
-                class="font-tiktok-sans mb-3 max-w-2xl text-3xl font-bold text-white md:text-5xl lg:leading-16"
-              >
-                Style, Space & Comfort — In One Bag
-              </h1>
-              <p class="mb-6 max-w-md text-base leading-relaxed text-white">
-                Explore practical, stylish bags selected for school, office, travel and everyday use.
-              </p>
-              <a
-                href="{{ url('/shop') }}"
-                class="group bg-success-light text-primary-main inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-base font-medium transition-all hover:bg-white"
-              >
-                Shop Bags
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 22 22"
-                  fill="none"
-                  class="transition-transform duration-500 group-hover:rotate-45"
-                >
-                  <path
-                    d="M15.5833 6.41406L5.5 16.4974"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
-            </div>
-
-            <!-- Image & Sticker Column -->
-            <div
-              class="relative order-1 hidden justify-end lg:order-2 lg:col-span-6 lg:flex xl:col-span-7"
-            >
-              <div
-                class="relative flex aspect-square w-full items-center justify-center xl:max-w-[684px]"
-              >
-                <!-- Floating Container Image Placeholder -->
-                <div
-                  class="relative flex h-full w-full items-center justify-center overflow-visible"
-                >
-                  <img
-                    src="{{ asset('frontend/assets/images/home-1/hero/sl-img-3.webp') }}"
-                    class="block"
-                    alt="Shop the Smart Way"
-                  />
-                </div>
-
-                <!-- Starburst sticker badge overlay -->
-                <div
-                  class="absolute top-39 left-10 z-10 size-40 cursor-pointer duration-300 select-none xl:size-58"
-                >
-                  <img
-                    src="{{ asset('frontend/assets/images/home-1/hero/badge-2.png') }}"
-                    class="animate-spin [animation-duration:15s] xl:w-full"
-                    alt=""
-                  />
-                  <div
-                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                  >
-                    <p class="text-3xl leading-none font-light text-gray-900">
-                      UP TO
-                    </p>
-                    <p class="text-[64px] leading-none font-bold text-gray-900">
-                      25%
-                    </p>
-                    <p class="text-right text-4xl leading-none text-gray-900">
-                      OFF
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Navigation Buttons (Aligned to the container borders, appearing on hover or always on touch devices) -->
-  <button
-    class="hero-prev bg-gray-tertiary/8 hover:text-success-light hover:bg-primary-main-dark absolute top-1/2 left-2 z-20 hidden size-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full text-white opacity-0 transition-all duration-300 group-hover:opacity-100 md:size-12 xl:flex 2xl:left-25"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-    >
-      <path
-        d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    </svg>
-  </button>
-  <button
-    class="hero-next bg-gray-tertiary/8 hover:text-success-light hover:bg-primary-main-dark absolute top-1/2 right-2 z-20 hidden size-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full text-white opacity-0 transition-all duration-300 group-hover:opacity-100 md:right-6 md:size-12 xl:flex 2xl:right-25"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-    >
-      <path
-        d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6.00002"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    </svg>
-  </button>
-
-  <!-- Custom Pagination Pills container -->
-  <div
-    class="hero-pagination absolute !right-0 !bottom-5 !left-0 z-20 !mx-auto mt-6 flex !w-max items-center justify-center gap-2 rounded-full bg-white/10 px-3 py-2.5 lg:!bottom-10"
-  >
-    <!-- Bullet elements injected dynamically by Swiper -->
-  </div>
-</section>
-<section class="overflow-hidden pt-24 pb-12">
-  <div class="custom-container group relative">
-    <div class="swiper category-slider">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <a
-            href="{{ url('/shop') }}"
-            class="group wow animate__fadeInUp inline-flex w-full flex-col items-center justify-center gap-4 text-center"
-          >
-            <div class="size-20">
-              <img
-                src="{{ asset('frontend/assets/images/home-1/category/cat-1.webp') }}"
-                class="w-full"
-                alt=""
-              />
-            </div>
-            <div>
-              <span
-                class="text-gray-primary group-hover:text-primary-main mb-1 block text-base font-medium transition-colors"
-                >Backpacks</span
-              >
-              <span class="text-gray-secondary text-sm">Explore</span>
-            </div>
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a
-            href="{{ url('/shop') }}"
-            class="group wow animate__fadeInUp inline-flex w-full flex-col items-center justify-center gap-4 text-center"
-          >
-            <div class="size-20">
-              <img
-                src="{{ asset('frontend/assets/images/home-1/category/cat-2.webp') }}"
-                class="w-full"
-                alt=""
-              />
-            </div>
-            <div>
-              <span
-                class="text-gray-primary group-hover:text-primary-main mb-1 block text-base font-medium transition-colors"
-                >School Bags</span
-              >
-              <span class="text-gray-secondary text-sm">Explore</span>
-            </div>
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a
-            href="{{ url('/shop') }}"
-            class="group wow animate__fadeInUp inline-flex w-full flex-col items-center justify-center gap-4 text-center"
-          >
-            <div class="size-20">
-              <img
-                src="{{ asset('frontend/assets/images/home-1/category/cat-3.webp') }}"
-                class="w-full"
-                alt=""
-              />
-            </div>
-            <div>
-              <span
-                class="text-gray-primary group-hover:text-primary-main mb-1 block text-base font-medium transition-colors"
-                >Laptop Bags</span
-              >
-              <span class="text-gray-secondary text-sm">Explore</span>
-            </div>
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a
-            href="{{ url('/shop') }}"
-            class="group wow animate__fadeInUp inline-flex w-full flex-col items-center justify-center gap-4 text-center"
-          >
-            <div class="size-20">
-              <img
-                src="{{ asset('frontend/assets/images/home-1/category/cat-4.webp') }}"
-                class="w-full"
-                alt=""
-              />
-            </div>
-            <div>
-              <span
-                class="text-gray-primary group-hover:text-primary-main mb-1 block text-base font-medium transition-colors"
-                >Travel Bags</span
-              >
-              <span class="text-gray-secondary text-sm">Explore</span>
-            </div>
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a
-            href="{{ url('/shop') }}"
-            class="group wow animate__fadeInUp inline-flex w-full flex-col items-center justify-center gap-4 text-center"
-          >
-            <div class="size-20">
-              <img
-                src="{{ asset('frontend/assets/images/home-1/category/cat-5.webp') }}"
-                class="w-full"
-                alt=""
-              />
-            </div>
-            <div>
-              <span
-                class="text-gray-primary group-hover:text-primary-main mb-1 block text-base font-medium transition-colors"
-                >Office Bags</span
-              >
-              <span class="text-gray-secondary text-sm">Explore</span>
-            </div>
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a
-            href="{{ url('/shop') }}"
-            class="group wow animate__fadeInUp inline-flex w-full flex-col items-center justify-center gap-4 text-center"
-          >
-            <div class="size-20">
-              <img
-                src="{{ asset('frontend/assets/images/home-1/category/cat-6.webp') }}"
-                class="w-full"
-                alt=""
-              />
-            </div>
-            <div>
-              <span
-                class="text-gray-primary group-hover:text-primary-main mb-1 block text-base font-medium transition-colors"
-                >Crossbody Bags</span
-              >
-              <span class="text-gray-secondary text-sm">Explore</span>
-            </div>
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a
-            href="{{ url('/shop') }}"
-            class="group wow animate__fadeInUp inline-flex w-full flex-col items-center justify-center gap-4 text-center"
-          >
-            <div class="size-20">
-              <img
-                src="{{ asset('frontend/assets/images/home-1/category/cat-3.webp') }}"
-                class="w-full"
-                alt=""
-              />
-            </div>
-            <div>
-              <span
-                class="text-gray-primary group-hover:text-primary-main mb-1 block text-base font-medium transition-colors"
-                >Shoulder Bags</span
-              >
-              <span class="text-gray-secondary text-sm">Explore</span>
-            </div>
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a
-            href="{{ url('/shop') }}"
-            class="group wow animate__fadeInUp inline-flex w-full flex-col items-center justify-center gap-4 text-center"
-          >
-            <div class="size-20">
-              <img
-                src="{{ asset('frontend/assets/images/home-1/category/cat-3.webp') }}"
-                class="w-full"
-                alt=""
-              />
-            </div>
-            <div>
-              <span
-                class="text-gray-primary group-hover:text-primary-main mb-1 block text-base font-medium transition-colors"
-                >Handbags</span
-              >
-              <span class="text-gray-secondary text-sm">Explore</span>
-            </div>
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a
-            href="{{ url('/shop') }}"
-            class="group wow animate__fadeInUp inline-flex w-full flex-col items-center justify-center gap-4 text-center"
-          >
-            <div class="size-20">
-              <img
-                src="{{ asset('frontend/assets/images/home-1/category/cat-4.webp') }}"
-                class="w-full"
-                alt=""
-              />
-            </div>
-            <div>
-              <span
-                class="text-gray-primary group-hover:text-primary-main mb-1 block text-base font-medium transition-colors"
-                >Duffel Bags</span
-              >
-              <span class="text-gray-secondary text-sm">Explore</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <button
-      class="category-prev bg-primary-main hover:bg-primary-main-dark absolute top-1/2 left-4 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full text-white opacity-0 shadow-sm transition-all duration-300 group-hover:opacity-100 [&.swiper-button-disabled]:hidden"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-      >
-        <path
-          d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </button>
-    <button
-      class="category-next bg-primary-main hover:bg-primary-main-dark absolute top-1/2 right-4 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full text-white opacity-0 shadow-sm transition-all duration-300 group-hover:opacity-100 [&.swiper-button-disabled]:hidden"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-      >
-        <path
-          d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </button>
-  </div>
-</section>
-<section class="py-12" id="best-selling-section">
-  <div class="custom-container">
-    <div class="wow animate__fadeInUp mx-auto mb-12 max-w-md text-center">
-      <h2 class="text-32 text-gray-primary mb-2 font-bold">
-        Best Selling Bags
-      </h2>
-      <p class="text-gray-secondary text-base">
-        Customer-favorite Bagora styles for work, study and travel.
-      </p>
-    </div>
-    <div class="mx-auto mb-12 max-w-[760px]">
-      <nav
-        class="best-selling-filter flex flex-nowrap gap-4 overflow-x-auto sm:justify-center [&::-webkit-scrollbar]:hidden"
-      >
-        <button
-          data-filter="*"
-          class="bs-filter-btn is-checked bg-primary-main text-success-light inline-flex shrink-0 items-center justify-center rounded-full px-5 py-2.5 text-base leading-6.5 font-medium"
-        >
-          All Products
-        </button>
-        <button
-          data-filter=".cat-backpacks"
-          class="bs-filter-btn text-gray-primary hover:bg-primary-main hover:border-primary-main hover:text-success-light border-gray-tertiary/32 inline-flex shrink-0 items-center justify-center rounded-full border bg-transparent px-5 py-2.5 text-base leading-6.5 font-medium transition-all duration-300"
-        >
-          Backpacks
-        </button>
-        <button
-          data-filter=".cat-school"
-          class="bs-filter-btn text-gray-primary hover:bg-primary-main hover:border-primary-main hover:text-success-light border-gray-tertiary/32 inline-flex shrink-0 items-center justify-center rounded-full border bg-transparent px-5 py-2.5 text-base leading-6.5 font-medium transition-all duration-300"
-        >
-          School Bags
-        </button>
-        <button
-          data-filter=".cat-laptop"
-          class="bs-filter-btn text-gray-primary hover:bg-primary-main hover:border-primary-main hover:text-success-light border-gray-tertiary/32 inline-flex shrink-0 items-center justify-center rounded-full border bg-transparent px-5 py-2.5 text-base leading-6.5 font-medium transition-all duration-300"
-        >
-          Laptop Bags
-        </button>
-        <button
-          data-filter=".cat-travel"
-          class="bs-filter-btn text-gray-primary hover:bg-primary-main hover:border-primary-main hover:text-success-light border-gray-tertiary/32 inline-flex shrink-0 items-center justify-center rounded-full border bg-transparent px-5 py-2.5 text-base leading-6.5 font-medium transition-all duration-300"
-        >
-          Travel Bags
-        </button>
-      </nav>
-    </div>
-    <div class="swiper best-selling-tab-slider">
-      <div id="best-selling-isotope-grid" class="swiper-wrapper">
-        <article class="wow animate__fadeInUp swiper-slide cat-backpacks">
-          <div
-            class="flex flex-col gap-3.5 rounded-xl border border-gray-300 p-4"
-          >
-            <div class="relative">
-              <a
-                href="{{ url('/shop') }}"
-                class="relative block overflow-hidden rounded-lg"
-              >
-                <img
-                  src="{{ asset('frontend/assets/images/home-1/best-selling-tabs/product-1.webp') }}"
-                  class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
-                  alt="product"
-                />
-              </a>
-              <div class="absolute top-2 left-0 inline-block">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="67"
-                  height="22"
-                  viewBox="0 0 67 22"
-                  fill="none"
-                >
-                  <path
-                    d="M67 0L65.2314 1.86426L67 3.54199L65.2314 5.59277L67 7.27148L65.2314 9.13574L67 11L65.2314 12.8643L67 14.7285L65.2314 16.5928L67 18.458L65.2314 20.1357L67 22H0V0H67Z"
-                    fill="#CB0233"
-                  />
-                </svg>
-                <span
-                  class="absolute inset-0 z-10 flex items-center justify-center text-xs font-medium text-white uppercase"
-                >
-                  15% off
-                </span>
-              </div>
-              <!-- Wishlist -->
-              <div x-data="{ liked: false }">
-                <button
-                  @click="liked = !liked"
-                  :class="liked
-      ? 'bg-error-dark text-white'
-      : 'bg-white text-gray-secondary'"
-                  class="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full transition-all duration-300"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M14.5969 2.99561C12.5857 1.76192 10.8303 2.25909 9.77576 3.05101C9.34339 3.37572 9.1272 3.53807 9 3.53807C8.8728 3.53807 8.65661 3.37572 8.22424 3.05101C7.16971 2.25909 5.41431 1.76192 3.40308 2.99561C0.763551 4.6147 0.166291 9.95614 6.25465 14.4625C7.41429 15.3208 7.99411 15.75 9 15.75C10.0059 15.75 10.5857 15.3208 11.7454 14.4625C17.8337 9.95614 17.2364 4.6147 14.5969 2.99561Z"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <h3
-              class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-            >
-              <a href="{{ url('/shop') }}">
-                Bagora Urban Everyday Backpack
-              </a>
-            </h3>
-            <div class="flex items-center gap-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                fill="none"
-              >
-                <path
-                  d="M13.1701 15.75C13.0501 15.7505 12.9318 15.7222 12.8251 15.6675L9.00009 13.665L5.17509 15.6675C4.92169 15.8008 4.61453 15.7781 4.38341 15.6092C4.15228 15.4402 4.03751 15.1544 4.08759 14.8725L4.83759 10.65L1.74759 7.65003C1.55113 7.45398 1.479 7.16547 1.56009 6.90003C1.64877 6.6281 1.8844 6.43028 2.16759 6.39003L6.44259 5.76753L8.32509 1.92003C8.4504 1.66129 8.71259 1.49695 9.00009 1.49695C9.28758 1.49695 9.54977 1.66129 9.67509 1.92003L11.5801 5.76003L15.8551 6.38253C16.1383 6.42278 16.3739 6.6206 16.4626 6.89253C16.5437 7.15797 16.4715 7.44648 16.2751 7.64253L13.1851 10.6425L13.9351 14.865C13.9898 15.1521 13.8727 15.4448 13.6351 15.615C13.4993 15.7102 13.3357 15.7577 13.1701 15.75Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#919EAB"
-                />
-              </svg>
-              <span class="text-gray-secondary text-sm"> (189) </span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-gray-primary text-base font-medium"
-                >৳1,590</span
-              >
-              <span class="text-gray-tertiary text-sm line-through"
-                >৳1,890</span
-              >
-            </div>
-            <button
-              class="bg-primary-main hover:bg-primary-main-dark text-success-light flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <g clip-path="url(#clip0_37995_40602)">
-                  <path
-                    d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M5 5L18.3333 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <circle
-                    cx="4.99967"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <circle
-                    cx="14.1667"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <path
-                    d="M6.66667 16.6666L12.5 16.6666"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M1.6665 1.66663L2.47151 1.66663C3.25874 1.66663 3.94495 2.18712 4.13589 2.92907L6.61527 12.5637C6.74057 13.0506 6.63334 13.5664 6.32337 13.9679L5.52661 15"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_37995_40602">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              Add to Cart
-            </button>
-          </div>
-        </article>
-        <article class="wow animate__fadeInUp swiper-slide cat-backpacks">
-          <div
-            class="flex flex-col gap-3.5 rounded-xl border border-gray-300 p-4"
-          >
-            <div class="relative">
-              <a
-                href="{{ url('/shop') }}"
-                class="relative block overflow-hidden rounded-lg"
-              >
-                <img
-                  src="{{ asset('frontend/assets/images/home-1/best-selling-tabs/product-2.webp') }}"
-                  class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
-                  alt="product"
-                />
-              </a>
-              <div class="absolute top-2 left-0 inline-block">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="67"
-                  height="22"
-                  viewBox="0 0 67 22"
-                  fill="none"
-                >
-                  <path
-                    d="M67 0L65.2314 1.86426L67 3.54199L65.2314 5.59277L67 7.27148L65.2314 9.13574L67 11L65.2314 12.8643L67 14.7285L65.2314 16.5928L67 18.458L65.2314 20.1357L67 22H0V0H67Z"
-                    fill="#CB0233"
-                  />
-                </svg>
-                <span
-                  class="absolute inset-0 z-10 flex items-center justify-center text-xs font-medium text-white uppercase"
-                >
-                  15% off
-                </span>
-              </div>
-              <!-- Wishlist -->
-              <div x-data="{ liked: false }">
-                <button
-                  @click="liked = !liked"
-                  :class="liked
-      ? 'bg-error-dark text-white'
-      : 'bg-white text-gray-secondary'"
-                  class="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full transition-all duration-300"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M14.5969 2.99561C12.5857 1.76192 10.8303 2.25909 9.77576 3.05101C9.34339 3.37572 9.1272 3.53807 9 3.53807C8.8728 3.53807 8.65661 3.37572 8.22424 3.05101C7.16971 2.25909 5.41431 1.76192 3.40308 2.99561C0.763551 4.6147 0.166291 9.95614 6.25465 14.4625C7.41429 15.3208 7.99411 15.75 9 15.75C10.0059 15.75 10.5857 15.3208 11.7454 14.4625C17.8337 9.95614 17.2364 4.6147 14.5969 2.99561Z"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <h3
-              class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-            >
-              <a href="{{ url('/shop') }}">
-                Bagora Campus Pro School Backpack
-              </a>
-            </h3>
-            <div class="flex items-center gap-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                fill="none"
-              >
-                <path
-                  d="M13.1701 15.75C13.0501 15.7505 12.9318 15.7222 12.8251 15.6675L9.00009 13.665L5.17509 15.6675C4.92169 15.8008 4.61453 15.7781 4.38341 15.6092C4.15228 15.4402 4.03751 15.1544 4.08759 14.8725L4.83759 10.65L1.74759 7.65003C1.55113 7.45398 1.479 7.16547 1.56009 6.90003C1.64877 6.6281 1.8844 6.43028 2.16759 6.39003L6.44259 5.76753L8.32509 1.92003C8.4504 1.66129 8.71259 1.49695 9.00009 1.49695C9.28758 1.49695 9.54977 1.66129 9.67509 1.92003L11.5801 5.76003L15.8551 6.38253C16.1383 6.42278 16.3739 6.6206 16.4626 6.89253C16.5437 7.15797 16.4715 7.44648 16.2751 7.64253L13.1851 10.6425L13.9351 14.865C13.9898 15.1521 13.8727 15.4448 13.6351 15.615C13.4993 15.7102 13.3357 15.7577 13.1701 15.75Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#919EAB"
-                />
-              </svg>
-              <span class="text-gray-secondary text-sm"> (189) </span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-gray-primary text-base font-medium"
-                >৳1,590</span
-              >
-              <span class="text-gray-tertiary text-sm line-through"
-                >৳1,890</span
-              >
-            </div>
-            <button
-              class="bg-primary-main hover:bg-primary-main-dark text-success-light flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <g clip-path="url(#clip0_37995_40602)">
-                  <path
-                    d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M5 5L18.3333 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <circle
-                    cx="4.99967"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <circle
-                    cx="14.1667"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <path
-                    d="M6.66667 16.6666L12.5 16.6666"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M1.6665 1.66663L2.47151 1.66663C3.25874 1.66663 3.94495 2.18712 4.13589 2.92907L6.61527 12.5637C6.74057 13.0506 6.63334 13.5664 6.32337 13.9679L5.52661 15"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_37995_40602">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              Add to Cart
-            </button>
-          </div>
-        </article>
-        <article class="wow animate__fadeInUp swiper-slide cat-backpacks">
-          <div
-            class="flex flex-col gap-3.5 rounded-xl border border-gray-300 p-4"
-          >
-            <div class="relative">
-              <a
-                href="{{ url('/shop') }}"
-                class="relative block overflow-hidden rounded-lg"
-              >
-                <img
-                  src="{{ asset('frontend/assets/src/images/home-1/best-selling-tabs/product-3.webp') }}"
-                  class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
-                  alt="product"
-                />
-              </a>
-              <div class="absolute top-2 left-0 inline-block">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="67"
-                  height="22"
-                  viewBox="0 0 67 22"
-                  fill="none"
-                >
-                  <path
-                    d="M67 0L65.2314 1.86426L67 3.54199L65.2314 5.59277L67 7.27148L65.2314 9.13574L67 11L65.2314 12.8643L67 14.7285L65.2314 16.5928L67 18.458L65.2314 20.1357L67 22H0V0H67Z"
-                    fill="#CB0233"
-                  />
-                </svg>
-                <span
-                  class="absolute inset-0 z-10 flex items-center justify-center text-xs font-medium text-white uppercase"
-                >
-                  15% off
-                </span>
-              </div>
-              <!-- Wishlist -->
-              <div x-data="{ liked: false }">
-                <button
-                  @click="liked = !liked"
-                  :class="liked
-      ? 'bg-error-dark text-white'
-      : 'bg-white text-gray-secondary'"
-                  class="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full transition-all duration-300"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M14.5969 2.99561C12.5857 1.76192 10.8303 2.25909 9.77576 3.05101C9.34339 3.37572 9.1272 3.53807 9 3.53807C8.8728 3.53807 8.65661 3.37572 8.22424 3.05101C7.16971 2.25909 5.41431 1.76192 3.40308 2.99561C0.763551 4.6147 0.166291 9.95614 6.25465 14.4625C7.41429 15.3208 7.99411 15.75 9 15.75C10.0059 15.75 10.5857 15.3208 11.7454 14.4625C17.8337 9.95614 17.2364 4.6147 14.5969 2.99561Z"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <h3
-              class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-            >
-              <a href="{{ url('/shop') }}">
-                Bagora Shield 15.6” Laptop Backpack
-              </a>
-            </h3>
-            <div class="flex items-center gap-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                fill="none"
-              >
-                <path
-                  d="M13.1701 15.75C13.0501 15.7505 12.9318 15.7222 12.8251 15.6675L9.00009 13.665L5.17509 15.6675C4.92169 15.8008 4.61453 15.7781 4.38341 15.6092C4.15228 15.4402 4.03751 15.1544 4.08759 14.8725L4.83759 10.65L1.74759 7.65003C1.55113 7.45398 1.479 7.16547 1.56009 6.90003C1.64877 6.6281 1.8844 6.43028 2.16759 6.39003L6.44259 5.76753L8.32509 1.92003C8.4504 1.66129 8.71259 1.49695 9.00009 1.49695C9.28758 1.49695 9.54977 1.66129 9.67509 1.92003L11.5801 5.76003L15.8551 6.38253C16.1383 6.42278 16.3739 6.6206 16.4626 6.89253C16.5437 7.15797 16.4715 7.44648 16.2751 7.64253L13.1851 10.6425L13.9351 14.865C13.9898 15.1521 13.8727 15.4448 13.6351 15.615C13.4993 15.7102 13.3357 15.7577 13.1701 15.75Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#919EAB"
-                />
-              </svg>
-              <span class="text-gray-secondary text-sm"> (189) </span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-gray-primary text-base font-medium"
-                >৳1,590</span
-              >
-              <span class="text-gray-tertiary text-sm line-through"
-                >৳1,890</span
-              >
-            </div>
-            <button
-              class="bg-primary-main hover:bg-primary-main-dark text-success-light flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <g clip-path="url(#clip0_37995_40602)">
-                  <path
-                    d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M5 5L18.3333 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <circle
-                    cx="4.99967"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <circle
-                    cx="14.1667"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <path
-                    d="M6.66667 16.6666L12.5 16.6666"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M1.6665 1.66663L2.47151 1.66663C3.25874 1.66663 3.94495 2.18712 4.13589 2.92907L6.61527 12.5637C6.74057 13.0506 6.63334 13.5664 6.32337 13.9679L5.52661 15"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_37995_40602">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              Add to Cart
-            </button>
-          </div>
-        </article>
-        <article class="wow animate__fadeInUp swiper-slide cat-school">
-          <div
-            class="flex flex-col gap-3.5 rounded-xl border border-gray-300 p-4"
-          >
-            <div class="relative">
-              <a
-                href="{{ url('/shop') }}"
-                class="relative block overflow-hidden rounded-lg"
-              >
-                <img
-                  src="{{ asset('frontend/assets/images/home-1/best-selling-tabs/product-4.webp') }}"
-                  class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
-                  alt="product"
-                />
-              </a>
-              <div class="absolute top-2 left-0 inline-block">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="67"
-                  height="22"
-                  viewBox="0 0 67 22"
-                  fill="none"
-                >
-                  <path
-                    d="M67 0L65.2314 1.86426L67 3.54199L65.2314 5.59277L67 7.27148L65.2314 9.13574L67 11L65.2314 12.8643L67 14.7285L65.2314 16.5928L67 18.458L65.2314 20.1357L67 22H0V0H67Z"
-                    fill="#CB0233"
-                  />
-                </svg>
-                <span
-                  class="absolute inset-0 z-10 flex items-center justify-center text-xs font-medium text-white uppercase"
-                >
-                  15% off
-                </span>
-              </div>
-              <!-- Wishlist -->
-              <div x-data="{ liked: false }">
-                <button
-                  @click="liked = !liked"
-                  :class="liked
-      ? 'bg-error-dark text-white'
-      : 'bg-white text-gray-secondary'"
-                  class="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full transition-all duration-300"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M14.5969 2.99561C12.5857 1.76192 10.8303 2.25909 9.77576 3.05101C9.34339 3.37572 9.1272 3.53807 9 3.53807C8.8728 3.53807 8.65661 3.37572 8.22424 3.05101C7.16971 2.25909 5.41431 1.76192 3.40308 2.99561C0.763551 4.6147 0.166291 9.95614 6.25465 14.4625C7.41429 15.3208 7.99411 15.75 9 15.75C10.0059 15.75 10.5857 15.3208 11.7454 14.4625C17.8337 9.95614 17.2364 4.6147 14.5969 2.99561Z"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <h3
-              class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-            >
-              <a href="{{ url('/shop') }}">
-                Bagora Voyager Travel Backpack
-              </a>
-            </h3>
-            <div class="flex items-center gap-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                fill="none"
-              >
-                <path
-                  d="M13.1701 15.75C13.0501 15.7505 12.9318 15.7222 12.8251 15.6675L9.00009 13.665L5.17509 15.6675C4.92169 15.8008 4.61453 15.7781 4.38341 15.6092C4.15228 15.4402 4.03751 15.1544 4.08759 14.8725L4.83759 10.65L1.74759 7.65003C1.55113 7.45398 1.479 7.16547 1.56009 6.90003C1.64877 6.6281 1.8844 6.43028 2.16759 6.39003L6.44259 5.76753L8.32509 1.92003C8.4504 1.66129 8.71259 1.49695 9.00009 1.49695C9.28758 1.49695 9.54977 1.66129 9.67509 1.92003L11.5801 5.76003L15.8551 6.38253C16.1383 6.42278 16.3739 6.6206 16.4626 6.89253C16.5437 7.15797 16.4715 7.44648 16.2751 7.64253L13.1851 10.6425L13.9351 14.865C13.9898 15.1521 13.8727 15.4448 13.6351 15.615C13.4993 15.7102 13.3357 15.7577 13.1701 15.75Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#919EAB"
-                />
-              </svg>
-              <span class="text-gray-secondary text-sm"> (189) </span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-gray-primary text-base font-medium"
-                >৳1,590</span
-              >
-              <span class="text-gray-tertiary text-sm line-through"
-                >৳1,890</span
-              >
-            </div>
-            <button
-              class="bg-primary-main hover:bg-primary-main-dark text-success-light flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <g clip-path="url(#clip0_37995_40602)">
-                  <path
-                    d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M5 5L18.3333 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <circle
-                    cx="4.99967"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <circle
-                    cx="14.1667"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <path
-                    d="M6.66667 16.6666L12.5 16.6666"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M1.6665 1.66663L2.47151 1.66663C3.25874 1.66663 3.94495 2.18712 4.13589 2.92907L6.61527 12.5637C6.74057 13.0506 6.63334 13.5664 6.32337 13.9679L5.52661 15"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_37995_40602">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              Add to Cart
-            </button>
-          </div>
-        </article>
-        <article class="wow animate__fadeInUp swiper-slide cat-school">
-          <div
-            class="flex flex-col gap-3.5 rounded-xl border border-gray-300 p-4"
-          >
-            <div class="relative">
-              <a
-                href="{{ url('/shop') }}"
-                class="relative block overflow-hidden rounded-lg"
-              >
-                <img
-                  src="{{ asset('frontend/assets/images/home-1/best-selling-tabs/product-5.webp') }}"
-                  class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
-                  alt="product"
-                />
-              </a>
-              <div class="absolute top-2 left-0 inline-block">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="67"
-                  height="22"
-                  viewBox="0 0 67 22"
-                  fill="none"
-                >
-                  <path
-                    d="M67 0L65.2314 1.86426L67 3.54199L65.2314 5.59277L67 7.27148L65.2314 9.13574L67 11L65.2314 12.8643L67 14.7285L65.2314 16.5928L67 18.458L65.2314 20.1357L67 22H0V0H67Z"
-                    fill="#CB0233"
-                  />
-                </svg>
-                <span
-                  class="absolute inset-0 z-10 flex items-center justify-center text-xs font-medium text-white uppercase"
-                >
-                  15% off
-                </span>
-              </div>
-              <!-- Wishlist -->
-              <div x-data="{ liked: false }">
-                <button
-                  @click="liked = !liked"
-                  :class="liked
-      ? 'bg-error-dark text-white'
-      : 'bg-white text-gray-secondary'"
-                  class="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full transition-all duration-300"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M14.5969 2.99561C12.5857 1.76192 10.8303 2.25909 9.77576 3.05101C9.34339 3.37572 9.1272 3.53807 9 3.53807C8.8728 3.53807 8.65661 3.37572 8.22424 3.05101C7.16971 2.25909 5.41431 1.76192 3.40308 2.99561C0.763551 4.6147 0.166291 9.95614 6.25465 14.4625C7.41429 15.3208 7.99411 15.75 9 15.75C10.0059 15.75 10.5857 15.3208 11.7454 14.4625C17.8337 9.95614 17.2364 4.6147 14.5969 2.99561Z"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <h3
-              class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-            >
-              <a href="{{ url('/shop') }}">
-                Bagora Metro Office Backpack
-              </a>
-            </h3>
-            <div class="flex items-center gap-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                fill="none"
-              >
-                <path
-                  d="M13.1701 15.75C13.0501 15.7505 12.9318 15.7222 12.8251 15.6675L9.00009 13.665L5.17509 15.6675C4.92169 15.8008 4.61453 15.7781 4.38341 15.6092C4.15228 15.4402 4.03751 15.1544 4.08759 14.8725L4.83759 10.65L1.74759 7.65003C1.55113 7.45398 1.479 7.16547 1.56009 6.90003C1.64877 6.6281 1.8844 6.43028 2.16759 6.39003L6.44259 5.76753L8.32509 1.92003C8.4504 1.66129 8.71259 1.49695 9.00009 1.49695C9.28758 1.49695 9.54977 1.66129 9.67509 1.92003L11.5801 5.76003L15.8551 6.38253C16.1383 6.42278 16.3739 6.6206 16.4626 6.89253C16.5437 7.15797 16.4715 7.44648 16.2751 7.64253L13.1851 10.6425L13.9351 14.865C13.9898 15.1521 13.8727 15.4448 13.6351 15.615C13.4993 15.7102 13.3357 15.7577 13.1701 15.75Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#919EAB"
-                />
-              </svg>
-              <span class="text-gray-secondary text-sm"> (189) </span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-gray-primary text-base font-medium"
-                >৳1,590</span
-              >
-              <span class="text-gray-tertiary text-sm line-through"
-                >৳1,890</span
-              >
-            </div>
-            <button
-              class="bg-primary-main hover:bg-primary-main-dark text-success-light flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <g clip-path="url(#clip0_37995_40602)">
-                  <path
-                    d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M5 5L18.3333 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <circle
-                    cx="4.99967"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <circle
-                    cx="14.1667"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <path
-                    d="M6.66667 16.6666L12.5 16.6666"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M1.6665 1.66663L2.47151 1.66663C3.25874 1.66663 3.94495 2.18712 4.13589 2.92907L6.61527 12.5637C6.74057 13.0506 6.63334 13.5664 6.32337 13.9679L5.52661 15"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_37995_40602">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              Add to Cart
-            </button>
-          </div>
-        </article>
-        <article class="wow animate__fadeInUp swiper-slide cat-school">
-          <div
-            class="flex flex-col gap-3.5 rounded-xl border border-gray-300 p-4"
-          >
-            <div class="relative">
-              <a
-                href="{{ url('/shop') }}"
-                class="relative block overflow-hidden rounded-lg"
-              >
-                <img
-                  src="{{ asset('frontend/assets/images/home-1/best-selling-tabs/product-5.webp') }}"
-                  class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
-                  alt="product"
-                />
-              </a>
-              <div class="absolute top-2 left-0 inline-block">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="67"
-                  height="22"
-                  viewBox="0 0 67 22"
-                  fill="none"
-                >
-                  <path
-                    d="M67 0L65.2314 1.86426L67 3.54199L65.2314 5.59277L67 7.27148L65.2314 9.13574L67 11L65.2314 12.8643L67 14.7285L65.2314 16.5928L67 18.458L65.2314 20.1357L67 22H0V0H67Z"
-                    fill="#CB0233"
-                  />
-                </svg>
-                <span
-                  class="absolute inset-0 z-10 flex items-center justify-center text-xs font-medium text-white uppercase"
-                >
-                  15% off
-                </span>
-              </div>
-              <!-- Wishlist -->
-              <div x-data="{ liked: false }">
-                <button
-                  @click="liked = !liked"
-                  :class="liked
-      ? 'bg-error-dark text-white'
-      : 'bg-white text-gray-secondary'"
-                  class="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full transition-all duration-300"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M14.5969 2.99561C12.5857 1.76192 10.8303 2.25909 9.77576 3.05101C9.34339 3.37572 9.1272 3.53807 9 3.53807C8.8728 3.53807 8.65661 3.37572 8.22424 3.05101C7.16971 2.25909 5.41431 1.76192 3.40308 2.99561C0.763551 4.6147 0.166291 9.95614 6.25465 14.4625C7.41429 15.3208 7.99411 15.75 9 15.75C10.0059 15.75 10.5857 15.3208 11.7454 14.4625C17.8337 9.95614 17.2364 4.6147 14.5969 2.99561Z"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <h3
-              class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-            >
-              <a href="{{ url('/shop') }}">
-                Bagora Compact Crossbody Bag
-              </a>
-            </h3>
-            <div class="flex items-center gap-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                fill="none"
-              >
-                <path
-                  d="M13.1701 15.75C13.0501 15.7505 12.9318 15.7222 12.8251 15.6675L9.00009 13.665L5.17509 15.6675C4.92169 15.8008 4.61453 15.7781 4.38341 15.6092C4.15228 15.4402 4.03751 15.1544 4.08759 14.8725L4.83759 10.65L1.74759 7.65003C1.55113 7.45398 1.479 7.16547 1.56009 6.90003C1.64877 6.6281 1.8844 6.43028 2.16759 6.39003L6.44259 5.76753L8.32509 1.92003C8.4504 1.66129 8.71259 1.49695 9.00009 1.49695C9.28758 1.49695 9.54977 1.66129 9.67509 1.92003L11.5801 5.76003L15.8551 6.38253C16.1383 6.42278 16.3739 6.6206 16.4626 6.89253C16.5437 7.15797 16.4715 7.44648 16.2751 7.64253L13.1851 10.6425L13.9351 14.865C13.9898 15.1521 13.8727 15.4448 13.6351 15.615C13.4993 15.7102 13.3357 15.7577 13.1701 15.75Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#919EAB"
-                />
-              </svg>
-              <span class="text-gray-secondary text-sm"> (189) </span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-gray-primary text-base font-medium"
-                >৳1,590</span
-              >
-              <span class="text-gray-tertiary text-sm line-through"
-                >৳1,890</span
-              >
-            </div>
-            <button
-              class="bg-primary-main hover:bg-primary-main-dark text-success-light flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <g clip-path="url(#clip0_37995_40602)">
-                  <path
-                    d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M5 5L18.3333 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <circle
-                    cx="4.99967"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <circle
-                    cx="14.1667"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <path
-                    d="M6.66667 16.6666L12.5 16.6666"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M1.6665 1.66663L2.47151 1.66663C3.25874 1.66663 3.94495 2.18712 4.13589 2.92907L6.61527 12.5637C6.74057 13.0506 6.63334 13.5664 6.32337 13.9679L5.52661 15"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_37995_40602">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              Add to Cart
-            </button>
-          </div>
-        </article>
-        <article class="wow animate__fadeInUp swiper-slide cat-laptop">
-          <div
-            class="flex flex-col gap-3.5 rounded-xl border border-gray-300 p-4"
-          >
-            <div class="relative">
-              <a
-                href="{{ url('/shop') }}"
-                class="relative block overflow-hidden rounded-lg"
-              >
-                <img
-                  src="{{ asset('frontend/assets/images/home-1/best-selling-tabs/product-1.webp') }}"
-                  class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
-                  alt="product"
-                />
-              </a>
-              <div class="absolute top-2 left-0 inline-block">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="67"
-                  height="22"
-                  viewBox="0 0 67 22"
-                  fill="none"
-                >
-                  <path
-                    d="M67 0L65.2314 1.86426L67 3.54199L65.2314 5.59277L67 7.27148L65.2314 9.13574L67 11L65.2314 12.8643L67 14.7285L65.2314 16.5928L67 18.458L65.2314 20.1357L67 22H0V0H67Z"
-                    fill="#CB0233"
-                  />
-                </svg>
-                <span
-                  class="absolute inset-0 z-10 flex items-center justify-center text-xs font-medium text-white uppercase"
-                >
-                  15% off
-                </span>
-              </div>
-              <!-- Wishlist -->
-              <div x-data="{ liked: false }">
-                <button
-                  @click="liked = !liked"
-                  :class="liked
-      ? 'bg-error-dark text-white'
-      : 'bg-white text-gray-secondary'"
-                  class="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full transition-all duration-300"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M14.5969 2.99561C12.5857 1.76192 10.8303 2.25909 9.77576 3.05101C9.34339 3.37572 9.1272 3.53807 9 3.53807C8.8728 3.53807 8.65661 3.37572 8.22424 3.05101C7.16971 2.25909 5.41431 1.76192 3.40308 2.99561C0.763551 4.6147 0.166291 9.95614 6.25465 14.4625C7.41429 15.3208 7.99411 15.75 9 15.75C10.0059 15.75 10.5857 15.3208 11.7454 14.4625C17.8337 9.95614 17.2364 4.6147 14.5969 2.99561Z"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <h3
-              class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-            >
-              <a href="{{ url('/shop') }}">
-                Bagora Classic Shoulder Bag
-              </a>
-            </h3>
-            <div class="flex items-center gap-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                fill="none"
-              >
-                <path
-                  d="M13.1701 15.75C13.0501 15.7505 12.9318 15.7222 12.8251 15.6675L9.00009 13.665L5.17509 15.6675C4.92169 15.8008 4.61453 15.7781 4.38341 15.6092C4.15228 15.4402 4.03751 15.1544 4.08759 14.8725L4.83759 10.65L1.74759 7.65003C1.55113 7.45398 1.479 7.16547 1.56009 6.90003C1.64877 6.6281 1.8844 6.43028 2.16759 6.39003L6.44259 5.76753L8.32509 1.92003C8.4504 1.66129 8.71259 1.49695 9.00009 1.49695C9.28758 1.49695 9.54977 1.66129 9.67509 1.92003L11.5801 5.76003L15.8551 6.38253C16.1383 6.42278 16.3739 6.6206 16.4626 6.89253C16.5437 7.15797 16.4715 7.44648 16.2751 7.64253L13.1851 10.6425L13.9351 14.865C13.9898 15.1521 13.8727 15.4448 13.6351 15.615C13.4993 15.7102 13.3357 15.7577 13.1701 15.75Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#919EAB"
-                />
-              </svg>
-              <span class="text-gray-secondary text-sm"> (189) </span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-gray-primary text-base font-medium"
-                >৳1,590</span
-              >
-              <span class="text-gray-tertiary text-sm line-through"
-                >৳1,890</span
-              >
-            </div>
-            <button
-              class="bg-primary-main hover:bg-primary-main-dark text-success-light flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <g clip-path="url(#clip0_37995_40602)">
-                  <path
-                    d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M5 5L18.3333 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <circle
-                    cx="4.99967"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <circle
-                    cx="14.1667"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <path
-                    d="M6.66667 16.6666L12.5 16.6666"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M1.6665 1.66663L2.47151 1.66663C3.25874 1.66663 3.94495 2.18712 4.13589 2.92907L6.61527 12.5637C6.74057 13.0506 6.63334 13.5664 6.32337 13.9679L5.52661 15"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_37995_40602">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              Add to Cart
-            </button>
-          </div>
-        </article>
-        <article class="wow animate__fadeInUp swiper-slide cat-laptop">
-          <div
-            class="flex flex-col gap-3.5 rounded-xl border border-gray-300 p-4"
-          >
-            <div class="relative">
-              <a
-                href="{{ url('/shop') }}"
-                class="relative block overflow-hidden rounded-lg"
-              >
-                <img
-                  src="{{ asset('frontend/assets/images/home-1/best-selling-tabs/product-2.webp') }}"
-                  class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
-                  alt="product"
-                />
-              </a>
-              <div class="absolute top-2 left-0 inline-block">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="67"
-                  height="22"
-                  viewBox="0 0 67 22"
-                  fill="none"
-                >
-                  <path
-                    d="M67 0L65.2314 1.86426L67 3.54199L65.2314 5.59277L67 7.27148L65.2314 9.13574L67 11L65.2314 12.8643L67 14.7285L65.2314 16.5928L67 18.458L65.2314 20.1357L67 22H0V0H67Z"
-                    fill="#CB0233"
-                  />
-                </svg>
-                <span
-                  class="absolute inset-0 z-10 flex items-center justify-center text-xs font-medium text-white uppercase"
-                >
-                  15% off
-                </span>
-              </div>
-              <!-- Wishlist -->
-              <div x-data="{ liked: false }">
-                <button
-                  @click="liked = !liked"
-                  :class="liked
-      ? 'bg-error-dark text-white'
-      : 'bg-white text-gray-secondary'"
-                  class="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full transition-all duration-300"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M14.5969 2.99561C12.5857 1.76192 10.8303 2.25909 9.77576 3.05101C9.34339 3.37572 9.1272 3.53807 9 3.53807C8.8728 3.53807 8.65661 3.37572 8.22424 3.05101C7.16971 2.25909 5.41431 1.76192 3.40308 2.99561C0.763551 4.6147 0.166291 9.95614 6.25465 14.4625C7.41429 15.3208 7.99411 15.75 9 15.75C10.0059 15.75 10.5857 15.3208 11.7454 14.4625C17.8337 9.95614 17.2364 4.6147 14.5969 2.99561Z"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <h3
-              class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-            >
-              <a href="{{ url('/shop') }}">
-                Bagora Weekender Duffel Bag
-              </a>
-            </h3>
-            <div class="flex items-center gap-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                fill="none"
-              >
-                <path
-                  d="M13.1701 15.75C13.0501 15.7505 12.9318 15.7222 12.8251 15.6675L9.00009 13.665L5.17509 15.6675C4.92169 15.8008 4.61453 15.7781 4.38341 15.6092C4.15228 15.4402 4.03751 15.1544 4.08759 14.8725L4.83759 10.65L1.74759 7.65003C1.55113 7.45398 1.479 7.16547 1.56009 6.90003C1.64877 6.6281 1.8844 6.43028 2.16759 6.39003L6.44259 5.76753L8.32509 1.92003C8.4504 1.66129 8.71259 1.49695 9.00009 1.49695C9.28758 1.49695 9.54977 1.66129 9.67509 1.92003L11.5801 5.76003L15.8551 6.38253C16.1383 6.42278 16.3739 6.6206 16.4626 6.89253C16.5437 7.15797 16.4715 7.44648 16.2751 7.64253L13.1851 10.6425L13.9351 14.865C13.9898 15.1521 13.8727 15.4448 13.6351 15.615C13.4993 15.7102 13.3357 15.7577 13.1701 15.75Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#919EAB"
-                />
-              </svg>
-              <span class="text-gray-secondary text-sm"> (189) </span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-gray-primary text-base font-medium"
-                >৳1,590</span
-              >
-              <span class="text-gray-tertiary text-sm line-through"
-                >৳1,890</span
-              >
-            </div>
-            <button
-              class="bg-primary-main hover:bg-primary-main-dark text-success-light flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <g clip-path="url(#clip0_37995_40602)">
-                  <path
-                    d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M5 5L18.3333 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <circle
-                    cx="4.99967"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <circle
-                    cx="14.1667"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <path
-                    d="M6.66667 16.6666L12.5 16.6666"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M1.6665 1.66663L2.47151 1.66663C3.25874 1.66663 3.94495 2.18712 4.13589 2.92907L6.61527 12.5637C6.74057 13.0506 6.63334 13.5664 6.32337 13.9679L5.52661 15"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_37995_40602">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              Add to Cart
-            </button>
-          </div>
-        </article>
-        <article class="wow animate__fadeInUp swiper-slide cat-travel">
-          <div
-            class="flex flex-col gap-3.5 rounded-xl border border-gray-300 p-4"
-          >
-            <div class="relative">
-              <a
-                href="{{ url('/shop') }}"
-                class="relative block overflow-hidden rounded-lg"
-              >
-                <img
-                  src="{{ asset('frontend/assets/images/home-1/best-selling-tabs/product-3.webp') }}"
-                  class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
-                  alt="product"
-                />
-              </a>
-              <div class="absolute top-2 left-0 inline-block">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="67"
-                  height="22"
-                  viewBox="0 0 67 22"
-                  fill="none"
-                >
-                  <path
-                    d="M67 0L65.2314 1.86426L67 3.54199L65.2314 5.59277L67 7.27148L65.2314 9.13574L67 11L65.2314 12.8643L67 14.7285L65.2314 16.5928L67 18.458L65.2314 20.1357L67 22H0V0H67Z"
-                    fill="#CB0233"
-                  />
-                </svg>
-                <span
-                  class="absolute inset-0 z-10 flex items-center justify-center text-xs font-medium text-white uppercase"
-                >
-                  15% off
-                </span>
-              </div>
-              <!-- Wishlist -->
-              <div x-data="{ liked: false }">
-                <button
-                  @click="liked = !liked"
-                  :class="liked
-      ? 'bg-error-dark text-white'
-      : 'bg-white text-gray-secondary'"
-                  class="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full transition-all duration-300"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M14.5969 2.99561C12.5857 1.76192 10.8303 2.25909 9.77576 3.05101C9.34339 3.37572 9.1272 3.53807 9 3.53807C8.8728 3.53807 8.65661 3.37572 8.22424 3.05101C7.16971 2.25909 5.41431 1.76192 3.40308 2.99561C0.763551 4.6147 0.166291 9.95614 6.25465 14.4625C7.41429 15.3208 7.99411 15.75 9 15.75C10.0059 15.75 10.5857 15.3208 11.7454 14.4625C17.8337 9.95614 17.2364 4.6147 14.5969 2.99561Z"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <h3
-              class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-            >
-              <a href="{{ url('/shop') }}">
-                Bagora Lite Daily Backpack
-              </a>
-            </h3>
-            <div class="flex items-center gap-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                fill="none"
-              >
-                <path
-                  d="M13.1701 15.75C13.0501 15.7505 12.9318 15.7222 12.8251 15.6675L9.00009 13.665L5.17509 15.6675C4.92169 15.8008 4.61453 15.7781 4.38341 15.6092C4.15228 15.4402 4.03751 15.1544 4.08759 14.8725L4.83759 10.65L1.74759 7.65003C1.55113 7.45398 1.479 7.16547 1.56009 6.90003C1.64877 6.6281 1.8844 6.43028 2.16759 6.39003L6.44259 5.76753L8.32509 1.92003C8.4504 1.66129 8.71259 1.49695 9.00009 1.49695C9.28758 1.49695 9.54977 1.66129 9.67509 1.92003L11.5801 5.76003L15.8551 6.38253C16.1383 6.42278 16.3739 6.6206 16.4626 6.89253C16.5437 7.15797 16.4715 7.44648 16.2751 7.64253L13.1851 10.6425L13.9351 14.865C13.9898 15.1521 13.8727 15.4448 13.6351 15.615C13.4993 15.7102 13.3357 15.7577 13.1701 15.75Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#919EAB"
-                />
-              </svg>
-              <span class="text-gray-secondary text-sm"> (189) </span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-gray-primary text-base font-medium"
-                >৳1,590</span
-              >
-              <span class="text-gray-tertiary text-sm line-through"
-                >৳1,890</span
-              >
-            </div>
-            <button
-              class="bg-primary-main hover:bg-primary-main-dark text-success-light flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <g clip-path="url(#clip0_37995_40602)">
-                  <path
-                    d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M5 5L18.3333 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <circle
-                    cx="4.99967"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <circle
-                    cx="14.1667"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <path
-                    d="M6.66667 16.6666L12.5 16.6666"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M1.6665 1.66663L2.47151 1.66663C3.25874 1.66663 3.94495 2.18712 4.13589 2.92907L6.61527 12.5637C6.74057 13.0506 6.63334 13.5664 6.32337 13.9679L5.52661 15"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_37995_40602">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              Add to Cart
-            </button>
-          </div>
-        </article>
-        <article class="wow animate__fadeInUp swiper-slide cat-travel">
-          <div
-            class="flex flex-col gap-3.5 rounded-xl border border-gray-300 p-4"
-          >
-            <div class="relative">
-              <a
-                href="{{ url('/shop') }}"
-                class="relative block overflow-hidden rounded-lg"
-              >
-                <img
-                  src="{{ asset('frontend/assets/images/home-1/best-selling-tabs/product-4.webp') }}"
-                  class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
-                  alt="product"
-                />
-              </a>
-              <div class="absolute top-2 left-0 inline-block">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="67"
-                  height="22"
-                  viewBox="0 0 67 22"
-                  fill="none"
-                >
-                  <path
-                    d="M67 0L65.2314 1.86426L67 3.54199L65.2314 5.59277L67 7.27148L65.2314 9.13574L67 11L65.2314 12.8643L67 14.7285L65.2314 16.5928L67 18.458L65.2314 20.1357L67 22H0V0H67Z"
-                    fill="#CB0233"
-                  />
-                </svg>
-                <span
-                  class="absolute inset-0 z-10 flex items-center justify-center text-xs font-medium text-white uppercase"
-                >
-                  15% off
-                </span>
-              </div>
-              <!-- Wishlist -->
-              <div x-data="{ liked: false }">
-                <button
-                  @click="liked = !liked"
-                  :class="liked
-      ? 'bg-error-dark text-white'
-      : 'bg-white text-gray-secondary'"
-                  class="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full transition-all duration-300"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M14.5969 2.99561C12.5857 1.76192 10.8303 2.25909 9.77576 3.05101C9.34339 3.37572 9.1272 3.53807 9 3.53807C8.8728 3.53807 8.65661 3.37572 8.22424 3.05101C7.16971 2.25909 5.41431 1.76192 3.40308 2.99561C0.763551 4.6147 0.166291 9.95614 6.25465 14.4625C7.41429 15.3208 7.99411 15.75 9 15.75C10.0059 15.75 10.5857 15.3208 11.7454 14.4625C17.8337 9.95614 17.2364 4.6147 14.5969 2.99561Z"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <h3
-              class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-            >
-              <a href="{{ url('/shop') }}">
-                Bagora Executive Laptop Bag
-              </a>
-            </h3>
-            <div class="flex items-center gap-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                fill="none"
-              >
-                <path
-                  d="M13.1701 15.75C13.0501 15.7505 12.9318 15.7222 12.8251 15.6675L9.00009 13.665L5.17509 15.6675C4.92169 15.8008 4.61453 15.7781 4.38341 15.6092C4.15228 15.4402 4.03751 15.1544 4.08759 14.8725L4.83759 10.65L1.74759 7.65003C1.55113 7.45398 1.479 7.16547 1.56009 6.90003C1.64877 6.6281 1.8844 6.43028 2.16759 6.39003L6.44259 5.76753L8.32509 1.92003C8.4504 1.66129 8.71259 1.49695 9.00009 1.49695C9.28758 1.49695 9.54977 1.66129 9.67509 1.92003L11.5801 5.76003L15.8551 6.38253C16.1383 6.42278 16.3739 6.6206 16.4626 6.89253C16.5437 7.15797 16.4715 7.44648 16.2751 7.64253L13.1851 10.6425L13.9351 14.865C13.9898 15.1521 13.8727 15.4448 13.6351 15.615C13.4993 15.7102 13.3357 15.7577 13.1701 15.75Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#FFC107"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <path
-                  d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                  fill="#919EAB"
-                />
-              </svg>
-              <span class="text-gray-secondary text-sm"> (189) </span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-gray-primary text-base font-medium"
-                >৳1,590</span
-              >
-              <span class="text-gray-tertiary text-sm line-through"
-                >৳1,890</span
-              >
-            </div>
-            <button
-              class="bg-primary-main hover:bg-primary-main-dark text-success-light flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <g clip-path="url(#clip0_37995_40602)">
-                  <path
-                    d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M5 5L18.3333 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <circle
-                    cx="4.99967"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <circle
-                    cx="14.1667"
-                    cy="16.6667"
-                    r="1.66667"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <path
-                    d="M6.66667 16.6666L12.5 16.6666"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M1.6665 1.66663L2.47151 1.66663C3.25874 1.66663 3.94495 2.18712 4.13589 2.92907L6.61527 12.5637C6.74057 13.0506 6.63334 13.5664 6.32337 13.9679L5.52661 15"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_37995_40602">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              Add to Cart
-            </button>
-          </div>
-        </article>
-      </div>
-    </div>
-    <div class="mt-12 flex h-12 justify-center gap-6">
-      <button
-        class="best-selling-tab-prev hover:bg-primary-main hover:text-success-light inline-flex size-12 items-center justify-center rounded-full bg-gray-100 transition-all duration-300"
-        aria-label="Previous slide"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-        >
-          <path
-            d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-      <button
-        class="best-selling-tab-next hover:bg-primary-main hover:text-success-light inline-flex size-12 items-center justify-center rounded-full bg-gray-100 transition-all duration-300"
-        aria-label="Next slide"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-        >
-          <path
-            d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-    </div>
-  </div>
-</section>
-<section class="py-12">
-  <div class="custom-container">
-    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-      <div class="wow animate__fadeInUp relative overflow-hidden rounded-2xl" data-wow-duration="1.2s">
-        <img
-          src="{{ asset('frontend/assets/images/home-1/feature-grid/banner-1.webp') }}"
-          class="h-full w-full rounded-2xl transition-transform duration-300 hover:scale-110"
-          alt=""
-        />
-        <div class="absolute right-6 bottom-6 left-6 rounded-2xl bg-white p-6">
-          <h3
-            class="text-primary-main mb-2 text-2xl font-bold lg:text-3xl xl:text-5xl xl:leading-16"
-          >
-            Carry More. <br />
-            Move Better.
-          </h3>
-          <p class="text-primary-main mb-3 text-base">
-            Reliable delivery across Bangladesh
-          </p>
-          <a
-            href="{{ url('/blog') }}"
-            class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-base font-medium transition-all hover:text-white"
-          >
-            Shop Bags
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="22"
-              height="22"
-              viewBox="0 0 22 22"
-              fill="none"
-              class="transition-transform duration-500 group-hover:rotate-45"
-            >
-              <path
-                d="M15.5833 6.41406L5.5 16.4974"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-              />
-              <path
-                d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div class="grid grid-cols-1 gap-6">
-        <div
-          class="wow animate__fadeInUp relative h-[300px] overflow-hidden rounded-2xl xl:h-[370px]"
-          data-wow-duration="1.2s"
-          data-wow-delay="0.1s"
-        >
-          <img
-            src="{{ asset('frontend/assets/images/home-1/feature-grid/banner-2.webp') }}"
-            class="h-full w-full rounded-2xl object-cover transition-transform duration-300 hover:scale-110"
-            alt=""
-          />
-          <div class="absolute top-1/2 left-6 max-w-[370px] -translate-y-1/2">
-            <h3
-              class="lg:text-32 mb-2 text-2xl font-bold text-white lg:leading-12"
-            >
-              Smart Bags for <br />
-              Work & Campus
-            </h3>
-            <p class="mb-3 text-base text-white">
-              Backpacks, laptop bags, travel bags and more — delivered across Bangladesh.
-            </p>
-            <a
-              href="{{ url('/blog') }}"
-              class="group hover:bg-primary-main-dark text-primary-main inline-flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 text-base font-medium transition-all hover:text-white"
-            >
-              Shop Bags
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
-                viewBox="0 0 22 22"
-                fill="none"
-                class="transition-transform duration-500 group-hover:rotate-45"
-              >
-                <path
-                  d="M15.5833 6.41406L5.5 16.4974"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div
-          class="wow animate__fadeInUp relative h-[300px] overflow-hidden rounded-2xl xl:h-[370px]"
-          data-wow-duration="1.2s"
-          data-wow-delay="0.2s"
-        >
-          <img
-            src="{{ asset('frontend/assets/images/home-1/feature-grid/banner-3.webp') }}"
-            class="h-full w-full rounded-2xl object-cover transition-transform duration-300 hover:scale-110"
-            alt=""
-          />
-          <div class="absolute top-1/2 left-6 max-w-[340px] -translate-y-1/2">
-            <h3
-              class="lg:text-32 mb-2 text-2xl font-bold text-white lg:leading-12"
-            >
-              Travel Ready. <br />
-              Everyday Ready.
-            </h3>
-            <p class="mb-3 text-base text-white">
-              Backpacks, laptop bags, travel bags and more — delivered across Bangladesh.
-            </p>
-            <a
-              href="{{ url('/blog') }}"
-              class="group hover:bg-primary-main-dark text-primary-main inline-flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 text-base font-medium transition-all hover:text-white"
-            >
-              Shop Bags
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
-                viewBox="0 0 22 22"
-                fill="none"
-                class="transition-transform duration-500 group-hover:rotate-45"
-              >
-                <path
-                  d="M15.5833 6.41406L5.5 16.4974"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="py-12">
-  <div class="custom-container">
     <div
-      class="w-full rounded-2xl bg-cover bg-center bg-no-repeat p-5"
-      style="
-        background-image: url('{{ asset('frontend/assets/images/home-1/cta/cta-cover.webp') }}');
-      "
+        class="
+            swiper
+            hero-slider
+            h-[220px]
+            overflow-hidden
+            sm:h-[300px]
+            md:h-[380px]
+            lg:h-[460px]
+            xl:h-[740px]
+        "
     >
-      <div class="rounded-3xl border border-gray-300 p-6">
-        <div class="wow animate__fadeInUp max-w-sm py-4" data-wow-duration="1.2s">
-          <h2 class="text-32 text-primary-main mb-3 font-bold">
-            Everyday Bags, One Place
-          </h2>
-          <p class="text-primary-main mb-6 text-base leading-6">
-            Backpacks, laptop bags, travel bags and more — delivered across Bangladesh.
-          </p>
-          <a
-            href="{{ url('/blog') }}"
-            class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-base font-medium transition-all hover:text-white"
-          >
-            Shop Bags
+
+
+        <div class="swiper-wrapper">
+
+
+            @foreach($banners as $banner)
+
+
+                <div
+                    class="
+                        swiper-slide
+                        h-full
+                        w-full
+                    "
+                >
+
+
+                    <img
+                        src="{{ asset($banner->image) }}"
+
+                        alt="Bagora Banner"
+
+                        class="
+                            block
+                            h-full
+                            w-full
+                            object-cover
+                        "
+                    >
+
+
+                </div>
+
+
+            @endforeach
+
+
+        </div>
+
+
+    </div>
+
+
+
+    {{-- ========================================================= --}}
+    {{-- PREVIOUS --}}
+    {{-- ========================================================= --}}
+
+    @if($banners->count() > 1)
+
+        <button
+            type="button"
+
+            class="
+                hero-prev
+                bg-black/20
+                hover:bg-black/50
+                absolute
+                top-1/2
+                left-2
+                z-20
+                hidden
+                size-10
+                -translate-y-1/2
+                cursor-pointer
+                items-center
+                justify-center
+                rounded-full
+                text-white
+                opacity-0
+                transition-all
+                duration-300
+                group-hover:opacity-100
+                md:size-12
+                xl:flex
+                2xl:left-10
+            "
+        >
+
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="22"
-              height="22"
-              viewBox="0 0 22 22"
-              fill="none"
-              class="transition-transform duration-500 group-hover:rotate-45"
-            >
-              <path
-                d="M15.5833 6.41406L5.5 16.4974"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-              />
-              <path
-                d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="py-12">
-  <div class="custom-container">
-    <div class="wow animate__fadeInUp mx-auto mb-12 max-w-md text-center">
-      <h2 class="text-32 text-gray-primary mb-2 font-bold">
-        Popular Bag Collections
-      </h2>
-      <p class="text-gray-secondary text-base">
-        Explore practical favorites picked for everyday use.
-      </p>
-    </div>
-    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
-      <!-- Top Rated Bags Slider -->
-      <div class="overflow-hidden">
-        <div
-          class="border-gray-tertiary/24 mb-10 flex justify-between gap-6 border-b pb-6"
-        >
-          <h3 class="text-gray-primary text-2xl font-bold">Top Rated Bags</h3>
-          <div class="flex gap-6">
-            <button
-              class="top-rated-prev hover:bg-primary-main text-gray-primary hover:text-success-light inline-flex size-9 cursor-pointer items-center justify-center rounded-full bg-transparent transition-all [&amp;.swiper-button-disabled]:opacity-40"
-            >
-              <svg
-                fill="none"
-                height="20"
-                viewbox="0 0 20 20"
-                width="20"
                 xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12.5 5L8.20711 9.29289C7.87377 9.62623 7.70711 9.79289 7.70711 10C7.70711 10.2071 7.87377 10.3738 8.20711 10.7071L12.5 15"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                ></path>
-              </svg>
-            </button>
-            <button
-              class="top-rated-next hover:bg-primary-main text-gray-primary hover:text-success-light inline-flex size-9 cursor-pointer items-center justify-center rounded-full bg-transparent transition-all [&amp;.swiper-button-disabled]:opacity-40"
-            >
-              <svg
+
+                width="24"
+                height="24"
+
+                viewBox="0 0 24 24"
+
                 fill="none"
-                height="20"
-                viewbox="0 0 20 20"
-                width="20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M7.5 15L11.7929 10.7071C12.1262 10.3738 12.2929 10.2071 12.2929 10C12.2929 9.79289 12.1262 9.62623 11.7929 9.29289L7.5 5"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div class="swiper top-rated-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <ul class="space-y-6 pb-1">
-                <li
-                  class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-                >
-                  <a
-                    class="flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-                    href="{{ url('/shop') }}"
-                  >
-                    <img
-                      alt="Juicy Blackberries"
-                      class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/images/home-1/harvest/product-1.webp') }}"
-                    />
-                  </a>
-                  <div class="flex flex-1 flex-col justify-between">
-                    <div class="space-y-3">
-                      <h4>
-                        <a
-                          class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                          href="{{ url('/shop') }}"
-                        >
-                          Juicy Blackberries – Bold Flavor &amp; Naturally Sweet
-                        </a>
-                      </h4>
-                      <div class="flex items-center gap-1">
-                        <div class="flex items-center">
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g opacity="0.48">
-                              <path
-                                d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                                fill="#919EAB"
-                              ></path>
-                            </g>
-                          </svg>
-                        </div>
-                        <span class="text-gray-secondary text-sm"> (118)</span>
-                      </div>
-                    </div>
-                    <div class="mt-3 flex items-end justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="text-gray-primary text-base font-medium"
-                          >৳1,690</span
-                        >
-                        <span class="text-gray-tertiary text-base line-through"
-                          >৳1,790</span
-                        >
-                      </div>
-                      <button
-                        class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                      >
-                        <svg
-                          fill="none"
-                          height="20"
-                          viewbox="0 0 20 20"
-                          width="20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M5 5L18.3333 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <circle
-                            cx="4.99967"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <circle
-                            cx="14.1667"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <path
-                            d="M6.66667 16.6667L12.5 16.6667"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                        </svg>
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li
-                  class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-                >
-                  <a
-                    class="flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-                    href="{{ url('/shop') }}"
-                  >
-                    <img
-                      alt=""
-                      class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/images/home-1/harvest/product-2.webp') }}"
-                    />
-                  </a>
-                  <div class="flex flex-1 flex-col justify-between">
-                    <div class="space-y-3">
-                      <h4>
-                        <a
-                          class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                          href="{{ url('/shop') }}"
-                        >
-                          Bagora Urban Everyday Backpack
-                          Goodness
-                        </a>
-                      </h4>
-                      <div class="flex items-center gap-1">
-                        <div class="flex items-center">
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g opacity="0.48">
-                              <path
-                                d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                                fill="#919EAB"
-                              ></path>
-                            </g>
-                          </svg>
-                        </div>
-                        <span class="text-gray-secondary text-sm"> (118)</span>
-                      </div>
-                    </div>
-                    <div class="mt-3 flex items-end justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="text-gray-primary text-base font-medium"
-                          >৳1,690</span
-                        >
-                        <span class="text-gray-tertiary text-base line-through"
-                          >৳1,790</span
-                        >
-                      </div>
-                      <button
-                        class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                      >
-                        <svg
-                          fill="none"
-                          height="20"
-                          viewbox="0 0 20 20"
-                          width="20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M5 5L18.3333 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <circle
-                            cx="4.99967"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <circle
-                            cx="14.1667"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <path
-                            d="M6.66667 16.6667L12.5 16.6667"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                        </svg>
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li
-                  class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-                >
-                  <a
-                    class="flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-                    href="{{ url('/shop') }}"
-                  >
-                    <img
-                      alt=""
-                      class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/images/home-1/harvest/product-5.webp') }}"
-                    />
-                  </a>
-                  <div class="flex flex-1 flex-col justify-between">
-                    <div class="space-y-3">
-                      <h4>
-                        <a
-                          class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                          href="{{ url('/shop') }}"
-                        >
-                          Bagora Campus Pro School Backpack
-                          Twist
-                        </a>
-                      </h4>
-                      <div class="flex items-center gap-1">
-                        <div class="flex items-center">
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g opacity="0.48">
-                              <path
-                                d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                                fill="#919EAB"
-                              ></path>
-                            </g>
-                          </svg>
-                        </div>
-                        <span class="text-gray-secondary text-sm"> (118)</span>
-                      </div>
-                    </div>
-                    <div class="mt-3 flex items-end justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="text-gray-primary text-base font-medium"
-                          >৳1,690</span
-                        >
-                        <span class="text-gray-tertiary text-base line-through"
-                          >৳1,790</span
-                        >
-                      </div>
-                      <button
-                        class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                      >
-                        <svg
-                          fill="none"
-                          height="20"
-                          viewbox="0 0 20 20"
-                          width="20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M5 5L18.3333 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <circle
-                            cx="4.99967"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <circle
-                            cx="14.1667"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <path
-                            d="M6.66667 16.6667L12.5 16.6667"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                        </svg>
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li
-                  class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-                >
-                  <a
-                    class="flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-                    href="{{ url('/shop') }}"
-                  >
-                    <img
-                      alt=""
-                      class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/images/home-1/harvest/product-5.webp') }}"
-                    />
-                  </a>
-                  <div class="flex flex-1 flex-col justify-between">
-                    <div class="space-y-3">
-                      <h4>
-                        <a
-                          class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                          href="{{ url('/shop') }}"
-                        >
-                          Bagora Shield 15.6” Laptop Backpack
-                          Twist
-                        </a>
-                      </h4>
-                      <div class="flex items-center gap-1">
-                        <div class="flex items-center">
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g opacity="0.48">
-                              <path
-                                d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                                fill="#919EAB"
-                              ></path>
-                            </g>
-                          </svg>
-                        </div>
-                        <span class="text-gray-secondary text-sm"> (118)</span>
-                      </div>
-                    </div>
-                    <div class="mt-3 flex items-end justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="text-gray-primary text-base font-medium"
-                          >৳1,690</span
-                        >
-                        <span class="text-gray-tertiary text-base line-through"
-                          >৳1,790</span
-                        >
-                      </div>
-                      <button
-                        class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                      >
-                        <svg
-                          fill="none"
-                          height="20"
-                          viewbox="0 0 20 20"
-                          width="20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M5 5L18.3333 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <circle
-                            cx="4.99967"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <circle
-                            cx="14.1667"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <path
-                            d="M6.66667 16.6667L12.5 16.6667"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                        </svg>
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="swiper-slide">
-              <ul class="space-y-6 pb-1">
-                <li
-                  class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-                >
-                  <a
-                    class="flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-                    href="{{ url('/shop') }}"
-                  >
-                    <img
-                      alt=""
-                      class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/images/home-1/harvest/product-5.webp') }}"
-                    />
-                  </a>
-                  <div class="flex flex-1 flex-col justify-between">
-                    <div class="space-y-3">
-                      <h4>
-                        <a
-                          class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                          href="{{ url('/shop') }}"
-                        >
-                          Bagora Voyager Travel Backpack
-                        </a>
-                      </h4>
-                      <div class="flex items-center gap-1">
-                        <div class="flex items-center">
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g opacity="0.48">
-                              <path
-                                d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                                fill="#919EAB"
-                              ></path>
-                            </g>
-                          </svg>
-                        </div>
-                        <span class="text-gray-secondary text-sm"> (118)</span>
-                      </div>
-                    </div>
-                    <div class="mt-3 flex items-end justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="text-gray-primary text-base font-medium"
-                          >৳1,690</span
-                        >
-                        <span class="text-gray-tertiary text-base line-through"
-                          >৳1,790</span
-                        >
-                      </div>
-                      <button
-                        class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                      >
-                        <svg
-                          fill="none"
-                          height="20"
-                          viewbox="0 0 20 20"
-                          width="20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M5 5L18.3333 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <circle
-                            cx="4.99967"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <circle
-                            cx="14.1667"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <path
-                            d="M6.66667 16.6667L12.5 16.6667"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                        </svg>
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li
-                  class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-                >
-                  <a
-                    class="flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-                    href="{{ url('/shop') }}"
-                  >
-                    <img
-                      alt=""
-                      class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/images/home-1/harvest/product-2.webp') }}"
-                    />
-                  </a>
-                  <div class="flex flex-1 flex-col justify-between">
-                    <div class="space-y-3">
-                      <h4>
-                        <a
-                          class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                          href="{{ url('/shop') }}"
-                        >
-                          Bagora Metro Office Backpack
-                          Goodness
-                        </a>
-                      </h4>
-                      <div class="flex items-center gap-1">
-                        <div class="flex items-center">
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g opacity="0.48">
-                              <path
-                                d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                                fill="#919EAB"
-                              ></path>
-                            </g>
-                          </svg>
-                        </div>
-                        <span class="text-gray-secondary text-sm"> (118)</span>
-                      </div>
-                    </div>
-                    <div class="mt-3 flex items-end justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="text-gray-primary text-base font-medium"
-                          >৳1,690</span
-                        >
-                        <span class="text-gray-tertiary text-base line-through"
-                          >৳1,790</span
-                        >
-                      </div>
-                      <button
-                        class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                      >
-                        <svg
-                          fill="none"
-                          height="20"
-                          viewbox="0 0 20 20"
-                          width="20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M5 5L18.3333 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <circle
-                            cx="4.99967"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <circle
-                            cx="14.1667"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <path
-                            d="M6.66667 16.6667L12.5 16.6667"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                        </svg>
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li
-                  class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-                >
-                  <a
-                    class="flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-                    href="{{ url('/shop') }}"
-                  >
-                    <img
-                      alt=""
-                      class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/images/home-1/harvest/product-5.webp') }}"
-                    />
-                  </a>
-                  <div class="flex flex-1 flex-col justify-between">
-                    <div class="space-y-3">
-                      <h4>
-                        <a
-                          class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                          href="{{ url('/shop') }}"
-                        >
-                          Bagora Compact Crossbody Bag
-                          Twist
-                        </a>
-                      </h4>
-                      <div class="flex items-center gap-1">
-                        <div class="flex items-center">
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g opacity="0.48">
-                              <path
-                                d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                                fill="#919EAB"
-                              ></path>
-                            </g>
-                          </svg>
-                        </div>
-                        <span class="text-gray-secondary text-sm"> (118)</span>
-                      </div>
-                    </div>
-                    <div class="mt-3 flex items-end justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="text-gray-primary text-base font-medium"
-                          >৳1,690</span
-                        >
-                        <span class="text-gray-tertiary text-base line-through"
-                          >৳1,790</span
-                        >
-                      </div>
-                      <button
-                        class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                      >
-                        <svg
-                          fill="none"
-                          height="20"
-                          viewbox="0 0 20 20"
-                          width="20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M5 5L18.3333 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <circle
-                            cx="4.99967"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <circle
-                            cx="14.1667"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <path
-                            d="M6.66667 16.6667L12.5 16.6667"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                        </svg>
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li
-                  class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-                >
-                  <a
-                    class="flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-                    href="{{ url('/shop') }}"
-                  >
-                    <img
-                      alt=""
-                      class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/images/home-1/harvest/product-5.webp') }}"
-                    />
-                  </a>
-                  <div class="flex flex-1 flex-col justify-between">
-                    <div class="space-y-3">
-                      <h4>
-                        <a
-                          class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                          href="{{ url('/shop') }}"
-                        >
-                          Bagora Classic Shoulder Bag
-                          Twist
-                        </a>
-                      </h4>
-                      <div class="flex items-center gap-1">
-                        <div class="flex items-center">
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g opacity="0.48">
-                              <path
-                                d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                                fill="#919EAB"
-                              ></path>
-                            </g>
-                          </svg>
-                        </div>
-                        <span class="text-gray-secondary text-sm"> (118)</span>
-                      </div>
-                    </div>
-                    <div class="mt-3 flex items-end justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="text-gray-primary text-base font-medium"
-                          >৳1,690</span
-                        >
-                        <span class="text-gray-tertiary text-base line-through"
-                          >৳1,790</span
-                        >
-                      </div>
-                      <button
-                        class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                      >
-                        <svg
-                          fill="none"
-                          height="20"
-                          viewbox="0 0 20 20"
-                          width="20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M5 5L18.3333 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <circle
-                            cx="4.99967"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <circle
-                            cx="14.1667"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <path
-                            d="M6.66667 16.6667L12.5 16.6667"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                        </svg>
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Popular Bags Slider -->
-      <div class="overflow-hidden">
-        <div
-          class="border-gray-tertiary/24 mb-10 flex justify-between gap-6 border-b pb-6"
-        >
-          <h3 class="text-gray-primary text-2xl font-bold">Popular Bags</h3>
-          <div class="flex gap-6">
-            <button
-              class="top-items-prev hover:bg-primary-main text-gray-primary hover:text-success-light inline-flex size-9 cursor-pointer items-center justify-center rounded-full bg-transparent transition-all [&amp;.swiper-button-disabled]:opacity-40"
             >
-              <svg
-                fill="none"
-                height="20"
-                viewbox="0 0 20 20"
-                width="20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+
                 <path
-                  d="M12.5 5L8.20711 9.29289C7.87377 9.62623 7.70711 9.79289 7.70711 10C7.70711 10.2071 7.87377 10.3738 8.20711 10.7071L12.5 15"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                ></path>
-              </svg>
-            </button>
-            <button
-              class="top-items-next hover:bg-primary-main text-gray-primary hover:text-success-light inline-flex size-9 cursor-pointer items-center justify-center rounded-full bg-transparent transition-all [&amp;.swiper-button-disabled]:opacity-40"
-            >
-              <svg
-                fill="none"
-                height="20"
-                viewbox="0 0 20 20"
-                width="20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M7.5 15L11.7929 10.7071C12.1262 10.3738 12.2929 10.2071 12.2929 10C12.2929 9.79289 12.1262 9.62623 11.7929 9.29289L7.5 5"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div class="swiper top-items-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <ul class="space-y-6 pb-1">
-                <li
-                  class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-                >
-                  <a
-                    class="flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-                    href="{{ url('/shop') }}"
-                  >
-                    <img
-                      alt=""
-                      class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/images/home-1/harvest/product-3.webp') }}"
-                    />
-                  </a>
-                  <div class="flex flex-1 flex-col justify-between">
-                    <div class="space-y-3">
-                      <h4>
-                        <a
-                          class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                          href="{{ url('/shop') }}"
-                          >Bagora Weekender Duffel Bag
-                        </a>
-                      </h4>
-                      <div class="flex items-center gap-1">
-                        <div class="flex items-center">
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g opacity="0.48">
-                              <path
-                                d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                                fill="#919EAB"
-                              ></path>
-                            </g>
-                          </svg>
-                        </div>
-                        <span class="text-gray-secondary text-sm"> (118)</span>
-                      </div>
-                    </div>
-                    <div class="mt-3 flex items-end justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="text-gray-primary text-base font-medium"
-                          >৳1,690</span
-                        >
-                        <span class="text-gray-tertiary text-base line-through"
-                          >৳1,790</span
-                        >
-                      </div>
-                      <button
-                        class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                      >
-                        <svg
-                          fill="none"
-                          height="20"
-                          viewbox="0 0 20 20"
-                          width="20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M5 5L18.3333 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <circle
-                            cx="4.99967"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <circle
-                            cx="14.1667"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <path
-                            d="M6.66667 16.6667L12.5 16.6667"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                        </svg>
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li
-                  class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-                >
-                  <a
-                    class="flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-                    href="{{ url('/shop') }}"
-                  >
-                    <img
-                      alt=""
-                      class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/src/images/home-1/harvest/product-6.webp') }}"
-                    />
-                  </a>
-                  <div class="flex flex-1 flex-col justify-between">
-                    <div class="space-y-3">
-                      <h4>
-                        <a
-                          class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                          href="{{ url('/shop') }}"
-                          >Bagora Lite Daily Backpack
-                        </a>
-                      </h4>
-                      <div class="flex items-center gap-1">
-                        <div class="flex items-center">
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g opacity="0.48">
-                              <path
-                                d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                                fill="#919EAB"
-                              ></path>
-                            </g>
-                          </svg>
-                        </div>
-                        <span class="text-gray-secondary text-sm"> (118)</span>
-                      </div>
-                    </div>
-                    <div class="mt-3 flex items-end justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="text-gray-primary text-base font-medium"
-                          >৳1,690</span
-                        >
-                        <span class="text-gray-tertiary text-base line-through"
-                          >৳1,790</span
-                        >
-                      </div>
-                      <button
-                        class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                      >
-                        <svg
-                          fill="none"
-                          height="20"
-                          viewbox="0 0 20 20"
-                          width="20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M5 5L18.3333 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <circle
-                            cx="4.99967"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <circle
-                            cx="14.1667"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <path
-                            d="M6.66667 16.6667L12.5 16.6667"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                        </svg>
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li
-                  class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-                >
-                  <a
-                    class="flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-                    href="{{ url('/shop') }}"
-                  >
-                    <img
-                      alt=""
-                      class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/images/home-1/harvest/product-4.webp') }}"
-                    />
-                  </a>
-                  <div class="flex flex-1 flex-col justify-between">
-                    <div class="space-y-3">
-                      <h4>
-                        <a
-                          class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                          href="{{ url('/shop') }}"
-                        >
-                          Creamy Sugar Apples – Soft, Sweet &amp; Tropical
-                          Delight
-                        </a>
-                      </h4>
-                      <div class="flex items-center gap-1">
-                        <div class="flex items-center">
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g opacity="0.48">
-                              <path
-                                d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                                fill="#919EAB"
-                              ></path>
-                            </g>
-                          </svg>
-                        </div>
-                        <span class="text-gray-secondary text-sm"> (118)</span>
-                      </div>
-                    </div>
-                    <div class="mt-3 flex items-end justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="text-gray-primary text-base font-medium"
-                          >৳1,690</span
-                        >
-                        <span class="text-gray-tertiary text-base line-through"
-                          >৳1,790</span
-                        >
-                      </div>
-                      <button
-                        class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                      >
-                        <svg
-                          fill="none"
-                          height="20"
-                          viewbox="0 0 20 20"
-                          width="20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M5 5L18.3333 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <circle
-                            cx="4.99967"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <circle
-                            cx="14.1667"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <path
-                            d="M6.66667 16.6667L12.5 16.6667"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                        </svg>
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li
-                  class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-                >
-                  <a
-                    class="flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-                    href="{{ url('/shop') }}"
-                  >
-                    <img
-                      alt=""
-                      class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/images/home-1/harvest/product-4.webp') }}"
-                    />
-                  </a>
-                  <div class="flex flex-1 flex-col justify-between">
-                    <div class="space-y-3">
-                      <h4>
-                        <a
-                          class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                          href="{{ url('/shop') }}"
-                        >
-                          Creamy Sugar Apples – Soft, Sweet &amp; Tropical
-                          Delight
-                        </a>
-                      </h4>
-                      <div class="flex items-center gap-1">
-                        <div class="flex items-center">
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g opacity="0.48">
-                              <path
-                                d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                                fill="#919EAB"
-                              ></path>
-                            </g>
-                          </svg>
-                        </div>
-                        <span class="text-gray-secondary text-sm"> (118)</span>
-                      </div>
-                    </div>
-                    <div class="mt-3 flex items-end justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="text-gray-primary text-base font-medium"
-                          >৳1,690</span
-                        >
-                        <span class="text-gray-tertiary text-base line-through"
-                          >৳1,790</span
-                        >
-                      </div>
-                      <button
-                        class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                      >
-                        <svg
-                          fill="none"
-                          height="20"
-                          viewbox="0 0 20 20"
-                          width="20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M5 5L18.3333 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <circle
-                            cx="4.99967"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <circle
-                            cx="14.1667"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <path
-                            d="M6.66667 16.6667L12.5 16.6667"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                        </svg>
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="swiper-slide">
-              <ul class="space-y-6 pb-1">
-                <li
-                  class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-                >
-                  <a
-                    class="flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-                    href="{{ url('/shop') }}"
-                  >
-                    <img
-                      alt=""
-                      class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/images/home-1/harvest/product-2.webp') }}"
-                    />
-                  </a>
-                  <div class="flex flex-1 flex-col justify-between">
-                    <div class="space-y-3">
-                      <h4>
-                        <a
-                          class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                          href="{{ url('/shop') }}"
-                        >
-                          Bagora Executive Laptop Bag
-                          Goodness
-                        </a>
-                      </h4>
-                      <div class="flex items-center gap-1">
-                        <div class="flex items-center">
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g opacity="0.48">
-                              <path
-                                d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                                fill="#919EAB"
-                              ></path>
-                            </g>
-                          </svg>
-                        </div>
-                        <span class="text-gray-secondary text-sm"> (118)</span>
-                      </div>
-                    </div>
-                    <div class="mt-3 flex items-end justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="text-gray-primary text-base font-medium"
-                          >৳1,690</span
-                        >
-                        <span class="text-gray-tertiary text-base line-through"
-                          >৳1,790</span
-                        >
-                      </div>
-                      <button
-                        class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                      >
-                        <svg
-                          fill="none"
-                          height="20"
-                          viewbox="0 0 20 20"
-                          width="20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M5 5L18.3333 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <circle
-                            cx="4.99967"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <circle
-                            cx="14.1667"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <path
-                            d="M6.66667 16.6667L12.5 16.6667"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                        </svg>
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li
-                  class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-                >
-                  <a
-                    class="flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-                    href="{{ url('/shop') }}"
-                  >
-                    <img
-                      alt=""
-                      class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/images/home-1/harvest/product-5.webp') }}"
-                    />
-                  </a>
-                  <div class="flex flex-1 flex-col justify-between">
-                    <div class="space-y-3">
-                      <h4>
-                        <a
-                          class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                          href="{{ url('/shop') }}"
-                        >
-                          Bagora Urban Everyday Backpack
-                          Twist
-                        </a>
-                      </h4>
-                      <div class="flex items-center gap-1">
-                        <div class="flex items-center">
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g opacity="0.48">
-                              <path
-                                d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                                fill="#919EAB"
-                              ></path>
-                            </g>
-                          </svg>
-                        </div>
-                        <span class="text-gray-secondary text-sm"> (118)</span>
-                      </div>
-                    </div>
-                    <div class="mt-3 flex items-end justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="text-gray-primary text-base font-medium"
-                          >৳1,690</span
-                        >
-                        <span class="text-gray-tertiary text-base line-through"
-                          >৳1,790</span
-                        >
-                      </div>
-                      <button
-                        class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                      >
-                        <svg
-                          fill="none"
-                          height="20"
-                          viewbox="0 0 20 20"
-                          width="20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M5 5L18.3333 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <circle
-                            cx="4.99967"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <circle
-                            cx="14.1667"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <path
-                            d="M6.66667 16.6667L12.5 16.6667"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                        </svg>
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li
-                  class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-                >
-                  <a
-                    class="flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-                    href="{{ url('/shop') }}"
-                  >
-                    <img
-                      alt=""
-                      class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/images/home-1/harvest/product-5.webp') }}"
-                    />
-                  </a>
-                  <div class="flex flex-1 flex-col justify-between">
-                    <div class="space-y-3">
-                      <h4>
-                        <a
-                          class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                          href="{{ url('/shop') }}"
-                        >
-                          Bagora Campus Pro School Backpack
-                          Twist
-                        </a>
-                      </h4>
-                      <div class="flex items-center gap-1">
-                        <div class="flex items-center">
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g opacity="0.48">
-                              <path
-                                d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                                fill="#919EAB"
-                              ></path>
-                            </g>
-                          </svg>
-                        </div>
-                        <span class="text-gray-secondary text-sm"> (118)</span>
-                      </div>
-                    </div>
-                    <div class="mt-3 flex items-end justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="text-gray-primary text-base font-medium"
-                          >৳1,690</span
-                        >
-                        <span class="text-gray-tertiary text-base line-through"
-                          >৳1,790</span
-                        >
-                      </div>
-                      <button
-                        class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                      >
-                        <svg
-                          fill="none"
-                          height="20"
-                          viewbox="0 0 20 20"
-                          width="20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M5 5L18.3333 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <circle
-                            cx="4.99967"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <circle
-                            cx="14.1667"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <path
-                            d="M6.66667 16.6667L12.5 16.6667"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                        </svg>
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li
-                  class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-                >
-                  <a
-                    class="flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-                    href="{{ url('/shop') }}"
-                  >
-                    <img
-                      alt=""
-                      class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                      src="{{ asset('frontend/assets/images/home-1/harvest/product-4.webp') }}"
-                    />
-                  </a>
-                  <div class="flex flex-1 flex-col justify-between">
-                    <div class="space-y-3">
-                      <h4>
-                        <a
-                          class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                          href="{{ url('/shop') }}"
-                        >
-                          Creamy Sugar Apples – Soft, Sweet &amp; Tropical
-                          Delight
-                        </a>
-                      </h4>
-                      <div class="flex items-center gap-1">
-                        <div class="flex items-center">
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                              fill="#FFC107"
-                            ></path>
-                          </svg>
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewbox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g opacity="0.48">
-                              <path
-                                d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                                fill="#919EAB"
-                              ></path>
-                            </g>
-                          </svg>
-                        </div>
-                        <span class="text-gray-secondary text-sm"> (118)</span>
-                      </div>
-                    </div>
-                    <div class="mt-3 flex items-end justify-between">
-                      <div class="flex items-center gap-2">
-                        <span class="text-gray-primary text-base font-medium"
-                          >৳1,690</span
-                        >
-                        <span class="text-gray-tertiary text-base line-through"
-                          >৳1,790</span
-                        >
-                      </div>
-                      <button
-                        class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                      >
-                        <svg
-                          fill="none"
-                          height="20"
-                          viewbox="0 0 20 20"
-                          width="20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M5 5L18.3333 5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <circle
-                            cx="4.99967"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <circle
-                            cx="14.1667"
-                            cy="16.6667"
-                            r="1.66667"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                          ></circle>
-                          <path
-                            d="M6.66667 16.6667L12.5 16.6667"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-width="1.5"
-                          ></path>
-                        </svg>
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-span-full xl:col-span-1">
-        <div class="relative overflow-hidden rounded-2xl">
-          <img
-            alt=""
-            class="h-full w-full rounded-2xl transition-transform duration-300 hover:scale-110"
-            src="{{ asset('frontend/assets/images/home-1/harvest/feature-img.webp') }}"
-          />
-          <div
-            class="absolute bottom-0 flex w-full flex-col gap-4 rounded-b-2xl bg-gradient-to-b from-transparent to-black px-6 py-8 text-center"
-          >
-            <h3 class="text-32 font-bold text-white">
-              Carry Better. Travel Smarter.
-            </h3>
-            <p class="text-base text-white">
-              Discover Vitamins, Supplements, Skincare &amp; Immunity Boosters —
-              All in One Place.
-            </p>
-            <div>
-              <a
-                class="group bg-success-light hover:text-gray-primary text-primary-main inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-base font-medium transition-all hover:bg-white"
-                href="#"
-              >
-                View Shop
-                <svg
-                  class="transition-transform duration-500 group-hover:rotate-45"
-                  fill="none"
-                  height="22"
-                  viewbox="0 0 22 22"
-                  width="22"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M15.5833 6.41699L5.5 16.5003"
+                    d="
+                        M15 6L9.70711 11.2929
+                        C9.37377 11.6262
+                        9.20711 11.7929
+                        9.20711 12
+                        C9.20711 12.2071
+                        9.37377 12.3738
+                        9.70711 12.7071
+                        L15 18
+                    "
+
                     stroke="currentColor"
-                    stroke-linecap="round"
+
                     stroke-width="1.5"
-                  ></path>
-                  <path
-                    d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
-                    stroke="currentColor"
+
                     stroke-linecap="round"
+
                     stroke-linejoin="round"
+                />
+
+            </svg>
+
+        </button>
+
+
+
+        {{-- ========================================================= --}}
+        {{-- NEXT --}}
+        {{-- ========================================================= --}}
+
+        <button
+            type="button"
+
+            class="
+                hero-next
+                bg-black/20
+                hover:bg-black/50
+                absolute
+                top-1/2
+                right-2
+                z-20
+                hidden
+                size-10
+                -translate-y-1/2
+                cursor-pointer
+                items-center
+                justify-center
+                rounded-full
+                text-white
+                opacity-0
+                transition-all
+                duration-300
+                group-hover:opacity-100
+                md:size-12
+                xl:flex
+                2xl:right-10
+            "
+        >
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+
+                width="24"
+                height="24"
+
+                viewBox="0 0 24 24"
+
+                fill="none"
+            >
+
+                <path
+                    d="
+                        M9 18L14.2929 12.7071
+                        C14.6262 12.3738
+                        14.7929 12.2071
+                        14.7929 12
+                        C14.7929 11.7929
+                        14.6262 11.6262
+                        14.2929 11.2929
+                        L9 6.00002
+                    "
+
+                    stroke="currentColor"
+
                     stroke-width="1.5"
-                  ></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
+                    stroke-linecap="round"
+
+                    stroke-linejoin="round"
+                />
+
+            </svg>
+
+        </button>
+
+
+
+        {{-- ========================================================= --}}
+        {{-- PAGINATION --}}
+        {{-- ========================================================= --}}
+
+        <div
+            class="
+                hero-pagination
+                absolute
+                !right-0
+                !bottom-3
+                !left-0
+                z-20
+                !mx-auto
+                flex
+                !w-max
+                items-center
+                justify-center
+                gap-2
+                rounded-full
+                bg-black/20
+                px-3
+                py-2
+                lg:!bottom-5
+            "
+        ></div>
+
+    @endif
+
+
 </section>
-<section class="py-12">
-  <div class="custom-container">
-    <div class="wow animate__fadeInUp rounded-2xl border border-gray-300 p-6" data-wow-duration="1.2s">
-      <div class="flex flex-col items-center justify-between gap-5 lg:flex-row">
-        <div>
-          <span
-            class="text-primary-main text-[70px] font-bold opacity-15 md:text-[100px] xl:text-[127px]"
-            >-50%</span
-          >
-        </div>
+
+@endif
+
+{{-- slider end --}}
+{{-- ========================================================= --}}
+{{-- DYNAMIC CATEGORY SHOWCASE --}}
+{{-- ========================================================= --}}
+
+@if(isset($categories) && $categories->isNotEmpty())
+
+<section
+    id="category-showcase"
+    class="overflow-hidden bg-white py-8 md:py-10 lg:py-12"
+>
+
+    <div class="custom-container relative">
+
+        {{-- ========================================================= --}}
+        {{-- SWIPER --}}
+        {{-- ========================================================= --}}
+
         <div
-          class="flex flex-col items-center justify-center lg:items-start lg:justify-start"
+            class="
+                swiper
+                category-showcase-slider
+                !overflow-visible
+            "
         >
-          <span
-            class="text-primary-main text-center text-5xl leading-16 font-bold"
-            >WINTER SALE</span
-          >
-          <p class="flex items-center gap-3 text-base leading-6 font-medium">
-            Sale Code: WINSALE2026
-            <button>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                fill="none"
-              >
-                <path
-                  d="M6.75 11.25C6.75 9.12868 6.75 8.06802 7.40901 7.40901C8.06802 6.75 9.12868 6.75 11.25 6.75L12 6.75C14.1213 6.75 15.182 6.75 15.841 7.40901C16.5 8.06802 16.5 9.12868 16.5 11.25V12C16.5 14.1213 16.5 15.182 15.841 15.841C15.182 16.5 14.1213 16.5 12 16.5H11.25C9.12868 16.5 8.06802 16.5 7.40901 15.841C6.75 15.182 6.75 14.1213 6.75 12L6.75 11.25Z"
-                  stroke="#495057"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M12.7499 6.75C12.7482 4.53218 12.7146 3.38341 12.069 2.59682C11.9444 2.44492 11.8051 2.30563 11.6532 2.18097C10.8234 1.5 9.59061 1.5 7.125 1.5C4.65939 1.5 3.42658 1.5 2.59682 2.18097C2.44492 2.30563 2.30563 2.44492 2.18097 2.59682C1.5 3.42658 1.5 4.65939 1.5 7.125C1.5 9.59061 1.5 10.8234 2.18097 11.6532C2.30563 11.8051 2.44492 11.9444 2.59682 12.069C3.38341 12.7146 4.53218 12.7482 6.75 12.7499"
-                  stroke="#495057"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-          </p>
-          <p class="text-gray-secondary text-center text-base lg:text-left">
-            Join our mailing list for exclusive deals and updates
-          </p>
+
+            <div class="swiper-wrapper">
+
+
+                @foreach($categories as $category)
+
+                    <div
+                        class="
+                            swiper-slide
+                            !h-auto
+                        "
+                    >
+
+                        <a
+                            href="{{ url('/shop?category=' . $category->slug) }}"
+
+                            class="
+                                group
+                                block
+                                w-full
+                                overflow-hidden
+                                rounded-[10px]
+                                bg-gray-100
+                            "
+                        >
+
+                            @if($category->image)
+
+                                <div
+                                    class="
+                                        category-showcase-media
+                                        relative
+                                        w-full
+                                        overflow-hidden
+                                    "
+                                >
+
+                                    <img
+                                        src="{{ asset($category->image) }}"
+
+                                        alt="{{ $category->name }}"
+
+                                        loading="lazy"
+
+                                        class="
+                                            block
+                                            h-full
+                                            w-full
+                                            object-cover
+                                            transition-transform
+                                            duration-500
+                                            ease-out
+                                            group-hover:scale-[1.025]
+                                        "
+                                    >
+
+                                </div>
+
+                            @else
+
+                                <div
+                                    class="
+                                        category-showcase-media
+                                        flex
+                                        w-full
+                                        items-center
+                                        justify-center
+                                        bg-gray-100
+                                    "
+                                >
+
+                                    <div class="text-center">
+
+                                        <i
+                                            class="
+                                                bi
+                                                bi-image
+                                                text-5xl
+                                                text-gray-300
+                                            "
+                                        ></i>
+
+                                        <div
+                                            class="
+                                                mt-3
+                                                text-sm
+                                                text-gray-400
+                                            "
+                                        >
+
+                                            {{ $category->name }}
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            @endif
+
+                        </a>
+
+                    </div>
+
+                @endforeach
+
+
+            </div>
+
         </div>
-        <div>
-          <a
-            href="{{ url('/shop') }}"
-            class="bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex items-center justify-center gap-2 rounded-lg px-10 py-3 text-base font-medium transition-all"
-          >
-            Shop Bags
-          </a>
-        </div>
-      </div>
+
+
+
+        {{-- ========================================================= --}}
+        {{-- DESKTOP INVISIBLE DRAG AREA --}}
+        {{-- ========================================================= --}}
+
+        <div
+            class="
+                pointer-events-none
+                absolute
+                inset-0
+                z-10
+                hidden
+                lg:block
+            "
+        ></div>
+
     </div>
-  </div>
+
+
+
+    {{-- ========================================================= --}}
+    {{-- DRAG INDICATOR --}}
+    {{-- ========================================================= --}}
+
+    @if($categories->count() > 1)
+
+        <div
+            class="
+                mt-7
+                flex
+                select-none
+                items-center
+                justify-center
+                gap-3
+                text-[11px]
+                font-bold
+                uppercase
+                tracking-[0.13em]
+                text-[#3d3d3d]
+            "
+        >
+
+            <span
+                class="
+                    text-base
+                    font-normal
+                    leading-none
+                "
+            >
+                ←
+            </span>
+
+
+            <span>
+                DRAG
+            </span>
+
+
+            <span
+                class="
+                    text-base
+                    font-normal
+                    leading-none
+                "
+            >
+                →
+            </span>
+
+        </div>
+
+    @endif
+
 </section>
-<section class="py-12">
-  <div class="custom-container">
-    <div class="wow animate__fadeInUp mx-auto mb-12 max-w-md text-center">
-      <h2 class="text-32 text-gray-primary mb-2 font-bold">
-        Explore Daily Essential
-      </h2>
-      <p class="text-gray-secondary text-base">
-        Hand-picked favorites, now with limited-time pricing
-      </p>
+
+@endif
+
+
+
+{{-- ========================================================= --}}
+{{-- CATEGORY SHOWCASE STYLE --}}
+{{-- ========================================================= --}}
+
+@push('styles')
+
+<style>
+    /*
+    |--------------------------------------------------------------------------
+    | Category Showcase
+    |--------------------------------------------------------------------------
+    */
+
+    #category-showcase {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #category-showcase .category-showcase-slider {
+        width: 100%;
+        overflow: hidden !important;
+        cursor: grab;
+    }
+
+    #category-showcase .category-showcase-slider:active {
+        cursor: grabbing;
+    }
+
+    #category-showcase .swiper-wrapper {
+        align-items: stretch;
+        transition-timing-function: linear !important;
+    }
+
+    #category-showcase .swiper-slide {
+        height: auto !important;
+        min-width: 0;
+    }
+
+    #category-showcase .category-showcase-media {
+        width: 100%;
+        aspect-ratio: 310 / 393;
+    }
+
+    #category-showcase .category-showcase-media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        user-select: none;
+        -webkit-user-drag: none;
+    }
+
+    @media (max-width: 639px) {
+        #category-showcase {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+</style>
+
+@endpush
+
+
+
+{{-- ========================================================= --}}
+{{-- CATEGORY SHOWCASE SWIPER --}}
+{{-- ========================================================= --}}
+
+{{-- ========================================================= --}}
+{{-- LATEST PRODUCTS --}}
+{{-- ========================================================= --}}
+
+@if(isset($latestProducts) && $latestProducts->isNotEmpty())
+
+<section
+    id="latest-products"
+    class="bg-white py-10 lg:py-16"
+>
+
+    <div class="custom-container">
+
+        {{-- Heading --}}
+        <div
+            class="
+                mb-7
+                flex
+                items-end
+                justify-between
+                gap-5
+                lg:mb-10
+            "
+        >
+
+            <div>
+
+                <h2
+                    class="
+                        text-2xl
+                        font-bold
+                        text-gray-primary
+                        md:text-3xl
+                    "
+                >
+                    Latest Products
+                </h2>
+
+                <p
+                    class="
+                        mt-2
+                        text-sm
+                        text-gray-secondary
+                        md:text-base
+                    "
+                >
+                    Discover our newest Bagora bags and latest additions.
+                </p>
+
+            </div>
+
+
+            <a
+                href="{{ url('/shop') }}"
+                class="
+                    hidden
+                    shrink-0
+                    items-center
+                    gap-2
+                    text-sm
+                    font-semibold
+                    text-primary-main
+                    transition
+                    hover:opacity-70
+                    sm:inline-flex
+                "
+            >
+                View All
+                <span>→</span>
+            </a>
+
+        </div>
+
+
+        {{-- Products --}}
+        <div
+            class="
+                grid
+                grid-cols-2
+                gap-3
+                sm:gap-5
+                md:grid-cols-3
+                lg:grid-cols-4
+                lg:gap-6
+            "
+        >
+
+            @foreach($latestProducts->take(8) as $product)
+
+                @include('frontend.partials.product-card', [
+                    'product' => $product
+                ])
+
+            @endforeach
+
+        </div>
+
+
+        {{-- Mobile View All --}}
+        <div class="mt-7 flex justify-center sm:hidden">
+
+            <a
+                href="{{ url('/shop') }}"
+                class="
+                    inline-flex
+                    items-center
+                    justify-center
+                    gap-2
+                    rounded-full
+                    border
+                    border-primary-main
+                    px-6
+                    py-2.5
+                    text-sm
+                    font-semibold
+                    text-primary-main
+                    transition
+                    hover:bg-primary-main
+                    hover:text-white
+                "
+            >
+                View All Products
+                <span>→</span>
+            </a>
+
+        </div>
+
     </div>
-    <div
-      class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
-    >
-      <article>
-        <div
-          class="flex flex-col gap-3.5 rounded-xl border border-gray-300 p-4"
-        >
-          <div class="relative">
-            <a
-              href="{{ url('/shop') }}"
-              class="relative block overflow-hidden rounded-lg"
-            >
-              <img
-                src="{{ asset('frontend/assets/images/home-1/essential-grid/product-1.webp') }}"
-                class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
-                alt="product"
-              />
-            </a>
-            <div class="absolute top-2 left-0 inline-block">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="67"
-                height="22"
-                viewBox="0 0 67 22"
-                fill="none"
-              >
-                <path
-                  d="M67 0L65.2314 1.86426L67 3.54199L65.2314 5.59277L67 7.27148L65.2314 9.13574L67 11L65.2314 12.8643L67 14.7285L65.2314 16.5928L67 18.458L65.2314 20.1357L67 22H0V0H67Z"
-                  fill="#CB0233"
-                />
-              </svg>
-              <span
-                class="absolute inset-0 z-10 flex items-center justify-center text-xs font-medium text-white uppercase"
-              >
-                15% off
-              </span>
-            </div>
-            <!-- Wishlist -->
-            <div x-data="{ liked: false }">
-              <button
-                @click="liked = !liked"
-                :class="liked
-    ? 'bg-error-dark text-white'
-    : 'bg-white text-gray-secondary'"
-                class="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full transition-all duration-300"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                >
-                  <path
-                    d="M14.5969 2.99561C12.5857 1.76192 10.8303 2.25909 9.77576 3.05101C9.34339 3.37572 9.1272 3.53807 9 3.53807C8.8728 3.53807 8.65661 3.37572 8.22424 3.05101C7.16971 2.25909 5.41431 1.76192 3.40308 2.99561C0.763551 4.6147 0.166291 9.95614 6.25465 14.4625C7.41429 15.3208 7.99411 15.75 9 15.75C10.0059 15.75 10.5857 15.3208 11.7454 14.4625C17.8337 9.95614 17.2364 4.6147 14.5969 2.99561Z"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <h3
-            class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-          >
-            <a href="{{ url('/shop') }}">
-              Bagora Shield 15.6” Laptop Backpack
-            </a>
-          </h3>
-          <div class="flex items-center gap-1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              fill="none"
-            >
-              <path
-                d="M13.1701 15.75C13.0501 15.7505 12.9318 15.7222 12.8251 15.6675L9.00009 13.665L5.17509 15.6675C4.92169 15.8008 4.61453 15.7781 4.38341 15.6092C4.15228 15.4402 4.03751 15.1544 4.08759 14.8725L4.83759 10.65L1.74759 7.65003C1.55113 7.45398 1.479 7.16547 1.56009 6.90003C1.64877 6.6281 1.8844 6.43028 2.16759 6.39003L6.44259 5.76753L8.32509 1.92003C8.4504 1.66129 8.71259 1.49695 9.00009 1.49695C9.28758 1.49695 9.54977 1.66129 9.67509 1.92003L11.5801 5.76003L15.8551 6.38253C16.1383 6.42278 16.3739 6.6206 16.4626 6.89253C16.5437 7.15797 16.4715 7.44648 16.2751 7.64253L13.1851 10.6425L13.9351 14.865C13.9898 15.1521 13.8727 15.4448 13.6351 15.615C13.4993 15.7102 13.3357 15.7577 13.1701 15.75Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#919EAB"
-              />
-            </svg>
-            <span class="text-gray-secondary text-sm"> (189) </span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="text-gray-primary text-base font-medium">৳1,590</span>
-            <span class="text-gray-tertiary text-sm line-through">৳1,890</span>
-          </div>
-          <button
-            class="bg-primary-main hover:bg-primary-main-dark text-success-light flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-white"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-            >
-              <g clip-path="url(#clip0_37995_40602)">
-                <path
-                  d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M5 5L18.3333 5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <circle
-                  cx="4.99967"
-                  cy="16.6667"
-                  r="1.66667"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <circle
-                  cx="14.1667"
-                  cy="16.6667"
-                  r="1.66667"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="M6.66667 16.6666L12.5 16.6666"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M1.6665 1.66663L2.47151 1.66663C3.25874 1.66663 3.94495 2.18712 4.13589 2.92907L6.61527 12.5637C6.74057 13.0506 6.63334 13.5664 6.32337 13.9679L5.52661 15"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_37995_40602">
-                  <rect width="20" height="20" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-      <article
-        class="relative hidden overflow-hidden rounded-2xl xl:col-span-3 xl:block"
-      >
-        <video
-          src="src/videos/home-1/video-1.mp4"
-          class="h-full max-h-[435px] w-full rounded-2xl object-cover"
-          autoplay
-          muted
-          loop
-          playsinline
-        ></video>
-      </article>
-      <article>
-        <div
-          class="flex flex-col gap-3.5 rounded-xl border border-gray-300 p-4"
-        >
-          <div class="relative">
-            <a
-              href="{{ url('/shop') }}"
-              class="relative block overflow-hidden rounded-lg"
-            >
-              <img
-                src="{{ asset('frontend/assets/images/home-1/essential-grid/product-2.webp') }}"
-                class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
-                alt="product"
-              />
-            </a>
-            <div class="absolute top-2 left-0 inline-block">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="67"
-                height="22"
-                viewBox="0 0 67 22"
-                fill="none"
-              >
-                <path
-                  d="M67 0L65.2314 1.86426L67 3.54199L65.2314 5.59277L67 7.27148L65.2314 9.13574L67 11L65.2314 12.8643L67 14.7285L65.2314 16.5928L67 18.458L65.2314 20.1357L67 22H0V0H67Z"
-                  fill="#CB0233"
-                />
-              </svg>
-              <span
-                class="absolute inset-0 z-10 flex items-center justify-center text-xs font-medium text-white uppercase"
-              >
-                15% off
-              </span>
-            </div>
-            <!-- Wishlist -->
-            <div x-data="{ liked: false }">
-              <button
-                @click="liked = !liked"
-                :class="liked
-    ? 'bg-error-dark text-white'
-    : 'bg-white text-gray-secondary'"
-                class="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full transition-all duration-300"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                >
-                  <path
-                    d="M14.5969 2.99561C12.5857 1.76192 10.8303 2.25909 9.77576 3.05101C9.34339 3.37572 9.1272 3.53807 9 3.53807C8.8728 3.53807 8.65661 3.37572 8.22424 3.05101C7.16971 2.25909 5.41431 1.76192 3.40308 2.99561C0.763551 4.6147 0.166291 9.95614 6.25465 14.4625C7.41429 15.3208 7.99411 15.75 9 15.75C10.0059 15.75 10.5857 15.3208 11.7454 14.4625C17.8337 9.95614 17.2364 4.6147 14.5969 2.99561Z"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <h3
-            class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-          >
-            <a href="{{ url('/shop') }}">
-              Bagora Voyager Travel Backpack
-            </a>
-          </h3>
-          <div class="flex items-center gap-1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              fill="none"
-            >
-              <path
-                d="M13.1701 15.75C13.0501 15.7505 12.9318 15.7222 12.8251 15.6675L9.00009 13.665L5.17509 15.6675C4.92169 15.8008 4.61453 15.7781 4.38341 15.6092C4.15228 15.4402 4.03751 15.1544 4.08759 14.8725L4.83759 10.65L1.74759 7.65003C1.55113 7.45398 1.479 7.16547 1.56009 6.90003C1.64877 6.6281 1.8844 6.43028 2.16759 6.39003L6.44259 5.76753L8.32509 1.92003C8.4504 1.66129 8.71259 1.49695 9.00009 1.49695C9.28758 1.49695 9.54977 1.66129 9.67509 1.92003L11.5801 5.76003L15.8551 6.38253C16.1383 6.42278 16.3739 6.6206 16.4626 6.89253C16.5437 7.15797 16.4715 7.44648 16.2751 7.64253L13.1851 10.6425L13.9351 14.865C13.9898 15.1521 13.8727 15.4448 13.6351 15.615C13.4993 15.7102 13.3357 15.7577 13.1701 15.75Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#919EAB"
-              />
-            </svg>
-            <span class="text-gray-secondary text-sm"> (189) </span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="text-gray-primary text-base font-medium">৳1,590</span>
-            <span class="text-gray-tertiary text-sm line-through">৳1,890</span>
-          </div>
-          <button
-            class="bg-primary-main hover:bg-primary-main-dark text-success-light flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-white"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-            >
-              <g clip-path="url(#clip0_37995_40602)">
-                <path
-                  d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M5 5L18.3333 5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <circle
-                  cx="4.99967"
-                  cy="16.6667"
-                  r="1.66667"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <circle
-                  cx="14.1667"
-                  cy="16.6667"
-                  r="1.66667"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="M6.66667 16.6666L12.5 16.6666"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M1.6665 1.66663L2.47151 1.66663C3.25874 1.66663 3.94495 2.18712 4.13589 2.92907L6.61527 12.5637C6.74057 13.0506 6.63334 13.5664 6.32337 13.9679L5.52661 15"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_37995_40602">
-                  <rect width="20" height="20" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-      <article>
-        <div
-          class="flex flex-col gap-3.5 rounded-xl border border-gray-300 p-4"
-        >
-          <div class="relative">
-            <a
-              href="{{ url('/shop') }}"
-              class="relative block overflow-hidden rounded-lg"
-            >
-              <img
-                src="{{ asset('frontend/assets/images/home-1/essential-grid/product-3.webp') }}"
-                class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
-                alt="product"
-              />
-            </a>
-            <div class="absolute top-2 left-0 inline-block">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="67"
-                height="22"
-                viewBox="0 0 67 22"
-                fill="none"
-              >
-                <path
-                  d="M67 0L65.2314 1.86426L67 3.54199L65.2314 5.59277L67 7.27148L65.2314 9.13574L67 11L65.2314 12.8643L67 14.7285L65.2314 16.5928L67 18.458L65.2314 20.1357L67 22H0V0H67Z"
-                  fill="#CB0233"
-                />
-              </svg>
-              <span
-                class="absolute inset-0 z-10 flex items-center justify-center text-xs font-medium text-white uppercase"
-              >
-                15% off
-              </span>
-            </div>
-            <!-- Wishlist -->
-            <div x-data="{ liked: false }">
-              <button
-                @click="liked = !liked"
-                :class="liked
-    ? 'bg-error-dark text-white'
-    : 'bg-white text-gray-secondary'"
-                class="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full transition-all duration-300"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                >
-                  <path
-                    d="M14.5969 2.99561C12.5857 1.76192 10.8303 2.25909 9.77576 3.05101C9.34339 3.37572 9.1272 3.53807 9 3.53807C8.8728 3.53807 8.65661 3.37572 8.22424 3.05101C7.16971 2.25909 5.41431 1.76192 3.40308 2.99561C0.763551 4.6147 0.166291 9.95614 6.25465 14.4625C7.41429 15.3208 7.99411 15.75 9 15.75C10.0059 15.75 10.5857 15.3208 11.7454 14.4625C17.8337 9.95614 17.2364 4.6147 14.5969 2.99561Z"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <h3
-            class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-          >
-            <a href="{{ url('/shop') }}">
-              Bagora Metro Office Backpack
-            </a>
-          </h3>
-          <div class="flex items-center gap-1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              fill="none"
-            >
-              <path
-                d="M13.1701 15.75C13.0501 15.7505 12.9318 15.7222 12.8251 15.6675L9.00009 13.665L5.17509 15.6675C4.92169 15.8008 4.61453 15.7781 4.38341 15.6092C4.15228 15.4402 4.03751 15.1544 4.08759 14.8725L4.83759 10.65L1.74759 7.65003C1.55113 7.45398 1.479 7.16547 1.56009 6.90003C1.64877 6.6281 1.8844 6.43028 2.16759 6.39003L6.44259 5.76753L8.32509 1.92003C8.4504 1.66129 8.71259 1.49695 9.00009 1.49695C9.28758 1.49695 9.54977 1.66129 9.67509 1.92003L11.5801 5.76003L15.8551 6.38253C16.1383 6.42278 16.3739 6.6206 16.4626 6.89253C16.5437 7.15797 16.4715 7.44648 16.2751 7.64253L13.1851 10.6425L13.9351 14.865C13.9898 15.1521 13.8727 15.4448 13.6351 15.615C13.4993 15.7102 13.3357 15.7577 13.1701 15.75Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#919EAB"
-              />
-            </svg>
-            <span class="text-gray-secondary text-sm"> (189) </span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="text-gray-primary text-base font-medium">৳1,590</span>
-            <span class="text-gray-tertiary text-sm line-through">৳1,890</span>
-          </div>
-          <button
-            class="bg-primary-main hover:bg-primary-main-dark text-success-light flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-white"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-            >
-              <g clip-path="url(#clip0_37995_40602)">
-                <path
-                  d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M5 5L18.3333 5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <circle
-                  cx="4.99967"
-                  cy="16.6667"
-                  r="1.66667"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <circle
-                  cx="14.1667"
-                  cy="16.6667"
-                  r="1.66667"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="M6.66667 16.6666L12.5 16.6666"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M1.6665 1.66663L2.47151 1.66663C3.25874 1.66663 3.94495 2.18712 4.13589 2.92907L6.61527 12.5637C6.74057 13.0506 6.63334 13.5664 6.32337 13.9679L5.52661 15"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_37995_40602">
-                  <rect width="20" height="20" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-      <article>
-        <div
-          class="flex flex-col gap-3.5 rounded-xl border border-gray-300 p-4"
-        >
-          <div class="relative">
-            <a
-              href="{{ url('/shop') }}"
-              class="relative block overflow-hidden rounded-lg"
-            >
-              <img
-                src="{{ asset('frontend/assets/images/home-1/essential-grid/product-4.webp') }}"
-                class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
-                alt="product"
-              />
-            </a>
-            <div class="absolute top-2 left-0 inline-block">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="67"
-                height="22"
-                viewBox="0 0 67 22"
-                fill="none"
-              >
-                <path
-                  d="M67 0L65.2314 1.86426L67 3.54199L65.2314 5.59277L67 7.27148L65.2314 9.13574L67 11L65.2314 12.8643L67 14.7285L65.2314 16.5928L67 18.458L65.2314 20.1357L67 22H0V0H67Z"
-                  fill="#CB0233"
-                />
-              </svg>
-              <span
-                class="absolute inset-0 z-10 flex items-center justify-center text-xs font-medium text-white uppercase"
-              >
-                15% off
-              </span>
-            </div>
-            <!-- Wishlist -->
-            <div x-data="{ liked: false }">
-              <button
-                @click="liked = !liked"
-                :class="liked
-    ? 'bg-error-dark text-white'
-    : 'bg-white text-gray-secondary'"
-                class="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full transition-all duration-300"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                >
-                  <path
-                    d="M14.5969 2.99561C12.5857 1.76192 10.8303 2.25909 9.77576 3.05101C9.34339 3.37572 9.1272 3.53807 9 3.53807C8.8728 3.53807 8.65661 3.37572 8.22424 3.05101C7.16971 2.25909 5.41431 1.76192 3.40308 2.99561C0.763551 4.6147 0.166291 9.95614 6.25465 14.4625C7.41429 15.3208 7.99411 15.75 9 15.75C10.0059 15.75 10.5857 15.3208 11.7454 14.4625C17.8337 9.95614 17.2364 4.6147 14.5969 2.99561Z"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <h3
-            class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-          >
-            <a href="{{ url('/shop') }}">
-              Bagora Compact Crossbody Bag
-            </a>
-          </h3>
-          <div class="flex items-center gap-1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              fill="none"
-            >
-              <path
-                d="M13.1701 15.75C13.0501 15.7505 12.9318 15.7222 12.8251 15.6675L9.00009 13.665L5.17509 15.6675C4.92169 15.8008 4.61453 15.7781 4.38341 15.6092C4.15228 15.4402 4.03751 15.1544 4.08759 14.8725L4.83759 10.65L1.74759 7.65003C1.55113 7.45398 1.479 7.16547 1.56009 6.90003C1.64877 6.6281 1.8844 6.43028 2.16759 6.39003L6.44259 5.76753L8.32509 1.92003C8.4504 1.66129 8.71259 1.49695 9.00009 1.49695C9.28758 1.49695 9.54977 1.66129 9.67509 1.92003L11.5801 5.76003L15.8551 6.38253C16.1383 6.42278 16.3739 6.6206 16.4626 6.89253C16.5437 7.15797 16.4715 7.44648 16.2751 7.64253L13.1851 10.6425L13.9351 14.865C13.9898 15.1521 13.8727 15.4448 13.6351 15.615C13.4993 15.7102 13.3357 15.7577 13.1701 15.75Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#919EAB"
-              />
-            </svg>
-            <span class="text-gray-secondary text-sm"> (189) </span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="text-gray-primary text-base font-medium">৳1,590</span>
-            <span class="text-gray-tertiary text-sm line-through">৳1,890</span>
-          </div>
-          <button
-            class="bg-primary-main hover:bg-primary-main-dark text-success-light flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-white"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-            >
-              <g clip-path="url(#clip0_37995_40602)">
-                <path
-                  d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M5 5L18.3333 5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <circle
-                  cx="4.99967"
-                  cy="16.6667"
-                  r="1.66667"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <circle
-                  cx="14.1667"
-                  cy="16.6667"
-                  r="1.66667"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="M6.66667 16.6666L12.5 16.6666"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M1.6665 1.66663L2.47151 1.66663C3.25874 1.66663 3.94495 2.18712 4.13589 2.92907L6.61527 12.5637C6.74057 13.0506 6.63334 13.5664 6.32337 13.9679L5.52661 15"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_37995_40602">
-                  <rect width="20" height="20" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-      <article>
-        <div
-          class="flex flex-col gap-3.5 rounded-xl border border-gray-300 p-4"
-        >
-          <div class="relative">
-            <a
-              href="{{ url('/shop') }}"
-              class="relative block overflow-hidden rounded-lg"
-            >
-              <img
-                src="{{ asset('frontend/assets/images/home-1/essential-grid/product-5.webp') }}"
-                class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
-                alt="product"
-              />
-            </a>
-            <div class="absolute top-2 left-0 inline-block">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="67"
-                height="22"
-                viewBox="0 0 67 22"
-                fill="none"
-              >
-                <path
-                  d="M67 0L65.2314 1.86426L67 3.54199L65.2314 5.59277L67 7.27148L65.2314 9.13574L67 11L65.2314 12.8643L67 14.7285L65.2314 16.5928L67 18.458L65.2314 20.1357L67 22H0V0H67Z"
-                  fill="#CB0233"
-                />
-              </svg>
-              <span
-                class="absolute inset-0 z-10 flex items-center justify-center text-xs font-medium text-white uppercase"
-              >
-                15% off
-              </span>
-            </div>
-            <!-- Wishlist -->
-            <div x-data="{ liked: false }">
-              <button
-                @click="liked = !liked"
-                :class="liked
-    ? 'bg-error-dark text-white'
-    : 'bg-white text-gray-secondary'"
-                class="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full transition-all duration-300"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                >
-                  <path
-                    d="M14.5969 2.99561C12.5857 1.76192 10.8303 2.25909 9.77576 3.05101C9.34339 3.37572 9.1272 3.53807 9 3.53807C8.8728 3.53807 8.65661 3.37572 8.22424 3.05101C7.16971 2.25909 5.41431 1.76192 3.40308 2.99561C0.763551 4.6147 0.166291 9.95614 6.25465 14.4625C7.41429 15.3208 7.99411 15.75 9 15.75C10.0059 15.75 10.5857 15.3208 11.7454 14.4625C17.8337 9.95614 17.2364 4.6147 14.5969 2.99561Z"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <h3
-            class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-          >
-            <a href="{{ url('/shop') }}">
-              Bagora Classic Shoulder Bag
-            </a>
-          </h3>
-          <div class="flex items-center gap-1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              fill="none"
-            >
-              <path
-                d="M13.1701 15.75C13.0501 15.7505 12.9318 15.7222 12.8251 15.6675L9.00009 13.665L5.17509 15.6675C4.92169 15.8008 4.61453 15.7781 4.38341 15.6092C4.15228 15.4402 4.03751 15.1544 4.08759 14.8725L4.83759 10.65L1.74759 7.65003C1.55113 7.45398 1.479 7.16547 1.56009 6.90003C1.64877 6.6281 1.8844 6.43028 2.16759 6.39003L6.44259 5.76753L8.32509 1.92003C8.4504 1.66129 8.71259 1.49695 9.00009 1.49695C9.28758 1.49695 9.54977 1.66129 9.67509 1.92003L11.5801 5.76003L15.8551 6.38253C16.1383 6.42278 16.3739 6.6206 16.4626 6.89253C16.5437 7.15797 16.4715 7.44648 16.2751 7.64253L13.1851 10.6425L13.9351 14.865C13.9898 15.1521 13.8727 15.4448 13.6351 15.615C13.4993 15.7102 13.3357 15.7577 13.1701 15.75Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#919EAB"
-              />
-            </svg>
-            <span class="text-gray-secondary text-sm"> (189) </span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="text-gray-primary text-base font-medium">৳1,590</span>
-            <span class="text-gray-tertiary text-sm line-through">৳1,890</span>
-          </div>
-          <button
-            class="bg-primary-main hover:bg-primary-main-dark text-success-light flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-white"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-            >
-              <g clip-path="url(#clip0_37995_40602)">
-                <path
-                  d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M5 5L18.3333 5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <circle
-                  cx="4.99967"
-                  cy="16.6667"
-                  r="1.66667"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <circle
-                  cx="14.1667"
-                  cy="16.6667"
-                  r="1.66667"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="M6.66667 16.6666L12.5 16.6666"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M1.6665 1.66663L2.47151 1.66663C3.25874 1.66663 3.94495 2.18712 4.13589 2.92907L6.61527 12.5637C6.74057 13.0506 6.63334 13.5664 6.32337 13.9679L5.52661 15"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_37995_40602">
-                  <rect width="20" height="20" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-      <article>
-        <div
-          class="flex flex-col gap-3.5 rounded-xl border border-gray-300 p-4"
-        >
-          <div class="relative">
-            <a
-              href="{{ url('/shop') }}"
-              class="relative block overflow-hidden rounded-lg"
-            >
-              <img
-                src="{{ asset('frontend/assets/images/home-1/essential-grid/product-6.webp') }}"
-                class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
-                alt="product"
-              />
-            </a>
-            <div class="absolute top-2 left-0 inline-block">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="67"
-                height="22"
-                viewBox="0 0 67 22"
-                fill="none"
-              >
-                <path
-                  d="M67 0L65.2314 1.86426L67 3.54199L65.2314 5.59277L67 7.27148L65.2314 9.13574L67 11L65.2314 12.8643L67 14.7285L65.2314 16.5928L67 18.458L65.2314 20.1357L67 22H0V0H67Z"
-                  fill="#CB0233"
-                />
-              </svg>
-              <span
-                class="absolute inset-0 z-10 flex items-center justify-center text-xs font-medium text-white uppercase"
-              >
-                15% off
-              </span>
-            </div>
-            <!-- Wishlist -->
-            <div x-data="{ liked: false }">
-              <button
-                @click="liked = !liked"
-                :class="liked
-    ? 'bg-error-dark text-white'
-    : 'bg-white text-gray-secondary'"
-                class="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full transition-all duration-300"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                >
-                  <path
-                    d="M14.5969 2.99561C12.5857 1.76192 10.8303 2.25909 9.77576 3.05101C9.34339 3.37572 9.1272 3.53807 9 3.53807C8.8728 3.53807 8.65661 3.37572 8.22424 3.05101C7.16971 2.25909 5.41431 1.76192 3.40308 2.99561C0.763551 4.6147 0.166291 9.95614 6.25465 14.4625C7.41429 15.3208 7.99411 15.75 9 15.75C10.0059 15.75 10.5857 15.3208 11.7454 14.4625C17.8337 9.95614 17.2364 4.6147 14.5969 2.99561Z"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <h3
-            class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-          >
-            <a href="{{ url('/shop') }}">
-              Bagora Weekender Duffel Bag
-            </a>
-          </h3>
-          <div class="flex items-center gap-1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              fill="none"
-            >
-              <path
-                d="M13.1701 15.75C13.0501 15.7505 12.9318 15.7222 12.8251 15.6675L9.00009 13.665L5.17509 15.6675C4.92169 15.8008 4.61453 15.7781 4.38341 15.6092C4.15228 15.4402 4.03751 15.1544 4.08759 14.8725L4.83759 10.65L1.74759 7.65003C1.55113 7.45398 1.479 7.16547 1.56009 6.90003C1.64877 6.6281 1.8844 6.43028 2.16759 6.39003L6.44259 5.76753L8.32509 1.92003C8.4504 1.66129 8.71259 1.49695 9.00009 1.49695C9.28758 1.49695 9.54977 1.66129 9.67509 1.92003L11.5801 5.76003L15.8551 6.38253C16.1383 6.42278 16.3739 6.6206 16.4626 6.89253C16.5437 7.15797 16.4715 7.44648 16.2751 7.64253L13.1851 10.6425L13.9351 14.865C13.9898 15.1521 13.8727 15.4448 13.6351 15.615C13.4993 15.7102 13.3357 15.7577 13.1701 15.75Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#919EAB"
-              />
-            </svg>
-            <span class="text-gray-secondary text-sm"> (189) </span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="text-gray-primary text-base font-medium">৳1,590</span>
-            <span class="text-gray-tertiary text-sm line-through">৳1,890</span>
-          </div>
-          <button
-            class="bg-primary-main hover:bg-primary-main-dark text-success-light flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-white"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-            >
-              <g clip-path="url(#clip0_37995_40602)">
-                <path
-                  d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M5 5L18.3333 5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <circle
-                  cx="4.99967"
-                  cy="16.6667"
-                  r="1.66667"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <circle
-                  cx="14.1667"
-                  cy="16.6667"
-                  r="1.66667"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="M6.66667 16.6666L12.5 16.6666"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M1.6665 1.66663L2.47151 1.66663C3.25874 1.66663 3.94495 2.18712 4.13589 2.92907L6.61527 12.5637C6.74057 13.0506 6.63334 13.5664 6.32337 13.9679L5.52661 15"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_37995_40602">
-                  <rect width="20" height="20" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-      <article>
-        <div
-          class="flex flex-col gap-3.5 rounded-xl border border-gray-300 p-4"
-        >
-          <div class="relative">
-            <a
-              href="{{ url('/shop') }}"
-              class="relative block overflow-hidden rounded-lg"
-            >
-              <img
-                src="{{ asset('frontend/assets/images/home-1/essential-grid/product-7.webp') }}"
-                class="w-full rounded-lg transition-transform duration-300 hover:scale-110"
-                alt="product"
-              />
-            </a>
-            <div class="absolute top-2 left-0 inline-block">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="67"
-                height="22"
-                viewBox="0 0 67 22"
-                fill="none"
-              >
-                <path
-                  d="M67 0L65.2314 1.86426L67 3.54199L65.2314 5.59277L67 7.27148L65.2314 9.13574L67 11L65.2314 12.8643L67 14.7285L65.2314 16.5928L67 18.458L65.2314 20.1357L67 22H0V0H67Z"
-                  fill="#CB0233"
-                />
-              </svg>
-              <span
-                class="absolute inset-0 z-10 flex items-center justify-center text-xs font-medium text-white uppercase"
-              >
-                15% off
-              </span>
-            </div>
-            <!-- Wishlist -->
-            <div x-data="{ liked: false }">
-              <button
-                @click="liked = !liked"
-                :class="liked
-    ? 'bg-error-dark text-white'
-    : 'bg-white text-gray-secondary'"
-                class="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full transition-all duration-300"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                >
-                  <path
-                    d="M14.5969 2.99561C12.5857 1.76192 10.8303 2.25909 9.77576 3.05101C9.34339 3.37572 9.1272 3.53807 9 3.53807C8.8728 3.53807 8.65661 3.37572 8.22424 3.05101C7.16971 2.25909 5.41431 1.76192 3.40308 2.99561C0.763551 4.6147 0.166291 9.95614 6.25465 14.4625C7.41429 15.3208 7.99411 15.75 9 15.75C10.0059 15.75 10.5857 15.3208 11.7454 14.4625C17.8337 9.95614 17.2364 4.6147 14.5969 2.99561Z"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <h3
-            class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-          >
-            <a href="{{ url('/shop') }}">
-              Bagora Lite Daily Backpack
-            </a>
-          </h3>
-          <div class="flex items-center gap-1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              fill="none"
-            >
-              <path
-                d="M13.1701 15.75C13.0501 15.7505 12.9318 15.7222 12.8251 15.6675L9.00009 13.665L5.17509 15.6675C4.92169 15.8008 4.61453 15.7781 4.38341 15.6092C4.15228 15.4402 4.03751 15.1544 4.08759 14.8725L4.83759 10.65L1.74759 7.65003C1.55113 7.45398 1.479 7.16547 1.56009 6.90003C1.64877 6.6281 1.8844 6.43028 2.16759 6.39003L6.44259 5.76753L8.32509 1.92003C8.4504 1.66129 8.71259 1.49695 9.00009 1.49695C9.28758 1.49695 9.54977 1.66129 9.67509 1.92003L11.5801 5.76003L15.8551 6.38253C16.1383 6.42278 16.3739 6.6206 16.4626 6.89253C16.5437 7.15797 16.4715 7.44648 16.2751 7.64253L13.1851 10.6425L13.9351 14.865C13.9898 15.1521 13.8727 15.4448 13.6351 15.615C13.4993 15.7102 13.3357 15.7577 13.1701 15.75Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#FFC107"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-            >
-              <path
-                d="M11.6427 14.2531C11.5228 14.2536 11.4045 14.2253 11.2977 14.1706L7.47274 12.1681L3.64774 14.1706C3.39434 14.3038 3.08719 14.2812 2.85606 14.1122C2.62494 13.9433 2.51017 13.6575 2.56024 13.3756L3.31024 9.15308L0.220242 6.15308C0.0237838 5.95703 -0.0483451 5.66852 0.0327416 5.40308C0.121425 5.13115 0.357059 4.93333 0.640242 4.89308L4.91524 4.27058L6.79774 0.423083C6.92306 0.16434 7.18525 0 7.47274 0C7.76023 0 8.02243 0.16434 8.14774 0.423083L10.0527 4.26308L14.3277 4.88558C14.6109 4.92583 14.8466 5.12365 14.9352 5.39558C15.0163 5.66102 14.9442 5.94953 14.7477 6.14558L11.6577 9.14558L12.4077 13.3681C12.4624 13.6552 12.3453 13.9479 12.1077 14.1181C11.9719 14.2133 11.8084 14.2607 11.6427 14.2531Z"
-                fill="#919EAB"
-              />
-            </svg>
-            <span class="text-gray-secondary text-sm"> (189) </span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="text-gray-primary text-base font-medium">৳1,590</span>
-            <span class="text-gray-tertiary text-sm line-through">৳1,890</span>
-          </div>
-          <button
-            class="bg-primary-main hover:bg-primary-main-dark text-success-light flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-white"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-            >
-              <g clip-path="url(#clip0_37995_40602)">
-                <path
-                  d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M5 5L18.3333 5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <circle
-                  cx="4.99967"
-                  cy="16.6667"
-                  r="1.66667"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <circle
-                  cx="14.1667"
-                  cy="16.6667"
-                  r="1.66667"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="M6.66667 16.6666L12.5 16.6666"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M1.6665 1.66663L2.47151 1.66663C3.25874 1.66663 3.94495 2.18712 4.13589 2.92907L6.61527 12.5637C6.74057 13.0506 6.63334 13.5664 6.32337 13.9679L5.52661 15"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_37995_40602">
-                  <rect width="20" height="20" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-    </div>
-  </div>
+
 </section>
+
+@endif
+
+{{-- category slider end --}}
+
+{{-- ========================================================= --}}
+{{-- BEST SELLING PRODUCTS --}}
+{{-- ========================================================= --}}
+
+@if(isset($bestSellingProducts) && $bestSellingProducts->isNotEmpty())
+
+<section id="best-selling-section" class="bg-white py-12 lg:py-16">
+
+    <div class="custom-container">
+
+        {{-- Heading --}}
+        <div class="mb-8 flex items-end justify-between gap-5 lg:mb-10">
+
+            <div>
+
+                <h2 class="text-2xl font-bold text-gray-primary md:text-3xl">
+                    Best Selling Bags
+                </h2>
+
+                <p class="mt-2 text-sm text-gray-secondary md:text-base">
+                    Customer-favorite Bagora styles for work, study and travel.
+                </p>
+
+            </div>
+
+
+            <a
+                href="{{ url('/shop') }}"
+                class="
+                    hidden
+                    items-center
+                    gap-2
+                    text-sm
+                    font-semibold
+                    text-primary-main
+                    transition
+                    hover:opacity-70
+                    sm:flex
+                "
+            >
+                View All
+
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                >
+                    <path
+                        d="M5 12H19M14 7L19 12L14 17"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                </svg>
+
+            </a>
+
+        </div>
+
+
+        {{-- Product Grid --}}
+        <div
+            class="
+                grid
+                grid-cols-2
+                gap-3
+                sm:gap-5
+                md:grid-cols-3
+                lg:grid-cols-4
+                lg:gap-6
+            "
+        >
+
+            @foreach($bestSellingProducts->take(8) as $product)
+
+                @php
+
+                    $regularPrice = (float) $product->regular_price;
+
+                    $salePrice = $product->sale_price
+                        ? (float) $product->sale_price
+                        : null;
+
+                    $currentPrice = $salePrice ?: $regularPrice;
+
+                    $hasDiscount =
+                        $salePrice
+                        &&
+                        $salePrice < $regularPrice;
+
+                    $discountPercent = $hasDiscount && $regularPrice > 0
+                        ? round((($regularPrice - $salePrice) / $regularPrice) * 100)
+                        : 0;
+
+                @endphp
+
+
+                <article
+                    class="
+                        group
+                        flex
+                        min-w-0
+                        flex-col
+                        overflow-hidden
+                        rounded-xl
+                        border
+                        border-gray-300
+                        bg-white
+                        transition-all
+                        duration-300
+                        hover:-translate-y-1
+                        hover:shadow-lg
+                    "
+                >
+
+                    {{-- Image --}}
+                    <div class="relative overflow-hidden bg-gray-100">
+
+                        <a
+                            href="{{ url('/shop?product=' . $product->slug) }}"
+                            class="block aspect-square overflow-hidden"
+                        >
+
+                            @if($product->thumbnail)
+
+                                <img
+                                    src="{{ asset($product->thumbnail) }}"
+                                    alt="{{ $product->title }}"
+                                    loading="lazy"
+                                    class="
+                                        h-full
+                                        w-full
+                                        object-cover
+                                        transition-transform
+                                        duration-500
+                                        ease-out
+                                        group-hover:scale-105
+                                    "
+                                >
+
+                            @else
+
+                                <div
+                                    class="
+                                        flex
+                                        h-full
+                                        w-full
+                                        items-center
+                                        justify-center
+                                        bg-gray-100
+                                        text-sm
+                                        text-gray-400
+                                    "
+                                >
+                                    No Image
+                                </div>
+
+                            @endif
+
+                        </a>
+
+
+                        {{-- Discount --}}
+                        @if($hasDiscount)
+
+                            <div
+                                class="
+                                    absolute
+                                    top-3
+                                    left-3
+                                    rounded-md
+                                    bg-error-dark
+                                    px-2.5
+                                    py-1
+                                    text-[11px]
+                                    font-bold
+                                    text-white
+                                "
+                            >
+                                -{{ $discountPercent }}%
+                            </div>
+
+                        @endif
+
+
+                        {{-- Bestseller badge --}}
+                        <div
+                            class="
+                                absolute
+                                bottom-3
+                                left-3
+                                rounded-full
+                                bg-white/95
+                                px-2.5
+                                py-1
+                                text-[10px]
+                                font-semibold
+                                tracking-wide
+                                text-primary-main
+                                shadow-sm
+                                backdrop-blur
+                            "
+                        >
+                            BEST SELLER
+                        </div>
+
+
+                        {{-- Wishlist --}}
+                        <button
+                            type="button"
+                            class="
+                                absolute
+                                top-3
+                                right-3
+                                flex
+                                size-9
+                                items-center
+                                justify-center
+                                rounded-full
+                                bg-white
+                                text-gray-secondary
+                                shadow-sm
+                                transition
+                                hover:bg-error-dark
+                                hover:text-white
+                            "
+                        >
+
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="18"
+                                height="18"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                            >
+                                <path
+                                    d="M20.84 4.61A5.5 5.5 0 0013.06 4L12 5.06 10.94 4A5.5 5.5 0 003.16 11.78L12 20.62l8.84-8.84a5.5 5.5 0 000-7.17Z"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+
+                        </button>
+
+                    </div>
+
+
+                    {{-- Content --}}
+                    <div class="flex flex-1 flex-col p-3 sm:p-4">
+
+
+                        {{-- Category / Brand --}}
+                        <div
+                            class="
+                                mb-2
+                                flex
+                                min-w-0
+                                items-center
+                                gap-2
+                                text-[11px]
+                                text-gray-tertiary
+                                sm:text-xs
+                            "
+                        >
+
+                            @if($product->category)
+
+                                <span class="truncate">
+                                    {{ $product->category->name }}
+                                </span>
+
+                            @endif
+
+
+                            @if($product->category && $product->brand)
+
+                                <span>•</span>
+
+                            @endif
+
+
+                            @if($product->brand)
+
+                                <span class="truncate">
+                                    {{ $product->brand->name }}
+                                </span>
+
+                            @endif
+
+                        </div>
+
+
+                        {{-- Product Title --}}
+                        <h3
+                            class="
+                                mb-3
+                                line-clamp-2
+                                min-h-[40px]
+                                text-sm
+                                leading-5
+                                font-semibold
+                                text-gray-primary
+                                transition
+                                group-hover:text-primary-main
+                                sm:text-base
+                                sm:leading-6
+                            "
+                        >
+
+                            <a
+                                href="{{ url('/shop?product=' . $product->slug) }}"
+                            >
+                                {{ $product->title }}
+                            </a>
+
+                        </h3>
+
+
+                        {{-- Price --}}
+                        <div class="mt-auto">
+
+                            <div
+                                class="
+                                    flex
+                                    flex-wrap
+                                    items-center
+                                    gap-x-2
+                                    gap-y-1
+                                "
+                            >
+
+                                <span
+                                    class="
+                                        text-base
+                                        font-bold
+                                        text-gray-primary
+                                        sm:text-lg
+                                    "
+                                >
+                                    ৳{{ number_format($currentPrice, 0) }}
+                                </span>
+
+
+                                @if($hasDiscount)
+
+                                    <span
+                                        class="
+                                            text-xs
+                                            text-gray-tertiary
+                                            line-through
+                                            sm:text-sm
+                                        "
+                                    >
+                                        ৳{{ number_format($regularPrice, 0) }}
+                                    </span>
+
+                                @endif
+
+                            </div>
+
+                        </div>
+
+
+                        {{-- Add to Cart --}}
+                        <a
+                            href="{{ url('/shop?product=' . $product->slug) }}"
+                            class="
+                                mt-4
+                                flex
+                                w-full
+                                items-center
+                                justify-center
+                                gap-2
+                                rounded-lg
+                                bg-primary-main
+                                px-3
+                                py-2.5
+                                text-xs
+                                font-semibold
+                                text-success-light
+                                transition-all
+                                duration-300
+                                hover:bg-primary-main-dark
+                                hover:text-white
+                                sm:text-sm
+                            "
+                        >
+
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="18"
+                                height="18"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                            >
+                                <path
+                                    d="M6.667 13.333L13.933 12.728C16.207 12.538 16.717 12.042 16.969 9.774L17.5 5"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                />
+
+                                <path
+                                    d="M5 5H18.333"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                />
+
+                                <circle
+                                    cx="5"
+                                    cy="16.667"
+                                    r="1.667"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                />
+
+                                <circle
+                                    cx="14.167"
+                                    cy="16.667"
+                                    r="1.667"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                />
+
+                                <path
+                                    d="M1.667 1.667H2.472C3.259 1.667 3.945 2.187 4.136 2.929L6.615 12.564"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+
+                            Add to Cart
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+            @endforeach
+
+        </div>
+
+
+        {{-- Mobile View All --}}
+        <div class="mt-7 flex justify-center sm:hidden">
+
+            <a
+                href="{{ url('/shop') }}"
+                class="
+                    inline-flex
+                    items-center
+                    gap-2
+                    rounded-full
+                    border
+                    border-primary-main
+                    px-6
+                    py-2.5
+                    text-sm
+                    font-semibold
+                    text-primary-main
+                "
+            >
+                View All Products →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+@endif
+{{-- best selling end --}}
+
+
 <section class="py-12">
   <div class="custom-container">
     <div
@@ -7141,1338 +1326,12 @@
     </div>
   </div>
 </section>
-<section class="py-12">
-  <div class="custom-container">
-    <div
-      class="flex flex-col gap-5 overflow-hidden rounded-2xl border border-gray-300 lg:flex-row lg:items-center"
-    >
-      <div class="wow animate__fadeInLeft xl:w-5/12" data-wow-duration="1.2s">
-        <div>
-          <img
-            src="{{ asset('frontend/assets/images/home-1/cta/delivery-men.webp') }}"
-            class="w-full"
-            alt=""
-          />
-        </div>
-      </div>
-      <div
-        class="wow animate__fadeInRight flex flex-col justify-between gap-5 p-6 sm:flex-row xl:w-7/12"
-        data-wow-duration="1.2s"
-      >
-        <div class="sm:w-1/2">
-          <h2 class="text-32 text-primary-main mb-3 leading-12 font-bold">
-            Bagora Delivery at Your Doorstep
-          </h2>
-          <p class="text-primary-main mb-4 text-base leading-6">
-            Order your favorite Bagora bag online and get it delivered safely to your doorstep.
-          </p>
-          <a
-            href="{{ url('/blog') }}"
-            class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-base font-medium transition-all hover:text-white"
-          >
-            Shop Bags
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="22"
-              height="22"
-              viewBox="0 0 22 22"
-              fill="none"
-              class="transition-transform duration-500 group-hover:rotate-45"
-            >
-              <path
-                d="M15.5833 6.41406L5.5 16.4974"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-              />
-              <path
-                d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </a>
-        </div>
-        <div
-          class="relative flex h-[226px] w-[226px] items-center justify-center rounded-full border border-gray-300"
-        >
-          <!-- Circular Text -->
-          <svg
-            class="absolute top-4 left-4 h-[194px] w-[194px] animate-spin [animation-duration:15s]"
-            viewBox="0 0 194 194"
-          >
-            <defs>
-              <!-- Radius = 82px (164px diameter) -->
-              <path
-                id="circlePath"
-                d="
-          M97,97
-          m-82,0
-          a82,82 0 1,1 164,0
-          a82,82 0 1,1 -164,0
-        "
-              />
-            </defs>
 
-            <text
-              class="fill-primary-main text-[14px] font-semibold tracking-[2px] uppercase"
-            >
-              <textPath href="#circlePath" startOffset="0%">
-                FAST DELIVERY • CASH ON DELIVERY • BAGORA • FAST DELIVERY •
-              </textPath>
-            </text>
-          </svg>
-
-          <!-- Center Circle -->
-          <div
-            class="bg-primary-main flex size-25 items-center justify-center rounded-full"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="44"
-              height="44"
-              viewBox="0 0 44 44"
-              fill="none"
-            >
-              <path
-                d="M12.7854 37.8988C15.3071 37.8988 17.3515 35.8545 17.3515 33.3327C17.3515 30.8109 15.3071 28.7666 12.7854 28.7666C10.2636 28.7666 8.21924 30.8109 8.21924 33.3327C8.21924 35.8545 10.2636 37.8988 12.7854 37.8988Z"
-                fill="#AAF27F"
-              />
-              <path
-                d="M31.0498 37.8988C33.5716 37.8988 35.6159 35.8545 35.6159 33.3327C35.6159 30.8109 33.5716 28.7666 31.0498 28.7666C28.528 28.7666 26.4837 30.8109 26.4837 33.3327C26.4837 35.8545 28.528 37.8988 31.0498 37.8988Z"
-                fill="#AAF27F"
-              />
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M4.06814 5.93604C3.5947 5.93604 3.14066 6.12248 2.80591 6.45436C2.47116 6.78623 2.28314 7.23634 2.2832 7.70565L2.28344 9.41591H15.5249V17.6349H11.872V23.1143H2.28536L2.28666 32.4768C2.28673 32.9489 2.47707 33.4013 2.81536 33.7335C3.15365 34.0658 3.61183 34.2502 4.088 34.2459L5.99644 34.2459C5.95664 33.9472 5.9361 33.6423 5.9361 33.3327C5.9361 29.55 9.00258 26.4836 12.7853 26.4836C16.568 26.4836 19.6344 29.55 19.6344 33.3327C19.6344 33.6424 19.6139 33.9472 19.5741 34.2459L24.2609 34.2459C24.2211 33.9472 24.2006 33.6424 24.2006 33.3327C24.2006 29.55 27.267 26.4836 31.0497 26.4836C34.8324 26.4836 37.8989 29.55 37.8989 33.3327C37.8989 33.6424 37.8784 33.9472 37.8386 34.2459L39.7669 34.246C40.7527 34.246 41.5518 33.4538 41.5518 32.4766V20.091C41.5518 19.7703 41.4639 19.4556 41.2974 19.1807L35.9426 10.3338C35.62 9.80091 35.039 9.47482 34.4121 9.47481L27.2723 9.47478V7.7054C27.2723 6.72821 26.4732 5.93604 25.4874 5.93604H4.06814ZM27.2756 18.3216V13.0135L33.4047 13.0135L36.6176 18.3216H27.2756Z"
-                fill="#AAF27F"
-              />
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M13.2419 15.3526H2.2832V11.6997H13.2419V15.3526ZM9.58899 20.8319H2.2832V17.179H9.58899V20.8319Z"
-                fill="#AAF27F"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+{{-- category wise products --}}
 <section class="py-12">
   <div class="custom-container">
     <div class="wow animate__fadeInUp mx-auto mb-12 max-w-md text-center">
-      <h2 class="text-32 text-gray-primary mb-2 font-bold">
-        Featured Bagora Collections
-      </h2>
-      <p class="text-gray-secondary text-base">
-        Explore the styles customers keep coming back for.
-      </p>
-    </div>
-    <div class="grid grid-cols-1 gap-6 xl:grid-cols-2">
-      <div class="rounded-3xl bg-gray-100 p-5 sm:p-8">
-        <div
-          class="mb-6 flex flex-col items-center justify-between gap-5 sm:flex-row"
-        >
-          <div
-            class="flex flex-1 flex-col items-center gap-4 text-center sm:flex-row sm:text-left"
-          >
-            <div class="shrink-0 overflow-hidden">
-              <img
-                src="{{ asset('frontend/assets/images/home-1/best-seller/seller-1.webp') }}"
-                class="size-16 rounded-full"
-                alt=""
-              />
-            </div>
-            <div>
-              <h4 class="text-gray-primary text-base font-bold">Bagora Everyday</h4>
-              <div class="flex gap-1">
-                <div class="flex items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7223 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4403 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.4541 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                      fill="#FFC107"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7223 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4403 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.4541 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                      fill="#FFC107"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7223 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4403 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.4541 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                      fill="#FFC107"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7223 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4403 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.4541 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                      fill="#FFC107"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <g opacity="0.48">
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7223 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4403 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.4541 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#919EAB"
-                      />
-                    </g>
-                  </svg>
-                </div>
-                <span class="text-gray-secondary text-sm">4.8/15k</span>
-              </div>
-            </div>
-          </div>
-          <div>
-            <a
-              href="{{ url('/shop') }}"
-              class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-base font-medium transition-all hover:text-white"
-            >
-              View Shop
-              <svg
-                class="transition-transform duration-500 group-hover:rotate-45"
-                xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
-                viewBox="0 0 22 22"
-                fill="none"
-              >
-                <path
-                  d="M15.5833 6.41699L5.5 16.5003"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-        <ul class="space-y-6">
-          <li
-            class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-          >
-            <a
-              href="{{ url('/shop') }}"
-              class="relative flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-            >
-              <img
-                src="{{ asset('frontend/assets/src/images/home-1/best-seller/product-1.webp') }}"
-                class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                alt=""
-              />
-            </a>
-            <div class="flex flex-1 flex-col justify-between">
-              <div class="space-y-2">
-                <h4>
-                  <a
-                    href="{{ url('/shop') }}"
-                    class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                    >Bagora Urban Everyday Backpack
-                  </a>
-                </h4>
-                <a
-                  href="{{ url('/shop') }}"
-                  class="text-gray-secondary block text-xs leading-4.5"
-                >
-                  Store Name/Category
-                </a>
-                <div class="flex items-center gap-1">
-                  <div class="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <g opacity="0.48">
-                        <path
-                          d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                          fill="#919EAB"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                  <span class="text-gray-secondary text-sm"> (118)</span>
-                </div>
-              </div>
-              <div class="mt-2.5 flex items-end justify-between">
-                <div class="flex items-center gap-2">
-                  <span class="text-gray-primary text-base font-medium"
-                    >৳1,690</span
-                  >
-                  <span class="text-gray-tertiary text-base line-through"
-                    >৳1,790</span
-                  >
-                </div>
-                <button
-                  class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                  >
-                    <path
-                      d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                    <path
-                      d="M5 5L18.3333 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                    <circle
-                      cx="4.99967"
-                      cy="16.6667"
-                      r="1.66667"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    />
-                    <circle
-                      cx="14.1667"
-                      cy="16.6667"
-                      r="1.66667"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    />
-                    <path
-                      d="M6.66667 16.6667L12.5 16.6667"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                    <path
-                      d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                  Add
-                </button>
-              </div>
-            </div>
-          </li>
-          <li
-            class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-          >
-            <a
-              href="{{ url('/shop') }}"
-              class="relative flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-            >
-              <img
-                src="{{ asset('frontend/assets/src/images/home-1/best-seller/product-2.webp') }}"
-                class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                alt=""
-              />
-            </a>
-            <div class="flex flex-1 flex-col justify-between">
-              <div class="space-y-2">
-                <h4>
-                  <a
-                    href="{{ url('/shop') }}"
-                    class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                    >Bagora Urban Everyday Backpack
-                  </a>
-                </h4>
-                <a
-                  href="{{ url('/shop') }}"
-                  class="text-gray-secondary block text-xs leading-4.5"
-                >
-                  Store Name/Category
-                </a>
-                <div class="flex items-center gap-1">
-                  <div class="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <g opacity="0.48">
-                        <path
-                          d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                          fill="#919EAB"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                  <span class="text-gray-secondary text-sm"> (118)</span>
-                </div>
-              </div>
-              <div class="mt-3 flex items-end justify-between">
-                <div class="flex items-center gap-2">
-                  <span class="text-gray-primary text-base font-medium"
-                    >৳1,690</span
-                  >
-                  <span class="text-gray-tertiary text-base line-through"
-                    >৳1,790</span
-                  >
-                </div>
-                <button
-                  class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                  >
-                    <path
-                      d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                    <path
-                      d="M5 5L18.3333 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                    <circle
-                      cx="4.99967"
-                      cy="16.6667"
-                      r="1.66667"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    />
-                    <circle
-                      cx="14.1667"
-                      cy="16.6667"
-                      r="1.66667"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    />
-                    <path
-                      d="M6.66667 16.6667L12.5 16.6667"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                    <path
-                      d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                  Add
-                </button>
-              </div>
-            </div>
-          </li>
-          <li
-            class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-          >
-            <a
-              href="{{ url('/shop') }}"
-              class="relative flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-            >
-              <img
-                src="{{ asset('frontend/assets/images/home-1/best-seller/product-3.webp') }}"
-                class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                alt=""
-              />
-            </a>
-            <div class="flex flex-1 flex-col justify-between">
-              <div class="space-y-2">
-                <h4>
-                  <a
-                    href="{{ url('/shop') }}"
-                    class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                    >Bagora Urban Everyday Backpack
-                  </a>
-                </h4>
-                <a
-                  href="{{ url('/shop') }}"
-                  class="text-gray-secondary block text-xs leading-4.5"
-                >
-                  Store Name/Category
-                </a>
-                <div class="flex items-center gap-1">
-                  <div class="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <g opacity="0.48">
-                        <path
-                          d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                          fill="#919EAB"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                  <span class="text-gray-secondary text-sm"> (118)</span>
-                </div>
-              </div>
-              <div class="mt-3 flex items-end justify-between">
-                <div class="flex items-center gap-2">
-                  <span class="text-gray-primary text-base font-medium"
-                    >৳1,690</span
-                  >
-                  <span class="text-gray-tertiary text-base line-through"
-                    >৳1,790</span
-                  >
-                </div>
-                <button
-                  class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                  >
-                    <path
-                      d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                    <path
-                      d="M5 5L18.3333 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                    <circle
-                      cx="4.99967"
-                      cy="16.6667"
-                      r="1.66667"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    />
-                    <circle
-                      cx="14.1667"
-                      cy="16.6667"
-                      r="1.66667"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    />
-                    <path
-                      d="M6.66667 16.6667L12.5 16.6667"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                    <path
-                      d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                  Add
-                </button>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="rounded-3xl bg-gray-100 p-5 sm:p-8">
-        <div
-          class="mb-6 flex flex-col items-center justify-between gap-5 sm:flex-row"
-        >
-          <div
-            class="flex flex-1 flex-col items-center gap-4 text-center sm:flex-row sm:text-left"
-          >
-            <div class="shrink-0">
-              <img
-                src="{{ asset('frontend/assets/images/home-1/best-seller/seller-2.webp') }}"
-                class="size-16 rounded-full"
-                alt=""
-              />
-            </div>
-            <div>
-              <h4 class="text-gray-primary text-base font-bold">Bagora Everyday</h4>
-              <div class="flex gap-1">
-                <div class="flex items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7223 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4403 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.4541 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                      fill="#FFC107"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7223 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4403 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.4541 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                      fill="#FFC107"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7223 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4403 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.4541 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                      fill="#FFC107"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <path
-                      d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7223 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4403 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.4541 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                      fill="#FFC107"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                  >
-                    <g opacity="0.48">
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7223 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4403 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.4541 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#919EAB"
-                      />
-                    </g>
-                  </svg>
-                </div>
-                <span class="text-gray-secondary text-sm">4.8/15k</span>
-              </div>
-            </div>
-          </div>
-          <div>
-            <a
-              href="{{ url('/shop') }}"
-              class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-base font-medium transition-all hover:text-white"
-            >
-              View Shop
-              <svg
-                class="transition-transform duration-500 group-hover:rotate-45"
-                xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
-                viewBox="0 0 22 22"
-                fill="none"
-              >
-                <path
-                  d="M15.5833 6.41699L5.5 16.5003"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-        <ul class="space-y-6">
-          <li
-            class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-          >
-            <a
-              href="{{ url('/shop') }}"
-              class="relative flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-            >
-              <img
-                src="{{ asset('frontend/assets/images/home-1/best-seller/product-4.webp') }}"
-                class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                alt=""
-              />
-            </a>
-            <div class="flex flex-1 flex-col justify-between">
-              <div class="space-y-2">
-                <h4>
-                  <a
-                    href="{{ url('/shop') }}"
-                    class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                    >Bagora Urban Everyday Backpack
-                  </a>
-                </h4>
-                <a
-                  href="{{ url('/shop') }}"
-                  class="text-gray-secondary block text-xs leading-4.5"
-                >
-                  Store Name/Category
-                </a>
-                <div class="flex items-center gap-1">
-                  <div class="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <g opacity="0.48">
-                        <path
-                          d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                          fill="#919EAB"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                  <span class="text-gray-secondary text-sm"> (118)</span>
-                </div>
-              </div>
-              <div class="mt-3 flex items-end justify-between">
-                <div class="flex items-center gap-2">
-                  <span class="text-gray-primary text-base font-medium"
-                    >৳1,690</span
-                  >
-                  <span class="text-gray-tertiary text-base line-through"
-                    >৳1,790</span
-                  >
-                </div>
-                <button
-                  class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                  >
-                    <path
-                      d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                    <path
-                      d="M5 5L18.3333 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                    <circle
-                      cx="4.99967"
-                      cy="16.6667"
-                      r="1.66667"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    />
-                    <circle
-                      cx="14.1667"
-                      cy="16.6667"
-                      r="1.66667"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    />
-                    <path
-                      d="M6.66667 16.6667L12.5 16.6667"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                    <path
-                      d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                  Add
-                </button>
-              </div>
-            </div>
-          </li>
-          <li
-            class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-          >
-            <a
-              href="{{ url('/shop') }}"
-              class="relative flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-            >
-              <img
-                src="{{ asset('frontend/assets/images/home-1/best-seller/product-5.webp') }}"
-                class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                alt=""
-              />
-            </a>
-            <div class="flex flex-1 flex-col justify-between">
-              <div class="space-y-2">
-                <h4>
-                  <a
-                    href="{{ url('/shop') }}"
-                    class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                    >Bagora Urban Everyday Backpack
-                  </a>
-                </h4>
-                <a
-                  href="{{ url('/shop') }}"
-                  class="text-gray-secondary block text-xs leading-4.5"
-                >
-                  Store Name/Category
-                </a>
-                <div class="flex items-center gap-1">
-                  <div class="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <g opacity="0.48">
-                        <path
-                          d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                          fill="#919EAB"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                  <span class="text-gray-secondary text-sm"> (118)</span>
-                </div>
-              </div>
-              <div class="mt-3 flex items-end justify-between">
-                <div class="flex items-center gap-2">
-                  <span class="text-gray-primary text-base font-medium"
-                    >৳1,690</span
-                  >
-                  <span class="text-gray-tertiary text-base line-through"
-                    >৳1,790</span
-                  >
-                </div>
-                <button
-                  class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                  >
-                    <path
-                      d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                    <path
-                      d="M5 5L18.3333 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                    <circle
-                      cx="4.99967"
-                      cy="16.6667"
-                      r="1.66667"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    />
-                    <circle
-                      cx="14.1667"
-                      cy="16.6667"
-                      r="1.66667"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    />
-                    <path
-                      d="M6.66667 16.6667L12.5 16.6667"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                    <path
-                      d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                  Add
-                </button>
-              </div>
-            </div>
-          </li>
-          <li
-            class="flex flex-col gap-4 rounded-xl border border-gray-300 bg-white p-4 sm:flex-row"
-          >
-            <a
-              href="{{ url('/shop') }}"
-              class="relative flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl sm:size-32"
-            >
-              <img
-                src="{{ asset('frontend/assets/images/home-1/best-seller/product-6.webp') }}"
-                class="h-full w-full rounded-xl transition-transform duration-300 hover:scale-110"
-                alt=""
-              />
-            </a>
-            <div class="flex flex-1 flex-col justify-between">
-              <div class="space-y-2">
-                <h4>
-                  <a
-                    href="{{ url('/shop') }}"
-                    class="text-gray-primary hover:text-primary-main line-clamp-2 text-base leading-6 font-medium"
-                    >Bagora Urban Everyday Backpack
-                  </a>
-                </h4>
-                <a
-                  href="{{ url('/shop') }}"
-                  class="text-gray-secondary block text-xs leading-4.5"
-                >
-                  Store Name/Category
-                </a>
-                <div class="flex items-center gap-1">
-                  <div class="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7783 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                        fill="#FFC107"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                    >
-                      <g opacity="0.48">
-                        <path
-                          d="M13.1701 15.7502C13.0501 15.7506 12.9318 15.7222 12.8251 15.6677L9.00009 13.6652L5.17509 15.6677C4.92169 15.8009 4.61453 15.7781 4.38341 15.6093C4.15228 15.4402 4.03751 15.1545 4.08759 14.8727L4.83759 10.6502L1.74759 7.65015C1.55113 7.45398 1.479 7.16559 1.56009 6.90015C1.64877 6.62822 1.8844 6.4304 2.16759 6.39015L6.44259 5.76765L8.32509 1.92015C8.4504 1.66141 8.71259 1.49707 9.00009 1.49707C9.28758 1.49707 9.54977 1.66141 9.67509 1.92015L11.5801 5.76015L15.8551 6.38265C16.1383 6.4229 16.3739 6.62072 16.4626 6.89265C16.5437 7.15809 16.4715 7.4466 16.2751 7.64265L13.1851 10.6427L13.9351 14.8652C13.9898 15.1523 13.8727 15.445 13.6351 15.6152C13.4993 15.7103 13.3357 15.7578 13.1701 15.7502Z"
-                          fill="#919EAB"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                  <span class="text-gray-secondary text-sm"> (118)</span>
-                </div>
-              </div>
-              <div class="mt-3 flex items-end justify-between">
-                <div class="flex items-center gap-2">
-                  <span class="text-gray-primary text-base font-medium"
-                    >৳1,690</span
-                  >
-                  <span class="text-gray-tertiary text-base line-through"
-                    >৳1,790</span
-                  >
-                </div>
-                <button
-                  class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex h-10 items-center justify-center gap-2 rounded-lg px-6.5 py-2.5 text-sm font-medium transition-all hover:text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                  >
-                    <path
-                      d="M6.6665 13.3333L13.9333 12.7278C16.207 12.5383 16.7174 12.0417 16.9694 9.77406L17.4998 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                    <path
-                      d="M5 5L18.3333 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                    <circle
-                      cx="4.99967"
-                      cy="16.6667"
-                      r="1.66667"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    />
-                    <circle
-                      cx="14.1667"
-                      cy="16.6667"
-                      r="1.66667"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    />
-                    <path
-                      d="M6.66667 16.6667L12.5 16.6667"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                    <path
-                      d="M1.6665 1.66675L2.47151 1.66675C3.25874 1.66675 3.94495 2.18724 4.13589 2.92919L6.61527 12.5638C6.74057 13.0507 6.63334 13.5665 6.32337 13.968L5.52661 15.0001"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                  Add
-                </button>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="py-12">
-  <div class="custom-container">
-    <div class="wow animate__fadeInUp mx-auto mb-12 max-w-md text-center">
-      <h2 class="text-32 text-gray-primary mb-2 font-bold">New Arrivals</h2>
+      <h2 class="text-32 text-gray-primary mb-2 font-bold">Backpack</h2>
       <p class="text-gray-secondary text-base">
         Premium staples, thoughtfully priced for a limited time
       </p>
@@ -10250,4 +3109,130 @@
   </div>
 </section>
 </main>
+
 @endsection
+
+@push('scripts')
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const categorySlider = document.querySelector('.category-showcase-slider');
+
+    if (!categorySlider || typeof window.Swiper === 'undefined') {
+        return;
+    }
+
+    if (categorySlider.swiper) {
+        categorySlider.swiper.destroy(true, true);
+    }
+
+    const totalCategorySlides =
+        categorySlider.querySelectorAll('.swiper-slide').length;
+
+    const shouldAutoScroll = totalCategorySlides > 4;
+
+    const categorySwiper = new Swiper(categorySlider, {
+
+        /*
+        |--------------------------------------------------------------------------
+        | Desktop = exactly 4 cards
+        |--------------------------------------------------------------------------
+        */
+        slidesPerView: 1.25,
+        spaceBetween: 14,
+
+        speed: 5000,
+
+        grabCursor: true,
+        allowTouchMove: true,
+        simulateTouch: true,
+        watchOverflow: true,
+
+        observer: true,
+        observeParents: true,
+        updateOnWindowResize: true,
+
+        /*
+        |--------------------------------------------------------------------------
+        | Infinite continuous movement
+        |--------------------------------------------------------------------------
+        */
+        loop: shouldAutoScroll,
+
+        autoplay: shouldAutoScroll
+            ? {
+                delay: 0,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+                waitForTransition: false,
+            }
+            : false,
+
+        /*
+        |--------------------------------------------------------------------------
+        | Responsive cards
+        |--------------------------------------------------------------------------
+        */
+        breakpoints: {
+
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+            },
+
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 24,
+            },
+
+        },
+
+        on: {
+
+            init: function () {
+                console.log('Bagora category slider initialized.');
+            },
+
+            touchEnd: function (swiper) {
+                if (
+                    shouldAutoScroll
+                    &&
+                    swiper.autoplay
+                ) {
+                    setTimeout(function () {
+                        swiper.autoplay.start();
+                    }, 700);
+                }
+            },
+
+        },
+
+    });
+
+    /*
+    |--------------------------------------------------------------------------
+    | Resume autoplay after manual mouse interaction
+    |--------------------------------------------------------------------------
+    */
+    categorySlider.addEventListener('mouseleave', function () {
+
+        if (
+            shouldAutoScroll
+            &&
+            categorySwiper.autoplay
+        ) {
+            categorySwiper.autoplay.start();
+        }
+
+    });
+
+});
+</script>
+
+@endpush
