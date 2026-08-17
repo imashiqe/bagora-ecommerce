@@ -4,6 +4,8 @@ use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ChildCategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
+use App\Http\Controllers\Backend\BlogCategoryController;
+use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\ColorController;
@@ -11,6 +13,7 @@ use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SizeController;
 use App\Http\Controllers\Frontend\HomeController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -67,9 +70,64 @@ Route::prefix('admin')
             return view('backend.dashboard');
 
         })->name('dashboard');
+// blogs
+  /*
+        |--------------------------------------------------------------------------
+        | Blog Content Image Upload
+        |--------------------------------------------------------------------------
+        | IMPORTANT: resource route-এর আগে
+        */
+
+        Route::post(
+            'blogs/content-image/upload',
+            [BlogController::class, 'uploadContentImage']
+        )->name('blogs.content-image.upload');
+
+Route::get(
+    'blogs/trashed',
+    [BlogController::class, 'trashed']
+)->name('blogs.trashed');
 
 
+Route::patch(
+    'blogs/{id}/restore',
+    [BlogController::class, 'restore']
+)->name('blogs.restore');
 
+
+Route::delete(
+    'blogs/{id}/force-delete',
+    [BlogController::class, 'forceDelete']
+)->name('blogs.force-delete');
+
+
+Route::resource(
+    'blogs',
+    BlogController::class
+)->except('show');
+// blog category
+Route::get(
+    'blog-categories/trashed',
+    [BlogCategoryController::class, 'trashed']
+)->name('blog-categories.trashed');
+
+
+Route::patch(
+    'blog-categories/{id}/restore',
+    [BlogCategoryController::class, 'restore']
+)->name('blog-categories.restore');
+
+
+Route::delete(
+    'blog-categories/{id}/force-delete',
+    [BlogCategoryController::class, 'forceDelete']
+)->name('blog-categories.force-delete');
+
+
+Route::resource(
+    'blog-categories',
+    BlogCategoryController::class
+)->except('show');
         /*
 |--------------------------------------------------------------------------
 | Category Trash Routes

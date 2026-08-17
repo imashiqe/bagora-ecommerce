@@ -15,6 +15,8 @@
         content="{{ csrf_token() }}"
     >
 
+    
+
     <title>
         @yield('title', 'Bagora Admin')
     </title>
@@ -1611,7 +1613,160 @@
                     </li>
 
 
+{{-- ========================================================= --}}
+{{-- BLOG MANAGEMENT --}}
+{{-- ========================================================= --}}
 
+<li
+    class="
+        nav-item
+        {{
+            request()->routeIs('admin.blog-categories.*')
+            || request()->routeIs('admin.blogs.*')
+                ? 'menu-open'
+                : ''
+        }}
+    "
+>
+
+    {{-- Parent --}}
+    <a
+        href="#"
+        class="
+            nav-link
+            {{
+                request()->routeIs('admin.blog-categories.*')
+                || request()->routeIs('admin.blogs.*')
+                    ? 'active'
+                    : ''
+            }}
+        "
+    >
+
+        <i class="nav-icon bi bi-journal-richtext"></i>
+
+        <p>
+            Blog Management
+
+            <i class="nav-arrow bi bi-chevron-right"></i>
+        </p>
+
+    </a>
+
+
+    {{-- Sub Menu --}}
+    <ul class="nav nav-treeview">
+
+
+        {{-- Blog Categories --}}
+        <li class="nav-item">
+
+            <a
+                href="{{ route('admin.blog-categories.index') }}"
+                class="
+                    nav-link
+                    {{
+                        request()->routeIs('admin.blog-categories.*')
+                            ? 'active'
+                            : ''
+                    }}
+                "
+            >
+
+                <i class="nav-icon bi bi-folder2-open"></i>
+
+                <p>
+                    Blog Categories
+                </p>
+
+            </a>
+
+        </li>
+
+
+        {{-- All Blogs --}}
+        <li class="nav-item">
+
+            <a
+                href="{{ route('admin.blogs.index') }}"
+                class="
+                    nav-link
+                    {{
+                        request()->routeIs('admin.blogs.index')
+                        || request()->routeIs('admin.blogs.edit')
+                        || request()->routeIs('admin.blogs.show')
+                            ? 'active'
+                            : ''
+                    }}
+                "
+            >
+
+                <i class="nav-icon bi bi-file-earmark-text"></i>
+
+                <p>
+                    All Blogs
+                </p>
+
+            </a>
+
+        </li>
+
+
+        {{-- Add Blog --}}
+        <li class="nav-item">
+
+            <a
+                href="{{ route('admin.blogs.create') }}"
+                class="
+                    nav-link
+                    {{
+                        request()->routeIs('admin.blogs.create')
+                            ? 'active'
+                            : ''
+                    }}
+                "
+            >
+
+                <i class="nav-icon bi bi-plus-circle"></i>
+
+                <p>
+                    Add Blog
+                </p>
+
+            </a>
+
+        </li>
+
+
+        {{-- Blog Trash --}}
+        <li class="nav-item">
+
+            <a
+                href="{{ route('admin.blogs.trashed') }}"
+                class="
+                    nav-link
+                    {{
+                        request()->routeIs('admin.blogs.trashed')
+                            ? 'active'
+                            : ''
+                    }}
+                "
+            >
+
+                <i class="nav-icon bi bi-trash3"></i>
+
+                <p>
+                    Blog Trash
+                </p>
+
+            </a>
+
+        </li>
+
+
+    </ul>
+
+</li>
 
                     {{-- ========================================
                         SYSTEM
