@@ -1168,7 +1168,7 @@
       >
         <div class="relative">
           <img
-            src="{{ asset('frontend/assets/images/home-1/three-col-cta/cta-img-one.webp') }}"
+            src="{{ asset('frontend/assets/images/home-1/three-col-cta/one.jpg') }}"
             class="h-full w-full rounded-2xl object-cover transition-transform duration-300 hover:scale-110"
             alt=""
           />
@@ -1222,7 +1222,7 @@
       >
         <div class="relative">
           <img
-            src="{{ asset('frontend/assets/images/home-1/three-col-cta/cta-img-two.webp') }}"
+            src="{{ asset('frontend/assets/images/home-1/three-col-cta/two.jpg') }}"
             class="h-full w-full rounded-2xl object-cover transition-transform duration-300 hover:scale-110"
             alt=""
           />
@@ -1276,7 +1276,7 @@
       >
         <div class="relative">
           <img
-            src="{{ asset('frontend/assets/images/home-1/three-col-cta/cta-img-three.webp') }}"
+            src="{{ asset('frontend/assets/images/home-1/three-col-cta/three.jpg') }}"
             class="h-full w-full rounded-2xl object-cover transition-transform duration-300 hover:scale-110"
             alt=""
           />

@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\ColorController;
 use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SizeController;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\HomeController;
 
 use Illuminate\Support\Facades\Route;
@@ -28,7 +29,36 @@ Route::get(
     [HomeController::class, 'index']
 )->name('home');
 
+/*
+|--------------------------------------------------------------------------
+| CART
+|--------------------------------------------------------------------------
+*/
 
+Route::get(
+    '/cart',
+    [CartController::class, 'index']
+)->name('cart');
+
+Route::post(
+    '/cart/add/{product}',
+    [CartController::class, 'add']
+)->name('cart.add');
+
+Route::patch(
+    '/cart/{product}',
+    [CartController::class, 'update']
+)->name('cart.update');
+
+Route::delete(
+    '/cart/{product}',
+    [CartController::class, 'remove']
+)->name('cart.remove');
+
+Route::delete(
+    '/cart',
+    [CartController::class, 'clear']
+)->name('cart.clear');
 /*
 |--------------------------------------------------------------------------
 | Shop
@@ -207,12 +237,11 @@ Route::get(
 |--------------------------------------------------------------------------
 */
 
+
 Route::get(
-    '/product-details',
+    '/product/{slug}',
     [HomeController::class, 'productDetails']
 )->name('product.details');
-
-
 /*
 |--------------------------------------------------------------------------
 | Return Policy

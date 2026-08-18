@@ -361,7 +361,11 @@
   <div class="custom-container">
     <div class="flex items-center justify-between gap-5">
       <a class="shrink-0" href="{{ url('/') }}">
-        <span class="text-primary-main text-3xl font-extrabold tracking-[0.18em]">BAGORA</span>
+         <img
+          class="h-12 w-auto"
+          src="{{ asset('frontend/assets/images/logo/logo.png') }}"
+          alt="Bagora Logo"
+        />
       </a>
       <div class="hidden xl:flex">
         <div
@@ -2021,14 +2025,11 @@
 </div>
 <nav class="hidden xl:flex">
   <ul class="flex items-center">
-    <li><a class="text-gray-primary hover:text-primary-main block px-5 py-3 text-base font-medium transition" href="{{ url('/') }}">Home</a></li>
     <li><a class="text-gray-primary hover:text-primary-main block px-5 py-3 text-base font-medium transition" href="{{ url('/shop') }}">Shop</a></li>
     <li><a class="text-gray-primary hover:text-primary-main block px-5 py-3 text-base font-medium transition" href="{{ url('/category/backpacks') }}">Backpacks</a></li>
     <li><a class="text-gray-primary hover:text-primary-main block px-5 py-3 text-base font-medium transition" href="{{ url('/category/school-bags') }}">School Bags</a></li>
     <li><a class="text-gray-primary hover:text-primary-main block px-5 py-3 text-base font-medium transition" href="{{ url('/category/laptop-bags') }}">Laptop Bags</a></li>
     <li><a class="text-gray-primary hover:text-primary-main block px-5 py-3 text-base font-medium transition" href="{{ url('/category/travel-bags') }}">Travel Bags</a></li>
-    <li><a class="text-gray-primary hover:text-primary-main block px-5 py-3 text-base font-medium transition" href="{{ url('/about-us') }}">About Us</a></li>
-    <li><a class="text-gray-primary hover:text-primary-main block px-5 py-3 text-base font-medium transition" href="{{ url('/contact-us') }}">Contact</a></li>
   </ul>
 </nav>
 <div class="flex items-center gap-4">
@@ -2116,7 +2117,7 @@
       </button>
     </div>
     <a class="shrink-0" href="{{ url('/') }}">
-      <img alt="Logo" class="w-40" src="{{ asset('frontend/assets/images/logo/logo-1-green.svg') }}" />
+      <img alt="Logo" class="w-40" src="{{ asset('frontend/assets/images/logo/logo.png') }}" />
     </a>
     <div>
       <button
@@ -5588,7 +5589,11 @@
       <div class="flex flex-col justify-between gap-6 xl:flex-row">
         <div class="xl:w-3/12">
           <a class="mb-5 block" href="{{ url('/shop') }}">
-            <span class="text-primary-main text-3xl font-extrabold tracking-[0.18em]">BAGORA</span>
+               <img
+          class="h-12 w-auto"
+          src="{{ asset('frontend/assets/images/logo/logo.png') }}"
+          alt="Bagora Logo"
+        />
           </a>
           <p class="mb-5 md:pr-10">
             Bags made for everyday life — delivered across Bangladesh with simple, reliable ordering.

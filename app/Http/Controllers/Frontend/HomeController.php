@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class HomeController extends Controller
@@ -17,6 +19,7 @@ class HomeController extends Controller
         | Banners
         |--------------------------------------------------------------------------
         */
+        
 
         $banners = Banner::query()
             ->where('status', true)
@@ -133,10 +136,468 @@ return view('frontend.main', compact(
     |--------------------------------------------------------------------------
     */
 
-    public function shop(): View
-    {
-        return view('frontend.pages.shop');
+   /*
+|--------------------------------------------------------------------------
+| SHOP
+|--------------------------------------------------------------------------
+*/
+
+public function shop(Request $request): View
+{
+    /*
+    |--------------------------------------------------------------------------
+    | Base Product Query
+    |--------------------------------------------------------------------------
+    */
+
+    $productsQuery = Product::query()
+        ->with([
+            'category',
+            'brand',
+        ])
+        ->where('status', true);
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Search
+    |--------------------------------------------------------------------------
+    */
+
+    if ($request->filled('q')) {
+
+        $search = trim($request->q);
+
+        $productsQuery->where(function ($query) use ($search) {
+
+            $query
+                ->where(
+                    'title',
+                    'like',
+                    '%' . $search . '%'
+                )
+
+                ->orWhere(
+                    'sku',
+                    'like',
+                    '%' . $search . '%'
+                )
+
+                ->orWhere(
+                    'model_no',
+                    'like',
+                    '%' . $search . '%'
+                )
+
+                ->orWhereHas(
+                    'category',
+                    function ($categoryQuery) use ($search) {
+
+                        $categoryQuery->where(
+                            'name',
+                            'like',
+                            '%' . $search . '%'
+                        );
+
+                    }
+                )
+
+                ->orWhereHas(
+                    'brand',
+                    function ($brandQuery) use ($search) {
+
+                        $brandQuery->where(
+                            'name',
+                            'like',
+                            '%' . $search . '%'
+                        );
+
+                    }
+                );
+
+        });
+
     }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Category Filter
+    |--------------------------------------------------------------------------
+    */
+
+    if ($request->filled('category')) {
+
+        $categorySlug =
+            $request->category;
+
+        $productsQuery->whereHas(
+            'category',
+            function ($query) use ($categorySlug) {
+
+                $query
+                    ->where(
+                        'slug',
+                        $categorySlug
+                    )
+                    ->where(
+                        'status',
+                        true
+                    );
+
+            }
+        );
+
+    }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Brand Filter
+    |--------------------------------------------------------------------------
+    */
+
+    if ($request->filled('brand')) {
+
+        $brandSlug =
+            $request->brand;
+
+        $productsQuery->whereHas(
+            'brand',
+            function ($query) use ($brandSlug) {
+
+                $query
+                    ->where(
+                        'slug',
+                        $brandSlug
+                    )
+                    ->where(
+                        'status',
+                        true
+                    );
+
+            }
+        );
+
+    }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Minimum Price
+    |--------------------------------------------------------------------------
+    */
+
+    if (
+        $request->filled('min_price')
+        &&
+        is_numeric($request->min_price)
+    ) {
+
+        $minPrice =
+            (float) $request->min_price;
+
+        $productsQuery->whereRaw(
+            'COALESCE(sale_price, regular_price) >= ?',
+            [$minPrice]
+        );
+
+    }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Maximum Price
+    |--------------------------------------------------------------------------
+    */
+
+    if (
+        $request->filled('max_price')
+        &&
+        is_numeric($request->max_price)
+    ) {
+
+        $maxPrice =
+            (float) $request->max_price;
+
+        $productsQuery->whereRaw(
+            'COALESCE(sale_price, regular_price) <= ?',
+            [$maxPrice]
+        );
+
+    }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Sorting
+    |--------------------------------------------------------------------------
+    */
+
+    switch ($request->get('sort')) {
+
+        /*
+        |--------------------------------------------------------------------------
+        | Price: Low → High
+        |--------------------------------------------------------------------------
+        */
+
+        case 'price_low':
+
+            $productsQuery->orderByRaw(
+                'COALESCE(sale_price, regular_price) ASC'
+            );
+
+            break;
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Price: High → Low
+        |--------------------------------------------------------------------------
+        */
+
+        case 'price_high':
+
+            $productsQuery->orderByRaw(
+                'COALESCE(sale_price, regular_price) DESC'
+            );
+
+            break;
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Name A-Z
+        |--------------------------------------------------------------------------
+        */
+
+        case 'name_az':
+
+            $productsQuery->orderBy(
+                'title',
+                'asc'
+            );
+
+            break;
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Name Z-A
+        |--------------------------------------------------------------------------
+        */
+
+        case 'name_za':
+
+            $productsQuery->orderBy(
+                'title',
+                'desc'
+            );
+
+            break;
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Biggest Discount
+        |--------------------------------------------------------------------------
+        */
+
+        case 'discount':
+
+            $productsQuery->orderByRaw(
+                '
+                CASE
+
+                    WHEN
+                        sale_price IS NOT NULL
+                        AND sale_price < regular_price
+                        AND regular_price > 0
+
+                    THEN
+                        (
+                            (regular_price - sale_price)
+                            /
+                            regular_price
+                        )
+
+                    ELSE 0
+
+                END DESC
+                '
+            );
+
+            break;
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Latest
+        |--------------------------------------------------------------------------
+        */
+
+        default:
+
+            $productsQuery->latest('id');
+
+            break;
+
+    }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Pagination
+    |--------------------------------------------------------------------------
+    */
+
+    $products = $productsQuery
+        ->paginate(12)
+        ->withQueryString();
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Categories
+    |--------------------------------------------------------------------------
+    */
+
+    $categories = Category::query()
+        ->where('status', true)
+        ->orderBy('sort_order')
+        ->orderBy('name')
+        ->get();
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Category Product Counts
+    |--------------------------------------------------------------------------
+    |
+    | Doing this separately means Category model does NOT need
+    | a products() relationship just for shop counts.
+    |
+    */
+
+    $categoryProductCounts = Product::query()
+        ->where('status', true)
+        ->selectRaw(
+            'category_id, COUNT(*) as total'
+        )
+        ->groupBy('category_id')
+        ->pluck(
+            'total',
+            'category_id'
+        );
+
+
+    $categories->each(
+        function ($category) use ($categoryProductCounts) {
+
+            $category->active_products_count =
+                (int) (
+                    $categoryProductCounts[
+                        $category->id
+                    ]
+                    ?? 0
+                );
+
+        }
+    );
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Brands
+    |--------------------------------------------------------------------------
+    */
+
+    $brands = Brand::query()
+        ->where('status', true)
+        ->orderBy('sort_order')
+        ->orderBy('name')
+        ->get();
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Brand Product Counts
+    |--------------------------------------------------------------------------
+    */
+
+    $brandProductCounts = Product::query()
+        ->where('status', true)
+        ->whereNotNull('brand_id')
+        ->selectRaw(
+            'brand_id, COUNT(*) as total'
+        )
+        ->groupBy('brand_id')
+        ->pluck(
+            'total',
+            'brand_id'
+        );
+
+
+    $brands->each(
+        function ($brand) use ($brandProductCounts) {
+
+            $brand->active_products_count =
+                (int) (
+                    $brandProductCounts[
+                        $brand->id
+                    ]
+                    ?? 0
+                );
+
+        }
+    );
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Available Maximum Price
+    |--------------------------------------------------------------------------
+    */
+
+    $availableMaxPrice = Product::query()
+        ->where('status', true)
+        ->selectRaw(
+            '
+            MAX(
+                COALESCE(
+                    sale_price,
+                    regular_price
+                )
+            ) as max_price
+            '
+        )
+        ->value('max_price');
+
+
+    $availableMaxPrice =
+        (float) (
+            $availableMaxPrice
+            ?? 0
+        );
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Return View
+    |--------------------------------------------------------------------------
+    */
+
+    return view(
+        'frontend.pages.shop',
+        compact(
+            'products',
+            'categories',
+            'brands',
+            'availableMaxPrice'
+        )
+    );
+}
 
 
       /*
@@ -303,11 +764,41 @@ return view('frontend.main', compact(
     |--------------------------------------------------------------------------
     */
 
-    public function productDetails(): View
-    {
-        return view('frontend.pages.product-details');
-    }
+public function productDetails(string $slug): View
+{
+    $product = Product::query()
+        ->with([
+            'category',
+            'subCategory',
+            'childCategory',
+            'brand',
+            'images',
+            'keyFeatures',
+        ])
+        ->where('status', 1)
+        ->where('slug', $slug)
+        ->firstOrFail();
 
+    $relatedProducts = Product::query()
+        ->with([
+            'category',
+            'brand',
+        ])
+        ->where('status', 1)
+        ->where('category_id', $product->category_id)
+        ->where('id', '!=', $product->id)
+        ->latest('id')
+        ->take(8)
+        ->get();
+
+    return view(
+        'frontend.pages.product-details',
+        compact(
+            'product',
+            'relatedProducts'
+        )
+    );
+}
 
     /*
     |--------------------------------------------------------------------------

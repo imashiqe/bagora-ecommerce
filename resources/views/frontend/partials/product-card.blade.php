@@ -14,7 +14,9 @@
 
     $discountPercent =
         $hasDiscount && $regularPrice > 0
-            ? round((($regularPrice - $salePrice) / $regularPrice) * 100)
+            ? round(
+                (($regularPrice - $salePrice) / $regularPrice) * 100
+            )
             : 0;
 @endphp
 
@@ -37,10 +39,14 @@
     "
 >
 
+    {{-- ========================================================= --}}
+    {{-- PRODUCT IMAGE --}}
+    {{-- ========================================================= --}}
+
     <div class="relative overflow-hidden bg-gray-100">
 
         <a
-            href="{{ url('/shop?product=' . $product->slug) }}"
+            href="{{ route('product.details', $product->slug) }}"
             class="block aspect-square overflow-hidden"
         >
 
@@ -70,6 +76,7 @@
                         w-full
                         items-center
                         justify-center
+                        bg-gray-100
                         text-sm
                         text-gray-400
                     "
@@ -81,6 +88,11 @@
 
         </a>
 
+
+
+        {{-- ========================================================= --}}
+        {{-- DISCOUNT --}}
+        {{-- ========================================================= --}}
 
         @if($hasDiscount)
 
@@ -104,6 +116,11 @@
 
         @endif
 
+
+
+        {{-- ========================================================= --}}
+        {{-- BEST SELLER --}}
+        {{-- ========================================================= --}}
 
         @if($product->best_seller)
 
@@ -129,11 +146,48 @@
 
         @endif
 
+
+
+        {{-- ========================================================= --}}
+        {{-- NEW ARRIVAL --}}
+        {{-- ========================================================= --}}
+
+        @if($product->new_arrival)
+
+            <span
+                class="
+                    absolute
+                    bottom-3
+                    right-3
+                    z-10
+                    rounded-full
+                    bg-primary-main
+                    px-2.5
+                    py-1
+                    text-[10px]
+                    font-semibold
+                    tracking-wide
+                    text-white
+                    shadow-sm
+                "
+            >
+                NEW
+            </span>
+
+        @endif
+
     </div>
 
 
+
+    {{-- ========================================================= --}}
+    {{-- PRODUCT INFO --}}
+    {{-- ========================================================= --}}
+
     <div class="flex flex-1 flex-col p-3 sm:p-4">
 
+
+        {{-- Category / Brand --}}
         <div
             class="
                 mb-2
@@ -158,7 +212,9 @@
 
             @if($product->category && $product->brand)
 
-                <span>•</span>
+                <span>
+                    •
+                </span>
 
             @endif
 
@@ -174,6 +230,8 @@
         </div>
 
 
+
+        {{-- Product Title --}}
         <h3
             class="
                 mb-3
@@ -190,25 +248,74 @@
             "
         >
 
-            <a href="{{ url('/shop?product=' . $product->slug) }}">
+            <a
+                href="{{ route('product.details', $product->slug) }}"
+            >
                 {{ $product->title }}
             </a>
 
         </h3>
 
 
+
+        {{-- Model --}}
+        @if($product->model_no)
+
+            <div
+                class="
+                    mb-2
+                    text-[11px]
+                    text-gray-tertiary
+                "
+            >
+                Model:
+                <span class="font-medium">
+                    {{ $product->model_no }}
+                </span>
+            </div>
+
+        @endif
+
+
+
+        {{-- ========================================================= --}}
+        {{-- PRICE --}}
+        {{-- ========================================================= --}}
+
         <div class="mt-auto">
 
-            <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <div
+                class="
+                    flex
+                    flex-wrap
+                    items-center
+                    gap-x-2
+                    gap-y-1
+                "
+            >
 
-                <span class="text-base font-bold text-gray-primary sm:text-lg">
+                <span
+                    class="
+                        text-base
+                        font-bold
+                        text-gray-primary
+                        sm:text-lg
+                    "
+                >
                     ৳{{ number_format($currentPrice, 0) }}
                 </span>
 
 
                 @if($hasDiscount)
 
-                    <span class="text-xs text-gray-tertiary line-through sm:text-sm">
+                    <span
+                        class="
+                            text-xs
+                            text-gray-tertiary
+                            line-through
+                            sm:text-sm
+                        "
+                    >
                         ৳{{ number_format($regularPrice, 0) }}
                     </span>
 
@@ -219,14 +326,20 @@
         </div>
 
 
+
+        {{-- ========================================================= --}}
+        {{-- VIEW PRODUCT --}}
+        {{-- ========================================================= --}}
+
         <a
-            href="{{ url('/shop?product=' . $product->slug) }}"
+            href="{{ route('product.details', $product->slug) }}"
             class="
                 mt-4
                 flex
                 w-full
                 items-center
                 justify-center
+                gap-2
                 rounded-lg
                 bg-primary-main
                 px-3
@@ -240,7 +353,25 @@
                 sm:text-sm
             "
         >
+
             View Product
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+            >
+                <path
+                    d="M5 12H19M14 7L19 12L14 17"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+            </svg>
+
         </a>
 
     </div>
