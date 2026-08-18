@@ -2554,560 +2554,461 @@
     </div>
   </div>
 </section>
+{{-- Blog --}}
+{{-- ========================================================= --}}
+{{-- LATEST BLOG --}}
+{{-- ========================================================= --}}
+
+@if(isset($latestBlogs) && $latestBlogs->isNotEmpty())
+
 <section class="pt-8 pb-10 lg:pt-12 lg:pb-24">
-  <div class="custom-container">
-    <div class="mb-6 flex flex-row items-center justify-between lg:mb-12">
-      <h2 class="lg:text-32 text-gray-primary text-2xl font-bold lg:leading-12">
-        Latest Blog
-      </h2>
-      <a
-        class="text-gray-primary hover:text-gray-primary text-sm font-medium"
-        href="#"
-      >
-        View All
-      </a>
+
+    <div class="custom-container">
+
+        {{-- Header --}}
+        <div
+            class="
+                mb-6
+                flex
+                flex-row
+                items-center
+                justify-between
+                lg:mb-12
+            "
+        >
+
+            <h2
+                class="
+                    lg:text-32
+                    text-gray-primary
+                    text-2xl
+                    font-bold
+                    lg:leading-12
+                "
+            >
+                Latest Blog
+            </h2>
+
+
+            <a
+                href="{{ route('blog') }}"
+                class="
+                    text-gray-primary
+                    hover:text-primary-main
+                    text-sm
+                    font-medium
+                    transition
+                "
+            >
+                View All
+            </a>
+
+        </div>
+
+
+
+        {{-- Blog Grid --}}
+        <div
+            class="
+                grid
+                grid-cols-1
+                gap-6
+                md:grid-cols-2
+                xl:grid-cols-4
+            "
+        >
+
+            @foreach($latestBlogs as $blog)
+
+                @php
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | Blog Date
+                    |--------------------------------------------------------------------------
+                    */
+
+                    $blogDate = $blog->publish_date
+                        ?? $blog->created_at;
+
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | Blog Time
+                    |--------------------------------------------------------------------------
+                    */
+
+                    $blogTime = $blog->publish_time
+                        ? \Carbon\Carbon::parse(
+                            $blog->publish_time
+                        )->format('h:i A')
+                        : optional(
+                            $blog->created_at
+                        )->format('h:i A');
+
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | Short Description
+                    |--------------------------------------------------------------------------
+                    */
+
+                    $blogExcerpt = $blog->short_description
+                        ?: \Illuminate\Support\Str::limit(
+                            strip_tags($blog->content),
+                            115
+                        );
+
+                @endphp
+
+
+                <article
+                    class="
+                        wow
+                        animate__fadeInUp
+                        flex
+                        h-full
+                        flex-col
+                        rounded-2xl
+                        border
+                        border-gray-300
+                        p-4
+                    "
+                >
+
+
+                    {{-- Image --}}
+                    <a
+                        href="{{ route(
+                            'blog.details',
+                            ['slug' => $blog->slug]
+                        ) }}"
+                        class="
+                            block
+                            aspect-[4/3]
+                            overflow-hidden
+                            rounded-lg
+                            bg-gray-100
+                        "
+                    >
+
+                        @if($blog->thumbnail)
+
+                            <img
+                                src="{{ asset($blog->thumbnail) }}"
+                                alt="{{ $blog->title }}"
+                                loading="lazy"
+                                class="
+                                    h-full
+                                    w-full
+                                    rounded-lg
+                                    object-cover
+                                    transition-transform
+                                    duration-300
+                                    hover:scale-110
+                                "
+                            >
+
+                        @else
+
+                            <div
+                                class="
+                                    flex
+                                    h-full
+                                    w-full
+                                    items-center
+                                    justify-center
+                                    text-sm
+                                    text-gray-tertiary
+                                "
+                            >
+                                No Image
+                            </div>
+
+                        @endif
+
+                    </a>
+
+
+
+                    {{-- Category --}}
+                    @if($blog->category)
+
+                        <a
+                            href="{{ route(
+                                'blog',
+                                [
+                                    'category' =>
+                                        $blog->category->slug
+                                ]
+                            ) }}"
+                            class="
+                                text-success-dark-main
+                                bg-success-dark/16
+                                my-4
+                                inline-flex
+                                h-5
+                                w-fit
+                                items-center
+                                justify-center
+                                rounded
+                                px-2
+                                py-1
+                                text-center
+                                text-xs
+                            "
+                        >
+                            {{ $blog->category->name }}
+                        </a>
+
+                    @else
+
+                        <div class="my-4"></div>
+
+                    @endif
+
+
+
+                    {{-- Date + Views --}}
+                    <div
+                        class="
+                            mb-4
+                            flex
+                            flex-wrap
+                            items-center
+                            gap-4
+                        "
+                    >
+
+
+                        {{-- Date --}}
+                        <div
+                            class="
+                                text-gray-secondary
+                                flex
+                                items-center
+                                gap-2
+                                text-xs
+                            "
+                        >
+
+                            <svg
+                                fill="none"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M12 1.33594V2.66927M4 1.33594V2.66927"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+
+                                <path
+                                    d="M2.33301 5.33594H13.6663"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+
+                                <path
+                                    d="M1.6665 8.16216C1.6665 5.25729 1.6665 3.80486 2.50125 2.90243C3.336 2 4.6795 2 7.3665 2H8.63317C11.3202 2 12.6637 2 13.4984 2.90243C14.3332 3.80486 14.3332 5.25729 14.3332 8.16216V8.5045C14.3332 11.4094 14.3332 12.8618 13.4984 13.7642C12.6637 14.6667 11.3202 14.6667 8.63317 14.6667H7.3665C4.6795 14.6667 3.336 14.6667 2.50125 13.7642C1.6665 12.8618 1.6665 11.4094 1.6665 8.5045V8.16216Z"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+
+
+                            <span>
+
+                                @if($blogDate)
+
+                                    {{ $blogTime }},
+                                    {{ $blogDate->format('d M Y') }}
+
+                                @endif
+
+                            </span>
+
+                        </div>
+
+
+                        <span
+                            class="
+                                bg-gray-tertiary/24
+                                h-4
+                                w-px
+                            "
+                        ></span>
+
+
+                        {{-- Views --}}
+                        <div
+                            class="
+                                text-gray-secondary
+                                flex
+                                items-center
+                                gap-2
+                                text-xs
+                            "
+                        >
+
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                            >
+                                <path
+                                    d="M2.5 12C4.5 7.5 7.7 5.25 12 5.25C16.3 5.25 19.5 7.5 21.5 12C19.5 16.5 16.3 18.75 12 18.75C7.7 18.75 4.5 16.5 2.5 12Z"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                />
+
+                                <circle
+                                    cx="12"
+                                    cy="12"
+                                    r="3"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                />
+                            </svg>
+
+                            <span>
+                                {{ number_format($blog->views ?? 0) }}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    {{-- Content --}}
+                    <div class="flex flex-1 flex-col">
+
+                        <h3 class="mb-3">
+
+                            <a
+                                href="{{ route(
+                                    'blog.details',
+                                    ['slug' => $blog->slug]
+                                ) }}"
+                                class="
+                                    text-gray-primary
+                                    hover:text-primary-main
+                                    line-clamp-2
+                                    text-lg
+                                    leading-7
+                                    font-medium
+                                    transition
+                                "
+                            >
+                                {{ $blog->title }}
+                            </a>
+
+                        </h3>
+
+
+                        @if($blogExcerpt)
+
+                            <p
+                                class="
+                                    text-gray-secondary
+                                    mb-4
+                                    line-clamp-3
+                                    text-base
+                                    leading-6
+                                    tracking-tight
+                                "
+                            >
+                                {{ $blogExcerpt }}
+                            </p>
+
+                        @endif
+
+
+                        {{-- Read More --}}
+                        <div class="mt-auto">
+
+                            <a
+                                href="{{ route(
+                                    'blog.details',
+                                    ['slug' => $blog->slug]
+                                ) }}"
+                                class="
+                                    group
+                                    bg-primary-main
+                                    hover:bg-primary-main-dark
+                                    text-success-light
+                                    inline-flex
+                                    items-center
+                                    justify-center
+                                    gap-2
+                                    rounded-lg
+                                    px-5
+                                    py-3
+                                    text-base
+                                    font-medium
+                                    transition-all
+                                    hover:text-white
+                                "
+                            >
+
+                                Read More
+
+
+                                <svg
+                                    class="
+                                        transition-transform
+                                        duration-500
+                                        group-hover:rotate-45
+                                    "
+                                    fill="none"
+                                    height="22"
+                                    viewBox="0 0 22 22"
+                                    width="22"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+
+                                    <path
+                                        d="M15.5833 6.41406L5.5 16.4974"
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-width="1.5"
+                                    />
+
+                                    <path
+                                        d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                    />
+
+                                </svg>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            @endforeach
+
+        </div>
+
     </div>
-    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
-      <article class="wow animate__fadeInUp rounded-2xl border border-gray-300 p-4">
-        <a class="block overflow-hidden rounded-lg" href="{{ url('/blog') }}">
-          <img
-            alt="blog grid"
-            class="h-full w-full rounded-lg transition-transform duration-300 hover:scale-110"
-            src="{{ asset('frontend/assets/images/blog/latest-blog-1/bt-1.webp') }}"
-          />
-        </a>
-        <a
-          class="text-success-dark-main bg-success-dark/16 my-4 inline-flex h-5 items-center justify-center rounded px-2 py-1 text-center text-xs"
-          href="{{ url('/shop') }}"
-        >
-          Category Name
-        </a>
-        <div class="mb-4 flex items-center gap-4">
-          <div class="text-gray-secondary flex items-center gap-2 text-xs">
-            <svg
-              fill="none"
-              height="16"
-              viewbox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 1.33594V2.66927M4 1.33594V2.66927"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M7.99668 8.67188H8.00267M7.99668 11.3385H8.00267M10.6604 8.67188H10.6663M5.33301 8.67188H5.33899M5.33301 11.3385H5.33899"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.33333"
-              ></path>
-              <path
-                d="M2.33301 5.33594H13.6663"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M1.6665 8.16216C1.6665 5.25729 1.6665 3.80486 2.50125 2.90243C3.336 2 4.6795 2 7.3665 2H8.63317C11.3202 2 12.6637 2 13.4984 2.90243C14.3332 3.80486 14.3332 5.25729 14.3332 8.16216V8.5045C14.3332 11.4094 14.3332 12.8618 13.4984 13.7642C12.6637 14.6667 11.3202 14.6667 8.63317 14.6667H7.3665C4.6795 14.6667 3.336 14.6667 2.50125 13.7642C1.6665 12.8618 1.6665 11.4094 1.6665 8.5045V8.16216Z"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M2 5.33594H14"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
-            <span>12:40 PM, 09 Feb 2027</span>
-          </div>
-          <span class="bg-gray-tertiary/24 h-4 w-px"></span>
-          <div class="text-gray-secondary flex items-center gap-2 text-xs">
-            <svg
-              fill="none"
-              height="16"
-              viewbox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#clip0_37919_95727)">
-                <path
-                  d="M13.3335 6.0026C12.8034 3.34564 10.342 1.33594 7.38633 1.33594C4.04382 1.33594 1.3335 3.90608 1.3335 7.07597C1.3335 8.59899 1.95896 9.98286 2.9792 11.0098C3.20382 11.2359 3.3538 11.5448 3.29327 11.8628C3.19338 12.3827 2.967 12.8676 2.63553 13.2717C3.50765 13.4325 4.41447 13.2877 5.19217 12.8778C5.46709 12.7328 5.60454 12.6604 5.70154 12.6457C5.76944 12.6354 5.85789 12.645 6.00016 12.6694"
-                  stroke="#495057"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
-                <path
-                  d="M7.3335 10.8437C7.3335 12.7809 8.97535 14.3515 11.0002 14.3515C11.2382 14.3518 11.4756 14.3298 11.7095 14.2859C11.8778 14.2543 11.962 14.2385 12.0208 14.2475C12.0795 14.2564 12.1628 14.3007 12.3293 14.3893C12.8004 14.6398 13.3498 14.7283 13.8781 14.63C13.6773 14.3831 13.5402 14.0867 13.4796 13.769C13.443 13.5747 13.5338 13.3859 13.6699 13.2477C14.2879 12.6202 14.6668 11.7745 14.6668 10.8437C14.6668 8.90658 13.025 7.33594 11.0002 7.33594C8.97535 7.33594 7.3335 8.90658 7.3335 10.8437Z"
-                  stroke="#495057"
-                  stroke-linejoin="round"
-                ></path>
-              </g>
-              <defs>
-                <clippath id="clip0_37919_95727">
-                  <rect fill="white" height="16" rx="5.33333" width="16"></rect>
-                </clippath>
-              </defs>
-            </svg>
-            <span>(10)</span>
-          </div>
-        </div>
-        <div>
-          <h3 class="mb-3">
-            <a
-              class="text-gray-primary hover:text-primary-main line-clamp-2 text-lg leading-7 font-medium"
-              href="{{ url('/blog') }}"
-            >
-              How to Choose the Right Backpack for Everyday Use
-            </a>
-          </h3>
-          <p
-            class="text-gray-secondary mb-4 text-base leading-6 tracking-tight"
-          >
-            Practical Bagora guides to help you choose the right size, features and style for your everyday needs.
-          </p>
-          <a
-            class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-base font-medium transition-all hover:text-white"
-            href="{{ url('/blog') }}"
-          >
-            Read More
-            <svg
-              class="transition-transform duration-500 group-hover:rotate-45"
-              fill="none"
-              height="22"
-              viewbox="0 0 22 22"
-              width="22"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15.5833 6.41406L5.5 16.4974"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="1.5"
-              ></path>
-              <path
-                d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-              ></path>
-            </svg>
-          </a>
-        </div>
-      </article>
-      <article
-        class="wow animate__fadeInUp rounded-2xl border border-gray-300 p-4"
-        data-wow-delay="0.1s"
-      >
-        <a class="block overflow-hidden rounded-lg" href="{{ url('/blog') }}">
-          <img
-            alt="blog grid"
-            class="h-full w-full rounded-lg transition-transform duration-300 hover:scale-110"
-            src="{{ asset('frontend/assets/images/blog/latest-blog-1/bt-2.webp') }}"
-          />
-        </a>
-        <a
-          class="text-success-dark-main bg-success-dark/16 my-4 inline-flex h-5 items-center justify-center rounded px-2 py-1 text-center text-xs"
-          href="{{ url('/shop') }}"
-        >
-          Category Name
-        </a>
-        <div class="mb-4 flex items-center gap-4">
-          <div class="text-gray-secondary flex items-center gap-2 text-xs">
-            <svg
-              fill="none"
-              height="16"
-              viewbox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 1.33594V2.66927M4 1.33594V2.66927"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M7.99668 8.67188H8.00267M7.99668 11.3385H8.00267M10.6604 8.67188H10.6663M5.33301 8.67188H5.33899M5.33301 11.3385H5.33899"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.33333"
-              ></path>
-              <path
-                d="M2.33301 5.33594H13.6663"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M1.6665 8.16216C1.6665 5.25729 1.6665 3.80486 2.50125 2.90243C3.336 2 4.6795 2 7.3665 2H8.63317C11.3202 2 12.6637 2 13.4984 2.90243C14.3332 3.80486 14.3332 5.25729 14.3332 8.16216V8.5045C14.3332 11.4094 14.3332 12.8618 13.4984 13.7642C12.6637 14.6667 11.3202 14.6667 8.63317 14.6667H7.3665C4.6795 14.6667 3.336 14.6667 2.50125 13.7642C1.6665 12.8618 1.6665 11.4094 1.6665 8.5045V8.16216Z"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M2 5.33594H14"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
-            <span>12:40 PM, 09 Feb 2027</span>
-          </div>
-          <span class="bg-gray-tertiary/24 h-4 w-px"></span>
-          <div class="text-gray-secondary flex items-center gap-2 text-xs">
-            <svg
-              fill="none"
-              height="16"
-              viewbox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#clip0_37919_95727)">
-                <path
-                  d="M13.3335 6.0026C12.8034 3.34564 10.342 1.33594 7.38633 1.33594C4.04382 1.33594 1.3335 3.90608 1.3335 7.07597C1.3335 8.59899 1.95896 9.98286 2.9792 11.0098C3.20382 11.2359 3.3538 11.5448 3.29327 11.8628C3.19338 12.3827 2.967 12.8676 2.63553 13.2717C3.50765 13.4325 4.41447 13.2877 5.19217 12.8778C5.46709 12.7328 5.60454 12.6604 5.70154 12.6457C5.76944 12.6354 5.85789 12.645 6.00016 12.6694"
-                  stroke="#495057"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
-                <path
-                  d="M7.3335 10.8437C7.3335 12.7809 8.97535 14.3515 11.0002 14.3515C11.2382 14.3518 11.4756 14.3298 11.7095 14.2859C11.8778 14.2543 11.962 14.2385 12.0208 14.2475C12.0795 14.2564 12.1628 14.3007 12.3293 14.3893C12.8004 14.6398 13.3498 14.7283 13.8781 14.63C13.6773 14.3831 13.5402 14.0867 13.4796 13.769C13.443 13.5747 13.5338 13.3859 13.6699 13.2477C14.2879 12.6202 14.6668 11.7745 14.6668 10.8437C14.6668 8.90658 13.025 7.33594 11.0002 7.33594C8.97535 7.33594 7.3335 8.90658 7.3335 10.8437Z"
-                  stroke="#495057"
-                  stroke-linejoin="round"
-                ></path>
-              </g>
-              <defs>
-                <clippath id="clip0_37919_95727">
-                  <rect fill="white" height="16" rx="5.33333" width="16"></rect>
-                </clippath>
-              </defs>
-            </svg>
-            <span>(10)</span>
-          </div>
-        </div>
-        <div>
-          <h3 class="mb-3">
-            <a
-              class="text-gray-primary hover:text-primary-main line-clamp-2 text-lg leading-7 font-medium"
-              href="{{ url('/blog') }}"
-            >
-              Laptop Bag Buying Guide: Size, Padding & Practical Features
-            </a>
-          </h3>
-          <p
-            class="text-gray-secondary mb-4 text-base leading-6 tracking-tight"
-          >
-            Practical Bagora guides to help you choose the right size, features and style for your everyday needs.
-          </p>
-          <a
-            class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-base font-medium transition-all hover:text-white"
-            href="{{ url('/blog') }}"
-          >
-            Read More
-            <svg
-              class="transition-transform duration-500 group-hover:rotate-45"
-              fill="none"
-              height="22"
-              viewbox="0 0 22 22"
-              width="22"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15.5833 6.41406L5.5 16.4974"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="1.5"
-              ></path>
-              <path
-                d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-              ></path>
-            </svg>
-          </a>
-        </div>
-      </article>
-      <article
-        class="wow animate__fadeInUp rounded-2xl border border-gray-300 p-4"
-        data-wow-delay="0.2s"
-      >
-        <a class="block overflow-hidden rounded-lg" href="{{ url('/blog') }}">
-          <img
-            alt="blog grid"
-            class="h-full w-full rounded-lg transition-transform duration-300 hover:scale-110"
-            src="{{ asset('frontend/assets/images/blog/latest-blog-1/bt-3.webp') }}"
-          />
-        </a>
-        <a
-          class="text-success-dark-main bg-success-dark/16 my-4 inline-flex h-5 items-center justify-center rounded px-2 py-1 text-center text-xs"
-          href="{{ url('/shop') }}"
-        >
-          Category Name
-        </a>
-        <div class="mb-4 flex items-center gap-4">
-          <div class="text-gray-secondary flex items-center gap-2 text-xs">
-            <svg
-              fill="none"
-              height="16"
-              viewbox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 1.33594V2.66927M4 1.33594V2.66927"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M7.99668 8.67188H8.00267M7.99668 11.3385H8.00267M10.6604 8.67188H10.6663M5.33301 8.67188H5.33899M5.33301 11.3385H5.33899"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.33333"
-              ></path>
-              <path
-                d="M2.33301 5.33594H13.6663"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M1.6665 8.16216C1.6665 5.25729 1.6665 3.80486 2.50125 2.90243C3.336 2 4.6795 2 7.3665 2H8.63317C11.3202 2 12.6637 2 13.4984 2.90243C14.3332 3.80486 14.3332 5.25729 14.3332 8.16216V8.5045C14.3332 11.4094 14.3332 12.8618 13.4984 13.7642C12.6637 14.6667 11.3202 14.6667 8.63317 14.6667H7.3665C4.6795 14.6667 3.336 14.6667 2.50125 13.7642C1.6665 12.8618 1.6665 11.4094 1.6665 8.5045V8.16216Z"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M2 5.33594H14"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
-            <span>12:40 PM, 09 Feb 2027</span>
-          </div>
-          <span class="bg-gray-tertiary/24 h-4 w-px"></span>
-          <div class="text-gray-secondary flex items-center gap-2 text-xs">
-            <svg
-              fill="none"
-              height="16"
-              viewbox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#clip0_37919_95727)">
-                <path
-                  d="M13.3335 6.0026C12.8034 3.34564 10.342 1.33594 7.38633 1.33594C4.04382 1.33594 1.3335 3.90608 1.3335 7.07597C1.3335 8.59899 1.95896 9.98286 2.9792 11.0098C3.20382 11.2359 3.3538 11.5448 3.29327 11.8628C3.19338 12.3827 2.967 12.8676 2.63553 13.2717C3.50765 13.4325 4.41447 13.2877 5.19217 12.8778C5.46709 12.7328 5.60454 12.6604 5.70154 12.6457C5.76944 12.6354 5.85789 12.645 6.00016 12.6694"
-                  stroke="#495057"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
-                <path
-                  d="M7.3335 10.8437C7.3335 12.7809 8.97535 14.3515 11.0002 14.3515C11.2382 14.3518 11.4756 14.3298 11.7095 14.2859C11.8778 14.2543 11.962 14.2385 12.0208 14.2475C12.0795 14.2564 12.1628 14.3007 12.3293 14.3893C12.8004 14.6398 13.3498 14.7283 13.8781 14.63C13.6773 14.3831 13.5402 14.0867 13.4796 13.769C13.443 13.5747 13.5338 13.3859 13.6699 13.2477C14.2879 12.6202 14.6668 11.7745 14.6668 10.8437C14.6668 8.90658 13.025 7.33594 11.0002 7.33594C8.97535 7.33594 7.3335 8.90658 7.3335 10.8437Z"
-                  stroke="#495057"
-                  stroke-linejoin="round"
-                ></path>
-              </g>
-              <defs>
-                <clippath id="clip0_37919_95727">
-                  <rect fill="white" height="16" rx="5.33333" width="16"></rect>
-                </clippath>
-              </defs>
-            </svg>
-            <span>(10)</span>
-          </div>
-        </div>
-        <div>
-          <h3 class="mb-3">
-            <a
-              class="text-gray-primary hover:text-primary-main line-clamp-2 text-lg leading-7 font-medium"
-              href="{{ url('/blog') }}"
-            >
-              School Bag Guide: Comfort, Capacity & Durability
-            </a>
-          </h3>
-          <p
-            class="text-gray-secondary mb-4 text-base leading-6 tracking-tight"
-          >
-            Practical Bagora guides to help you choose the right size, features and style for your everyday needs.
-          </p>
-          <a
-            class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-base font-medium transition-all hover:text-white"
-            href="{{ url('/blog') }}"
-          >
-            Read More
-            <svg
-              class="transition-transform duration-500 group-hover:rotate-45"
-              fill="none"
-              height="22"
-              viewbox="0 0 22 22"
-              width="22"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15.5833 6.41406L5.5 16.4974"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="1.5"
-              ></path>
-              <path
-                d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-              ></path>
-            </svg>
-          </a>
-        </div>
-      </article>
-      <article
-        class="wow animate__fadeInUp rounded-2xl border border-gray-300 p-4"
-        data-wow-delay="0.3s"
-      >
-        <a class="block overflow-hidden rounded-lg" href="{{ url('/blog') }}">
-          <img
-            alt="blog grid"
-            class="h-full w-full rounded-lg transition-transform duration-300 hover:scale-110"
-            src="{{ asset('frontend/assets/images/blog/latest-blog-1/bt-4.webp') }}"
-          />
-        </a>
-        <a
-          class="text-success-dark-main bg-success-dark/16 my-4 inline-flex h-5 items-center justify-center rounded px-2 py-1 text-center text-xs"
-          href="{{ url('/shop') }}"
-        >
-          Category Name
-        </a>
-        <div class="mb-4 flex items-center gap-4">
-          <div class="text-gray-secondary flex items-center gap-2 text-xs">
-            <svg
-              fill="none"
-              height="16"
-              viewbox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 1.33594V2.66927M4 1.33594V2.66927"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M7.99668 8.67188H8.00267M7.99668 11.3385H8.00267M10.6604 8.67188H10.6663M5.33301 8.67188H5.33899M5.33301 11.3385H5.33899"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.33333"
-              ></path>
-              <path
-                d="M2.33301 5.33594H13.6663"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M1.6665 8.16216C1.6665 5.25729 1.6665 3.80486 2.50125 2.90243C3.336 2 4.6795 2 7.3665 2H8.63317C11.3202 2 12.6637 2 13.4984 2.90243C14.3332 3.80486 14.3332 5.25729 14.3332 8.16216V8.5045C14.3332 11.4094 14.3332 12.8618 13.4984 13.7642C12.6637 14.6667 11.3202 14.6667 8.63317 14.6667H7.3665C4.6795 14.6667 3.336 14.6667 2.50125 13.7642C1.6665 12.8618 1.6665 11.4094 1.6665 8.5045V8.16216Z"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M2 5.33594H14"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
-            <span>12:40 PM, 09 Feb 2027</span>
-          </div>
-          <span class="bg-gray-tertiary/24 h-4 w-px"></span>
-          <div class="text-gray-secondary flex items-center gap-2 text-xs">
-            <svg
-              fill="none"
-              height="16"
-              viewbox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#clip0_37919_95727)">
-                <path
-                  d="M13.3335 6.0026C12.8034 3.34564 10.342 1.33594 7.38633 1.33594C4.04382 1.33594 1.3335 3.90608 1.3335 7.07597C1.3335 8.59899 1.95896 9.98286 2.9792 11.0098C3.20382 11.2359 3.3538 11.5448 3.29327 11.8628C3.19338 12.3827 2.967 12.8676 2.63553 13.2717C3.50765 13.4325 4.41447 13.2877 5.19217 12.8778C5.46709 12.7328 5.60454 12.6604 5.70154 12.6457C5.76944 12.6354 5.85789 12.645 6.00016 12.6694"
-                  stroke="#495057"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
-                <path
-                  d="M7.3335 10.8437C7.3335 12.7809 8.97535 14.3515 11.0002 14.3515C11.2382 14.3518 11.4756 14.3298 11.7095 14.2859C11.8778 14.2543 11.962 14.2385 12.0208 14.2475C12.0795 14.2564 12.1628 14.3007 12.3293 14.3893C12.8004 14.6398 13.3498 14.7283 13.8781 14.63C13.6773 14.3831 13.5402 14.0867 13.4796 13.769C13.443 13.5747 13.5338 13.3859 13.6699 13.2477C14.2879 12.6202 14.6668 11.7745 14.6668 10.8437C14.6668 8.90658 13.025 7.33594 11.0002 7.33594C8.97535 7.33594 7.3335 8.90658 7.3335 10.8437Z"
-                  stroke="#495057"
-                  stroke-linejoin="round"
-                ></path>
-              </g>
-              <defs>
-                <clippath id="clip0_37919_95727">
-                  <rect fill="white" height="16" rx="5.33333" width="16"></rect>
-                </clippath>
-              </defs>
-            </svg>
-            <span>(10)</span>
-          </div>
-        </div>
-        <div>
-          <h3 class="mb-3">
-            <a
-              class="text-gray-primary hover:text-primary-main line-clamp-2 text-lg leading-7 font-medium"
-              href="{{ url('/blog') }}"
-            >
-              Travel Bag Essentials: What to Look for Before You Buy
-            </a>
-          </h3>
-          <p
-            class="text-gray-secondary mb-4 text-base leading-6 tracking-tight"
-          >
-            Practical Bagora guides to help you choose the right size, features and style for your everyday needs.
-          </p>
-          <a
-            class="group bg-primary-main hover:bg-primary-main-dark text-success-light inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-base font-medium transition-all hover:text-white"
-            href="{{ url('/blog') }}"
-          >
-            Read More
-            <svg
-              class="transition-transform duration-500 group-hover:rotate-45"
-              fill="none"
-              height="22"
-              viewbox="0 0 22 22"
-              width="22"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15.5833 6.41406L5.5 16.4974"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="1.5"
-              ></path>
-              <path
-                d="M10.0835 5.5H15.8335C16.1478 5.5 16.3049 5.5 16.4025 5.59763C16.5002 5.69526 16.5002 5.8524 16.5002 6.16667V11.9167"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-              ></path>
-            </svg>
-          </a>
-        </div>
-      </article>
-    </div>
-  </div>
+
 </section>
+
+@endif
 </main>
 
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
+use App\Models\Blog;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
@@ -19,7 +20,7 @@ class HomeController extends Controller
         | Banners
         |--------------------------------------------------------------------------
         */
-        
+
 
         $banners = Banner::query()
             ->where('status', true)
@@ -111,7 +112,23 @@ class HomeController extends Controller
     ->take(12)
     ->get();
 
-
+$latestBlogs = Blog::query()
+    ->with('category')
+    ->where('status', true)
+    ->where(function ($query) {
+        $query
+            ->whereNull('publish_date')
+            ->orWhereDate(
+                'publish_date',
+                '<=',
+                now()->toDateString()
+            );
+    })
+    ->orderByDesc('publish_date')
+    ->orderByDesc('publish_time')
+    ->latest('id')
+    ->take(4)
+    ->get();
         /*
         |--------------------------------------------------------------------------
         | Homepage
@@ -124,7 +141,8 @@ return view('frontend.main', compact(
     'bestSellingProducts',
     'featuredProducts',
     'newArrivalProducts',
-    'latestProducts'
+    'latestProducts',
+    'latestBlogs'
 ));
     }
 
